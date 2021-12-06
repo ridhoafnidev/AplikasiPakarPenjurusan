@@ -1,0 +1,149 @@
+ext.versions = [
+
+        code                 : 1,
+        name                 : "1.0",
+        schemaDatabaseVersion: 1,
+
+        compileSdkVersion    : 31,
+        minSdkVersion        : 21,
+        targetSdkVersion     : 31,
+
+        //region Networking Dependencies
+        moshi                : '1.12.0',
+        okhttp               : '5.0.0-alpha.2',
+        retrofit             : '2.9.0',
+        chucker              : '3.4.0',
+        cookiejar            : '1.3.5',
+        //endregion
+
+        //region Plugin
+        agp                  : '7.0.3',
+        kotlin               : '1.5.31',
+        navigation_safe_args : '2.3.3',
+        //endregion
+
+        //region Common Dependencies
+        coroutine            : '1.4.3',
+        koin                 : '2.1.5',
+        //endregion
+
+        room                 : '2.3.0-rc01',
+
+        debug_banner         : '1.0.4',
+        validator            : '0.5.2',
+
+
+        navigation           : '2.3.5',
+        material             : '1.4.0',
+        appcompat            : '1.3.1',
+        constraint_layout    : '2.1.1',
+
+        junit                : "4.13-beta-3",
+        test_ext_junit_ktx   : "1.1.2",
+        core                 : "1.6.0",
+
+        services_maps        : "17.0.1",
+        legacy_support       : "1.0.0",
+
+        keyboard_watcher     : '3.0.0-RC3',
+        progress_button      : '2.1.0',
+
+        timber               : '4.7.1',
+
+        recyclical           : '1.1.1',
+        recyclical_swipe     : '1.1.1',
+        recycler_view_divider: '3.5.0',
+        glide                : '4.12.0',
+]
+
+ext.plugin = [
+        agp                 : "com.android.tools.build:gradle:$versions.agp",
+        kotlin              : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+        navigation_safe_args: "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation_safe_args",
+]
+
+ext.deps = [
+        moshi             : [
+                "com.squareup.moshi:moshi-kotlin:$versions.moshi",
+                "com.squareup.moshi:moshi-adapters:$versions.moshi"
+        ],
+        okhttp            : [
+                "com.squareup.okhttp3:okhttp:$versions.okhttp",
+                "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+        ],
+        retrofit          : [
+                "com.squareup.retrofit2:retrofit:$versions.retrofit",
+                "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
+                "com.squareup.retrofit2:converter-moshi:$versions.retrofit"
+        ],
+        cookiejar         : [
+                "net.gotev:cookie-store:$versions.cookiejar",
+                "net.gotev:cookie-store-okhttp:$versions.cookiejar"
+        ],
+
+        moshi_compiler    : "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshi",
+
+
+        coroutines        : [
+                "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutine",
+                "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutine"
+        ],
+        koin              : [
+                "org.koin:koin-core:$versions.koin",
+                "org.koin:koin-androidx-scope:$versions.koin",
+                "org.koin:koin-androidx-viewmodel:$versions.koin",
+                "org.koin:koin-androidx-fragment:$versions.koin"
+        ],
+
+
+        chucker_debug     : "com.github.chuckerteam.chucker:library:$versions.chucker",
+        chucker_release   : "com.github.chuckerteam.chucker:library-no-op:$versions.chucker",
+
+        room              : [
+                "androidx.room:room-ktx:$versions.room",
+                "androidx.room:room-migration:$versions.room"
+        ],
+
+        debug_banner      : "com.github.armcha:DebugBanner:$versions.debug_banner",
+        validator         : "com.afollestad:vvalidator:$versions.validator",
+
+        navigation        : [
+                "androidx.navigation:navigation-fragment-ktx:$versions.navigation",
+                "androidx.navigation:navigation-ui-ktx:$versions.navigation"
+        ],
+
+        material          : "com.google.android.material:material:$versions.material",
+
+        appcompat         : [
+                "androidx.appcompat:appcompat:$versions.appcompat",
+                "androidx.appcompat:appcompat-resources:$versions.appcompat"
+        ],
+
+        constraint_layout : "androidx.constraintlayout:constraintlayout:$versions.constraint_layout",
+
+        junit             : "junit:junit:$versions.junit",
+        test_ext_junit_ktx: "androidx.test.ext:junit-ktx:$versions.test_ext_junit_ktx",
+        core              : "androidx.core:core-ktx:$versions.core",
+
+        services_maps     : "com.google.android.gms:play-services-maps:$versions.services_maps",
+        legacy_support    : "androidx.legacy:legacy-support-v4:$versions.legacy_support",
+
+        progress_button   : "com.github.razir.progressbutton:progressbutton:$versions.progress_button",
+        keyboard_watcher  : "net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:$versions.keyboard_watcher",
+
+
+        timber            : "com.jakewharton.timber:timber:$versions.timber",
+
+        room_compiler     : "androidx.room:room-compiler:$versions.room",
+
+        recycler_view_util: [
+                "com.afollestad:recyclical:$versions.recyclical",
+                "com.afollestad:recyclical-swipe:$versions.recyclical_swipe",
+                "com.github.fondesa:recycler-view-divider:$versions.recycler_view_divider"
+        ],
+
+        glide             : [
+                "com.github.bumptech.glide:glide:$versions.glide",
+                "com.github.bumptech.glide:compiler:$versions.glide"
+        ]
+]

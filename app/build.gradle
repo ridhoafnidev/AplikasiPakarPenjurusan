@@ -1,0 +1,41 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+apply(from: "../shared_dependencies.gradle")
+
+android {
+    defaultConfig {
+        applicationId "com.example.aplikasipakarpenjurusan"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            minifyEnabled false
+            debuggable true
+        }
+    }
+}
+
+dependencies {
+    implementation project(":core-data")
+    implementation project(":core-navigation")
+    implementation project(":core-resource")
+    implementation project(":core-util")
+
+    implementation project(':feature-auth')
+
+    implementation deps.koin
+
+    implementation deps.debug_banner
+
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    debugImplementation deps.chucker_debug
+}
