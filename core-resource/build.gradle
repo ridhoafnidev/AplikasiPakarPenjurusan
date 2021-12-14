@@ -2,8 +2,11 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
 }
+
 apply(from: "../shared_dependencies.gradle")
 
 dependencies {
-
+    implementation deps.material
+    implementation deps.constraint_layout
+    implementation project(path: ':core-util')
 }

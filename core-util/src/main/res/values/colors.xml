@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorInputSecondaryPressed">#F3F3F3</color>
+    <color name="colorDivider">#F5F5F5</color>
+    <color name="colorInputSecondary">#F7F7F7</color>
+    <color name="colorInputSecondaryDisabled">#6D6D6D</color>
+    <color name="colorInputPrimary">#FFFFFF</color>
+    <color name="colorInputPrimaryPressed">#F3F3F3</color>
+    <color name="colorInputPrimaryFocused">#F0F0F0</color>
+    <color name="colorInputPrimaryDisabled">#6D6D6D</color>
+    <color name="colorTextPressed">#000000</color>
+    <color name="colorTextDisabled">#C9505050</color>
+    <color name="colorTextPrimary">#101010</color>
+    <color name="colorInputAccentPressed">#05334B</color>
+    <color name="colorInputAccentDisabled">#6D6D6D</color>
+    <color name="colorInputAccent">#053F5E</color>
+    <color name="colorTextAccent">#053F5E</color>
+
+</resources>
