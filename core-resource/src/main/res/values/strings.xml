@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorEnvBanner">@null</color>
+    <string name="text_search_chat">Cari</string>
 </resources>

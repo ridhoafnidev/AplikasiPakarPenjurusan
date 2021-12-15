@@ -6,10 +6,19 @@
         <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
         <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/feature-auth/src/main/res/layout/activity_auth.xml" value="0.1598731884057971" />
         <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/feature-auth/src/main/res/layout/activity_splash.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/core-resource/src/main/res/drawable/ic_back.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/core-resource/src/main/res/drawable/ic_search.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/core-resource/src/main/res/drawable/input_accent.xml" value="0.23055555555555557" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/core-resource/src/main/res/drawable/shape_circle_placeholder.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/core-resource/src/main/res/layout/component_toolbar.xml" value="0.25" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/core-util/src/main/res/drawable/ic_back.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/core-util/src/main/res/drawable/input_accent.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/core-util/src/main/res/drawable/input_primary.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/core-util/src/main/res/drawable/input_secondary.xml" value="0.1" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

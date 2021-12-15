@@ -40,11 +40,12 @@
     <dimen name="component_super">32dp</dimen>
 
     <dimen name="divider">0.8dp</dimen>
-    <dimen name="divider_bold">1dp</dimen>
     <dimen name="radius">20dp</dimen>
+    <dimen name="radius_input">10dp</dimen>
+
+    <dimen name="divider_bold">1dp</dimen>
     <dimen name="radius_small">6dp</dimen>
     <dimen name="radius_circle">200dp</dimen>
-    <dimen name="radius_input">10dp</dimen>
 
     <dimen name="tab">55dp</dimen>
     <dimen name="input_height">40dp</dimen>
