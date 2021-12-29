@@ -30,12 +30,13 @@ dependencies {
     implementation project(":core-util")
 
     implementation project(':feature-auth')
+    implementation project(':feature-home')
+
+    implementation project(':sub-feature-pakar')
 
     implementation deps.koin
 
     implementation deps.debug_banner
-
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     debugImplementation deps.chucker_debug
 }

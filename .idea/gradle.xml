@@ -16,6 +16,8 @@
             <option value="$PROJECT_DIR$/core-resource" />
             <option value="$PROJECT_DIR$/core-util" />
             <option value="$PROJECT_DIR$/feature-auth" />
+            <option value="$PROJECT_DIR$/feature-home" />
+            <option value="$PROJECT_DIR$/sub-feature-pakar" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

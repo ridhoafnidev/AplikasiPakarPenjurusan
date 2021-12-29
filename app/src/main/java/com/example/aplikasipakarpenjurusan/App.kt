@@ -2,7 +2,7 @@ package com.example.aplikasipakarpenjurusan
 
 import android.app.Application
 import com.example.core_data.dataModule
-import com.example.feature_auth.authModule
+import com.example.feature.auth.authModule
 import io.armcha.debugBanner.Banner
 import io.armcha.debugBanner.BuildConfig
 import io.armcha.debugBanner.DebugBanner
