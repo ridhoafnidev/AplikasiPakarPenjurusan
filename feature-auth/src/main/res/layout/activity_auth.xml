@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AuthActivity">
+    tools:context="com.example.feature.auth.AuthActivity">
 
     <fragment
         android:id="@+id/activity_auth_nav_host_fragment"
@@ -17,6 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/auth_navigation"
-        tools:ignore="FragmentTagUsage" />
+        tools:ignore="FragmentTagUsage"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

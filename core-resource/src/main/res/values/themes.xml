@@ -11,6 +11,12 @@
         <item name="android:navigationBarColor">@color/colorBackgroundPrimary</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationStyle</item>
+    </style>
+
+    <style name="WindowAnimationStyle">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
 
     <style name="BaseTheme.Auth">
@@ -50,12 +56,40 @@
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="BaseTheme.Button">
+    <style name="BaseTheme.Button" parent="Widget.MaterialComponents.Button">
         <item name="base_font_family">GoogleSans</item>
         <item name="base_font_style">bold</item>
-        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textSize">@dimen/text_very_small</item>
         <item name="android:paddingHorizontal" tools:targetApi="o">@dimen/component_big</item>
         <item name="android:paddingVertical" tools:targetApi="o">@dimen/component_normal</item>
+        <item name="cornerRadius">@dimen/small</item>
+    </style>
+
+    <style name="BaseTheme.Button.Primary">
+        <item name="android:textColor">@color/colorInputPrimary</item>
+        <item name="materialThemeOverlay">@style/Primary</item>
+    </style>
+
+    <style name="BaseTheme.Button.Secondary">
+        <item name="android:textColor">@color/colorInputPrimary</item>
+        <item name="materialThemeOverlay">@style/Secondary</item>
+    </style>
+
+    <style name="BaseTheme.Button.Accent">
+        <item name="android:textColor">@color/colorInputPrimary</item>
+        <item name="materialThemeOverlay">@style/Accent</item>
+    </style>
+
+    <style name="Primary">
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="Secondary">
+        <item name="colorPrimary">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="Accent">
+        <item name="colorPrimary">@color/colorAccent</item>
     </style>
 
     <style name="BaseTheme.Margin">

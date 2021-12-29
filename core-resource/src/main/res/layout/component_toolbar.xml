@@ -12,40 +12,41 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:background="@color/colorBackgroundSecondary"
         app:popupTheme="@style/BaseTheme">
 
         <com.example.core_resource.components.BaseTextView
             android:id="@+id/toolbarTitle"
-            app:base_font_style="bold"
-            android:textSize="@dimen/text_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="start"
             android:textColor="@color/colorTextAccent"
-            android:layout_gravity="start" />
+            android:textSize="@dimen/text_medium"
+            app:base_font_style="bold" />
 
         <ImageView
-            android:visibility="gone"
             android:id="@+id/imageProfilePicture"
-            android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:layout_gravity="end|center_vertical"
-            android:src="@drawable/shape_circle_placeholder"
             android:layout_width="35dp"
-            android:layout_height="35dp" />
+            android:layout_height="35dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:src="@drawable/shape_circle_placeholder"
+            android:visibility="gone"
+            tools:ignore="ContentDescription" />
 
         <com.example.core_resource.components.BaseEditText
-            android:visibility="gone"
             android:id="@+id/toolbarSearch"
-            android:drawableStart="@drawable/ic_search"
-            android:drawablePadding="@dimen/component_medium"
-            android:textSize="@dimen/text_medium"
+            style="@style/BaseTheme.EditText.Accent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/activity_horizontal_margin_big"
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            style="@style/BaseTheme.EditText.Accent"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="@dimen/component_medium"
             android:hint="@string/text_search_chat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/text_medium"
+            android:visibility="gone" />
 
     </androidx.appcompat.widget.Toolbar>
 

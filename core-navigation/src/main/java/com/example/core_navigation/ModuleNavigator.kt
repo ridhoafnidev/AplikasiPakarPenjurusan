@@ -18,6 +18,31 @@ interface ModuleNavigator{
         startActivity(ActivityClassPath.Auth, finnishCurrent)
     }
 
+    fun<T> T.navigateToHomeActivity(
+        finishCurrent: Boolean = false
+    ) where T :AppCompatActivity, T :ModuleNavigator {
+        startActivity(ActivityClassPath.Home, finishCurrent)
+    }
+
+    fun<T> T.navigateToHomeActivity(
+        finishCurrent: Boolean = false
+    ) where T : Fragment, T : ModuleNavigator {
+        startActivity(ActivityClassPath.Home, finishCurrent)
+    }
+
+    fun<T> T.navigateToPakarActivity(
+        finishCurrent: Boolean = false
+    ) where T : Fragment, T : ModuleNavigator {
+        startActivity(ActivityClassPath.Pakar, finishCurrent)
+    }
+
+    fun<T> T.navigateToPakarActivity(
+        finishCurrent: Boolean = false
+    ) where T : AppCompatActivity, T : ModuleNavigator {
+        startActivity(ActivityClassPath.Pakar, finishCurrent)
+    }
+
+
 }
 
 //region Extension functions to start activity in Activities list without parameter

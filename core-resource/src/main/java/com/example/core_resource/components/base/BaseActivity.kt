@@ -1,47 +1,42 @@
 package com.example.core_resource.components.base
 
+import android.annotation.SuppressLint
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.LayoutInflater
-import android.widget.Toolbar
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
-import androidx.core.view.isVisible
 import androidx.viewbinding.ViewBinding
-import com.example.core_resource.databinding.ComponentToolbarBinding
 import com.example.core_resource.R
+import kotlinx.android.synthetic.main.component_toolbar.*
 
 abstract class BaseActivity<VB: ViewBinding>(
     private val bindingInflater: (inflater: LayoutInflater) -> VB
 ) : AppCompatActivity() {
 
-    val binding by lazy {
+    val binding: VB by lazy {
         bindingInflater(layoutInflater)
     }
 
+    /*
     val bindingToolbar by lazy {
         ComponentToolbarBinding.inflate(layoutInflater)
     }
+     */
 
     protected abstract fun initView()
 
     protected abstract fun initListener()
-
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-        setContentView(binding.root)
-        initView()
-        initListener()
-    }
 
     fun initToolbar(
         back: Boolean = false,
         pageName: String = "",
         primary: Boolean = false
     ){
-        setSupportActionBar(bindingToolbar.toolbar)
+        setSupportActionBar(toolbar)
 
         setPageName(pageName)
 
@@ -56,7 +51,7 @@ abstract class BaseActivity<VB: ViewBinding>(
 
             backIcon?.let { drawable ->
                 drawable.colorFilter = iconColor
-                bindingToolbar.toolbar.overflowIcon?.colorFilter = iconColor
+                toolbar.overflowIcon?.colorFilter = iconColor
             }
 
             actionBar.setHomeAsUpIndicator(backIcon)
@@ -65,23 +60,27 @@ abstract class BaseActivity<VB: ViewBinding>(
     }
 
     fun setTitleGravity(gravity: Int){
-        with(bindingToolbar){
-            val layoutParams = toolbarTitle.layoutParams as Toolbar.LayoutParams
-            layoutParams.gravity = gravity
-            toolbarTitle.layoutParams = layoutParams
-        }
+        val layoutParams = toolbarTitle.layoutParams as Toolbar.LayoutParams
+        layoutParams.gravity = gravity
+        toolbarTitle.layoutParams = layoutParams
     }
 
     fun setPageName(pageName: String, line: Boolean = true){
-        with(bindingToolbar){
-            toolbarTitle.text = pageName
-            lineDivider.setBackgroundColor(ContextCompat.getColor(applicationContext,
-                if (line) R.color.colorDivider else R.color.colorInputPrimaryDisabled))
-        }
+        toolbarTitle.text = pageName
+        lineDivider.setBackgroundColor(ContextCompat.getColor(applicationContext,
+            if (line) R.color.colorDivider else R.color.colorInputPrimaryDisabled))
+    }
+
+    @SuppressLint("MissingSuperCall")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+        initView()
+        initListener()
     }
 
     fun setToolbarSearch(state: Boolean){
-        bindingToolbar.toolbarSearch.isVisible = state
+        toolbarSearch.visibility = if(state) View.VISIBLE else View.GONE
     }
 
 }
