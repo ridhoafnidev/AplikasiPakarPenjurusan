@@ -16,5 +16,11 @@
     <color name="colorInputAccentDisabled">#6D6D6D</color>
     <color name="colorInputAccent">#053F5E</color>
     <color name="colorTextAccent">#053F5E</color>
+    <color name="colorButtonPrimary">#95C63B</color>
+    <color name="colorButtonTextPrimary">#FFF</color>
+    <color name="colorButtonSecondary">#235489</color>
+    <color name="colorButtonTextPrimaryPressed">#B3B3B3</color>
+    <color name="colorButtonTextPrimaryDisabled">#A17A7A7A</color>
+    <color name="colorButtonPrimaryPressed">#05334B</color>
 
 </resources>

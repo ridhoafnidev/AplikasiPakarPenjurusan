@@ -2,12 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/pakar_navigation"
-    app:startDestination="@id/pakarFragment">
+    android:id="@+id/event_navigation"
+    app:startDestination="@id/createEventFragment">
 
     <fragment
-        android:id="@+id/pakarFragment"
-        android:name="com.ridhoafnidev.subfeature.pakar.CreateEventFragment"
+        android:id="@+id/createEventFragment"
+        android:name="com.kemenag_inhu.absensi.subfeature.create_event.CreateEventFragment"
         android:label="Pakar"
-        tools:layout="@layout/fragment_pakar" />
+        tools:layout="@layout/fragment_create_event" />
 </navigation>

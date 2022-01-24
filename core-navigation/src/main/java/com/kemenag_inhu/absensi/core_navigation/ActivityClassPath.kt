@@ -11,5 +11,5 @@ enum class ActivityClassPath(private val className: String) {
     fun getIntent(context: Context) = Intent(context, Class.forName(className))
 }
 
-private const val BASE_PATH = "com.ridhoafnidev.edtc.feature"
-private const val SUB_PATH = "com.ridhoafnidev.edtc.subfeature"
+private const val BASE_PATH = "com.kemenag_inhu.absensi.feature"
+private const val SUB_PATH = "com.kemenag_inhu.absensi.subfeature"

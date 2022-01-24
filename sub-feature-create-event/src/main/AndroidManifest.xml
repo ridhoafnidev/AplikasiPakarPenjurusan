@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ridhoafnidev.subfeature.pakar">
-
+    package="com.kemenag_inhu.absensi.subfeature.create_event">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <application>
         <activity
-            android:name="com.ridhoafnidev.subfeature.pakar.PakarActivity"
+            android:name="com.kemenag_inhu.absensi.subfeature.create_event.CreateEventActivity"
             android:exported="true"
             android:theme="@style/BaseTheme"/>
     </application>

@@ -1,28 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    style="@style/BaseTheme.Layout.Parent">
 
-    <com.example.core_resource.components.BaseTextView
-        android:id="@+id/baseTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Jawablah pertanyaan dengan baik dan benar. Jawablah dari pertanyaan yang telah diisi untuk menentukan jurusan yang akan anda terima. "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <com.example.core_resource.components.BaseButton
-        android:id="@+id/btn_start"
-        style="@style/BaseTheme.Button.Accent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MULAI"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_parent_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/colorPrimaryDark">
+
+            <ImageView
+                android:id="@+id/iv_user"
+                android:layout_width="@dimen/profile_picture"
+                android:layout_height="@dimen/profile_picture"
+                android:layout_margin="@dimen/medium"
+                android:contentDescription="@string/image_user"
+                android:src="@drawable/shape_circle_placeholder"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_welcome"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_welcome" />
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="@dimen/medium"
+                android:contentDescription="@string/image_user"
+                android:background="@drawable/shape_circle_image"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_user"
+                app:layout_constraintStart_toStartOf="@+id/iv_user"
+                app:layout_constraintTop_toTopOf="@+id/iv_user"
+                app:layout_constraintEnd_toEndOf="@+id/iv_user"/>
+
+            <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                android:id="@+id/tv_welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:gravity="center"
+                android:textColor="@color/colorTextLight"
+                app:base_font_style="medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/welcome" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_recent_clock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/medium"
+                android:layout_marginTop="@dimen/medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_welcome">
+
+                <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                    android:id="@+id/tv_recent_clock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_huge"
+                    android:textColor="@color/colorTextLight"
+                    app:base_font_style="bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_equals"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="08" />
+
+                <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                    android:id="@+id/tv_equals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_huge"
+                    android:textColor="@color/colorTextLight"
+                    app:base_font_style="bold"
+                    app:layout_constraintStart_toEndOf="@+id/tv_recent_clock"
+                    app:layout_constraintTop_toTopOf="@+id/tv_recent_clock"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_recent_clock"
+                    android:text=" : " />
+
+                <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                    android:id="@+id/tv_second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_huge"
+                    android:textColor="@color/colorTextLight"
+                    app:base_font_style="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_equals"
+                    app:layout_constraintTop_toTopOf="@+id/tv_recent_clock"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_recent_clock"
+                    android:text=" 09 " />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                android:id="@+id/tv_timestime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/colorTextLight"
+                app:base_font_style="medium"
+                app:layout_constraintTop_toBottomOf="@+id/layout_recent_clock"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="Jumat, 14 Jan 2022" />
+
+            <ImageView
+                android:id="@+id/iv_notification"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_margin="@dimen/medium"
+                android:contentDescription="@string/image_user"
+                android:rotation="-20"
+                android:src="@drawable/ic_notification_white"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_welcome"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_welcome" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_attendent"
+                android:layout_width="@dimen/match_constraint"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/medium"
+                android:layout_marginTop="@dimen/medium_fit"
+                android:layout_marginBottom="@dimen/medium_fit"
+                android:background="@color/colorBackgroundPrimary"
+                android:clipToPadding="true"
+                android:elevation="@dimen/small"
+                app:cardCornerRadius="@dimen/component_extra"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_timestime">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                        android:id="@+id/tv_schedule_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/small_medium"
+                        android:textColor="@color/colorTextSecondary"
+                        app:base_font_style="medium"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:text="Jadwal : 14 Jan 2022" />
+
+                    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                        android:id="@+id/tv_office"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/small"
+                        android:textColor="@color/colorTextSecondary"
+                        app:base_font_style="medium"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_schedule_date"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:text="Kantor" />
+
+                    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                        android:id="@+id/tv_daily_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorTextPrimary"
+                        app:base_font_style="medium"
+                        android:padding="@dimen/medium"
+                        android:textSize="@dimen/text_huge"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_office"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:text="08:00 - 17:00" />
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="@dimen/match_constraint"
+                        android:layout_height="@dimen/divider_bold"
+                        android:background="@color/colorDivider"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_daily_date"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <com.kemenag_inhu.absensi.core_resource.components.BaseButton
+                        android:id="@+id/btn_clock_in"
+                        android:layout_width="@dimen/match_constraint"
+                        android:layout_height="wrap_content"
+                        style="@style/BaseTheme.Button.Primary"
+                        android:layout_marginStart="@dimen/medium"
+                        android:layout_marginEnd="@dimen/small"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_clock_out"
+                        android:layout_marginVertical="@dimen/medium"
+                        android:textAllCaps="false"
+                        android:text="Clock In"/>
+
+                    <com.kemenag_inhu.absensi.core_resource.components.BaseButton
+                        android:id="@+id/btn_clock_out"
+                        android:layout_width="@dimen/match_constraint"
+                        android:layout_height="wrap_content"
+                        style="@style/BaseTheme.Button.Accent"
+                        android:layout_marginEnd="@dimen/medium"
+                        android:layout_marginStart="@dimen/small"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/btn_clock_in"
+                        app:layout_constraintTop_toBottomOf="@+id/divider"
+                        android:layout_marginVertical="@dimen/medium"
+                        android:text="Clock Out"
+                        android:textAllCaps="false"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/match_constraint"
+        android:background="@drawable/bg_rounded_left_right"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/large"
-        app:layout_constraintTop_toBottomOf="@+id/baseTextView" />
+        android:layout_marginTop="-16dp"
+        app:layout_constraintTop_toBottomOf="@+id/layout_parent_card">
+
+        <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+            android:id="@+id/tv_title_new_event"
+            style="@style/BaseTheme.Margin.Horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/attendance_log"
+            android:textSize="@dimen/text_medium_fit"
+            app:base_font_style="bold"
+            android:layout_marginTop="@dimen/medium_fit"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+            android:id="@+id/tv_history_attendance"
+            style="@style/BaseTheme.Margin.Horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lihat Semua"
+            android:textColor="@color/colorButtonTextPrimaryPressed"
+            android:textSize="@dimen/text_medium"
+            app:base_font_style="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_title_new_event"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title_new_event"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_history_attendance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_history_attendance" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

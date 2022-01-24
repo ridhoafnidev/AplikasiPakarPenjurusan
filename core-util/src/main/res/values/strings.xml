@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="text_good_afternoon">selamat sore</string>
+    <string name="text_good_evening">selamat malam</string>
+    <string name="text_good_night">selamat malam</string>
+    <string name="text_good_morning">selamat pagi</string>
+    <string name="title">Judul</string>
+    <string name="time_suffix">>></string>
+    <string name="time_prefix"><![CDATA[<<]]></string>
 </resources>

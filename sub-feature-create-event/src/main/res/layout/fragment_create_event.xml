@@ -1,55 +1,357 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".CreateEventFragment">
+    android:background="@color/colorBackgroundAlternative">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/view_pager"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/indicator_container"
+        app:layout_constraintBottom_toTopOf="@+id/materialCardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent">
 
-    <LinearLayout
-        android:id="@+id/indicator_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/next"
-        app:layout_constraintStart_toEndOf="@+id/preview"
-        app:layout_constraintTop_toTopOf="@+id/next" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <com.ridhoafnidev.edtc.core_resource.components.BaseButton
-        android:id="@+id/preview"
-        style="@style/BaseTheme.Button.Primary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/preview"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <View
+                android:id="@+id/view_container_event"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorBackgroundSecondary"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <com.ridhoafnidev.edtc.core_resource.components.BaseButton
-        android:id="@+id/next"
-        style="@style/BaseTheme.Button.Accent"
-        android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/il_event_name"
+                style="@style/BaseTheme.EditText.TextInputLayoutFilledBoxPadding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:boxBackgroundColor="@color/colorBackgroundSecondary"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@+id/view_container_event"
+                app:layout_constraintStart_toStartOf="@+id/view_container_event"
+                app:layout_constraintTop_toTopOf="@+id/view_container_event">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_event_name"
+                    style="@style/BaseTheme.EditText.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/event_name"
+                    android:inputType="text"
+                    android:lines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/il_event_location"
+                style="@style/BaseTheme.EditText.TextInputLayoutFilledBoxPadding"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_fit"
+                app:boxBackgroundColor="@color/colorBackgroundSecondary"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@id/il_event_name"
+                app:layout_constraintStart_toStartOf="@id/il_event_name"
+                app:layout_constraintTop_toBottomOf="@+id/il_event_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_event_location"
+                    style="@style/BaseTheme.EditText.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/event_location"
+                    android:inputType="text"
+                    android:lines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                android:id="@+id/event_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingVertical="@dimen/small"
+                android:text="@string/event_date"
+                android:layout_marginHorizontal="16dp"
+                android:textAllCaps="true"
+                android:textSize="@dimen/text_very_small"
+                android:textStyle="bold"
+                app:base_font_style="bold"
+                app:layout_constraintTop_toBottomOf="@+id/il_event_location"
+                app:layout_constraintStart_toStartOf="@+id/il_event_location"
+                app:layout_constraintEnd_toEndOf="@+id/il_event_location"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/il_date_from"
+                style="@style/BaseTheme.EditText.TextInputLayoutFilledBoxPadding"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:boxBackgroundColor="@color/colorBackgroundSecondary"
+                app:hintEnabled="false"
+                app:layout_constraintTop_toBottomOf="@+id/event_date"
+                app:layout_constraintStart_toStartOf="@+id/event_date"
+                app:layout_constraintEnd_toStartOf="@+id/il_date_from_clock">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_date_from"
+                    style="@style/BaseTheme.EditText.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/from_date"
+                    android:inputType="text"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/il_date_from_clock"
+                style="@style/BaseTheme.EditText.TextInputLayoutFilledBoxPadding"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:boxBackgroundColor="@color/colorBackgroundSecondary"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@+id/event_date"
+                app:layout_constraintTop_toBottomOf="@+id/event_date">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tv_date_from_clock"
+                    style="@style/BaseTheme.EditText.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/oclock"
+                    android:inputType="text"
+                    android:lines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/il_date_to"
+                style="@style/BaseTheme.EditText.TextInputLayoutFilledBoxPadding"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="2"
+                app:boxBackgroundColor="@color/colorBackgroundSecondary"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toStartOf="@+id/il_date_to_clock"
+                app:layout_constraintStart_toStartOf="@+id/il_date_from"
+                app:layout_constraintTop_toBottomOf="@+id/il_date_from">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_date_to"
+                    style="@style/BaseTheme.EditText.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/to_date"
+                    android:inputType="text"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/il_date_to_clock"
+                style="@style/BaseTheme.EditText.TextInputLayoutFilledBoxPadding"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small"
+                android:layout_weight="1"
+                app:boxBackgroundColor="@color/colorBackgroundSecondary"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@id/il_date_from_clock"
+                app:layout_constraintStart_toStartOf="@id/il_date_from_clock"
+                app:layout_constraintTop_toBottomOf="@id/il_date_from_clock"
+                app:layout_constraintBottom_toBottomOf="@+id/il_date_to">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tv_date_to_clock"
+                    style="@style/BaseTheme.EditText.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/oclock"
+                    android:inputType="text"
+                    android:lines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:id="@+id/container_event_image"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="@dimen/medium"
+                android:background="@color/colorBackgroundSecondary"
+                android:padding="@dimen/medium"
+                android:paddingHorizontal="@dimen/medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_container_event" />
+
+            <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                android:id="@+id/event_image_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/medium"
+                android:layout_marginTop="@dimen/medium"
+                android:text="@string/create_new_event"
+                android:textAllCaps="true"
+                android:textSize="@dimen/text_very_small"
+                android:textStyle="bold"
+                app:base_font_style="bold"
+                app:layout_constraintEnd_toEndOf="@+id/container_event_image"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/container_event_image"
+                app:layout_constraintTop_toTopOf="@+id/container_event_image" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                app:cardCornerRadius="@dimen/smaller"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                app:layout_constraintBottom_toBottomOf="@+id/container_event_image"
+                app:layout_constraintStart_toStartOf="@+id/event_image_title"
+                app:layout_constraintTop_toBottomOf="@+id/event_image_title">
+
+                <ImageView
+                    android:id="@+id/iv_event"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_event_image"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/image_picker_event" />
+
+            </androidx.cardview.widget.CardView>
+
+            <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                android:id="@+id/tv_image_event_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/image_event_description"
+                android:textSize="@dimen/text_very_small"
+                app:base_font_style="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cardView"
+                app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+            <LinearLayout
+                android:id="@+id/container_event_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_medium"
+                android:background="@color/colorBackgroundSecondary"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/medium"
+                android:paddingVertical="@dimen/small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/container_event_image">
+
+                <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/event_description"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/text_very_small"
+                    android:textStyle="bold"
+                    app:base_font_style="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/il_event_description"
+                    style="@style/BaseTheme.EditText.TextInputLayoutFilledBoxPadding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small"
+                    app:boxBackgroundColor="@color/colorBackgroundSecondary"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:suffixText="@string/zero_until_300">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_event_description"
+                        style="@style/BaseTheme.EditText.Primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/event_description_hint"
+                        android:inputType="text"
+                        android:maxLength="300" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/medium_fit"
+                    android:text="@string/event_organizer"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/text_very_small"
+                    android:textStyle="bold"
+                    app:base_font_style="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/il_event_organizer"
+                    style="@style/BaseTheme.EditText.TextInputLayoutFilledBoxPadding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/small"
+                    app:boxBackgroundColor="@color/colorBackgroundSecondary"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_event_organizer"
+                        style="@style/BaseTheme.EditText.Primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/event_organizer_example"
+                        android:inputType="text"
+                        android:maxLength="300" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/next"
+        android:background="@color/colorBackgroundSecondary"
+        app:cardElevation="@dimen/small_fit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.kemenag_inhu.absensi.core_resource.components.BaseButton
+            android:id="@+id/btn_next"
+            style="@style/BaseTheme.Button.Secondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium"
+            android:text="@string/next"
+            android:textAllCaps="true" />
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

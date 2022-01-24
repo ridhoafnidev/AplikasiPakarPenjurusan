@@ -7,24 +7,24 @@ apply(from: "../shared_dependencies.gradle")
 
 android {
     defaultConfig {
-        applicationId "com.example.aplikasipakarpenjurusan"
+        applicationId "com.ridhoafnidev.edtc"
     }
 
     buildTypes {
-        release {
-            minifyEnabled false
-            debuggable true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
         debug{
             minifyEnabled false
-            debuggable true
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 dependencies {
     implementation project(":core-data")
+    implementation project(":core-analytics")
+    implementation project(":core-domain")
     implementation project(":core-navigation")
     implementation project(":core-resource")
     implementation project(":core-util")
@@ -32,7 +32,7 @@ dependencies {
     implementation project(':feature-auth')
     implementation project(':feature-home')
 
-    implementation project(':sub-feature-pakar')
+    implementation project(':sub-feature-create-event')
 
     implementation deps.koin
 

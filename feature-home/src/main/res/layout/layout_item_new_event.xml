@@ -5,38 +5,79 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:clickable="true"
-    android:foreground="?attr/selectableItemBackground"
-    android:paddingHorizontal="@dimen/small">
+    android:paddingVertical="@dimen/small"
+    android:paddingHorizontal="@dimen/medium"
+    android:foreground="?attr/selectableItemBackground">
 
-    <ImageView
-        android:id="@+id/iv_menu"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="@dimen/small_fit"
-        android:contentDescription="@string/image_icon_menu"
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+        android:id="@+id/tv_day_attendance"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:lines="1"
+        android:padding="@dimen/small"
+        android:textAllCaps="true"
+        android:textColor="@color/colorTextSecondary"
+        app:base_font_style="regular"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        tools:src="@drawable/ic_create_event"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@color/colorPrimaryDark" />
+        tools:text="Jumat" />
 
-    <com.ridhoafnidev.edtc.core_resource.components.BaseTextView
-        android:id="@+id/tv_title_menu"
-        android:layout_width="0dp"
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+        android:id="@+id/tv_date_attendance"
+        android:layout_width="@dimen/match_constraint"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/small"
-        android:gravity="center"
         android:ellipsize="end"
+        android:gravity="center"
         android:lines="1"
-        android:paddingVertical="@dimen/small"
-        android:textColor="@color/colorTextSecondary"
-        android:textSize="@dimen/text_very_small"
+        android:paddingHorizontal="@dimen/small"
+        android:textColor="@color/colorTextPrimary"
         app:base_font_style="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_menu"
-        tools:text="@string/title_menu" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_day_attendance"
+        app:layout_constraintStart_toStartOf="@+id/tv_day_attendance"
+        app:layout_constraintTop_toBottomOf="@+id/tv_day_attendance"
+        tools:text="13" />
 
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+        android:id="@+id/tv_time_attendent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:lines="1"
+        android:paddingHorizontal="@dimen/medium"
+        android:paddingVertical="@dimen/small"
+        android:textColor="@color/colorTextPrimary"
+        app:base_font_style="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_date_attendance"
+        app:layout_constraintEnd_toStartOf="@+id/tv_title_clock_in_out"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_day_attendance"
+        app:layout_constraintTop_toTopOf="@+id/tv_day_attendance"
+        android:text="08:28" />
 
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+        android:id="@+id/tv_title_clock_in_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:lines="1"
+        android:paddingHorizontal="@dimen/medium"
+        android:paddingVertical="@dimen/small"
+        android:textColor="@color/colorTextPrimary"
+        app:base_font_style="bold"
+        app:layout_constraintStart_toEndOf="@+id/tv_time_attendent"
+        app:layout_constraintTop_toTopOf="@+id/tv_time_attendent"
+        android:text="Clock In" />
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_show"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_clock_in_out"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_clock_in_out"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    
 </androidx.constraintlayout.widget.ConstraintLayout>

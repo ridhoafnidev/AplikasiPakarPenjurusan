@@ -1,6 +1,7 @@
 package com.kemenag_inhu.absensi
 
 import android.app.Application
+import com.kemenag_inhu.absensi.core.analytics.analyticsModule
 import com.kemenag_inhu.absensi.core_data.dataModule
 import com.kemenag_inhu.absensi.core_data.di.domainModule
 import com.kemenag_inhu.absensi.feature.auth.authModule
@@ -35,6 +36,7 @@ class App : Application() {
             modules(
                 listOf(
                     dataModule,
+                    analyticsModule,
                     authModule,
                     domainModule,
                     createEventModule,

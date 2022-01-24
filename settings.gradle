@@ -3,10 +3,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "AplikasiPakarPenjurusan"
+rootProject.name = "KemenagInhuAbsensi"
 include ':app'
 include ':core-data'
 include ':core-navigation'
@@ -14,4 +15,6 @@ include ':core-resource'
 include ':core-util'
 include ':feature-auth'
 include ':feature-home'
-include ':sub-feature-pakar'
+include ':sub-feature-create-event'
+include ':core-domain'
+include ':core-analytics'

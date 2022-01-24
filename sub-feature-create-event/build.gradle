@@ -9,4 +9,8 @@ apply(from:"../shared_dependencies_feature.gradle")
 dependencies {
     implementation deps.legacy_support
     implementation deps.validator
+    implementation deps.time_picker
+    implementation deps.fragment
+    implementation deps.activity
+    implementation deps.glide
 }

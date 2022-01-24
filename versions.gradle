@@ -1,7 +1,7 @@
 ext.versions = [
 
         code                 : 1,
-        name                 : "1.0",
+        name                 : "1",
         schemaDatabaseVersion: 1,
 
         compileSdkVersion    : 31,
@@ -9,51 +9,80 @@ ext.versions = [
         targetSdkVersion     : 31,
 
         //region Networking Dependencies
+
         moshi                : '1.12.0',
         okhttp               : '5.0.0-alpha.2',
         retrofit             : '2.9.0',
         chucker              : '3.4.0',
         cookiejar            : '1.3.5',
+
         //endregion
 
         //region Plugin
+
         agp                  : '7.0.3',
         kotlin               : '1.5.31',
         navigation_safe_args : '2.3.3',
+
         //endregion
 
         //region Common Dependencies
+
         coroutine            : '1.4.3',
         koin                 : '2.1.5',
+        legacy_support       : "1.0.0",
+
         //endregion
 
+        // region Jetpack Dependencies
+
         room                 : '2.3.0-rc01',
-
-        debug_banner         : '1.0.4',
-        validator            : '0.5.2',
-
-
         navigation           : '2.3.5',
         material             : '1.4.0',
         appcompat            : '1.3.1',
         constraint_layout    : '2.1.1',
+        core                 : "1.6.0",
+        fragment             : '1.3.3',
+        activity             : '1.3.0-alpha06',
+        // endregion
+
+        // region Testing
 
         junit                : "4.13-beta-3",
         test_ext_junit_ktx   : "1.1.2",
-        core                 : "1.6.0",
 
+        // endregion
+
+        // region Firebase
+
+        firebase_analytics     : '18.0.3',
+        firebase_crashlytics   : '17.4.1',
+        firebase_perf          : '19.1.1',
+        firebase_auth          : '20.0.4',
+        firebase_firestore     : '22.1.2',
+        coroutine_play_services: '1.4.3',
         services_maps        : "17.0.1",
-        legacy_support       : "1.0.0",
 
+        //endregion
+
+        // region Extras
+
+        debug_banner         : '1.0.4',
+        validator            : '0.5.2',
         keyboard_watcher     : '3.0.0-RC3',
         progress_button      : '2.1.0',
-
         timber               : '4.7.1',
-
+        shimmer              : '0.5.0',
+        glide                : '4.12.0',
+        coil                 : '1.1.1',
+        spanner              : '1.1.0',
         recyclical           : '1.1.1',
         recyclical_swipe     : '1.1.1',
         recycler_view_divider: '3.5.0',
+        time_picker          : '1.0.3',
         glide                : '4.12.0',
+
+        // endregion
 ]
 
 ext.plugin = [
@@ -63,6 +92,9 @@ ext.plugin = [
 ]
 
 ext.deps = [
+
+        // region Networking
+
         moshi             : [
                 "com.squareup.moshi:moshi-kotlin:$versions.moshi",
                 "com.squareup.moshi:moshi-adapters:$versions.moshi"
@@ -80,9 +112,21 @@ ext.deps = [
                 "net.gotev:cookie-store:$versions.cookiejar",
                 "net.gotev:cookie-store-okhttp:$versions.cookiejar"
         ],
-
         moshi_compiler    : "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshi",
+        chucker_debug     : "com.github.chuckerteam.chucker:library:$versions.chucker",
+        chucker_release   : "com.github.chuckerteam.chucker:library-no-op:$versions.chucker",
 
+        // endregion
+
+
+        // region Firebase
+
+        services_maps     : "com.google.android.gms:play-services-maps:$versions.services_maps",
+
+        // endregion
+
+
+        // region Commons
 
         coroutines        : [
                 "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutine",
@@ -94,56 +138,73 @@ ext.deps = [
                 "org.koin:koin-androidx-viewmodel:$versions.koin",
                 "org.koin:koin-androidx-fragment:$versions.koin"
         ],
+        legacy_support    : "androidx.legacy:legacy-support-v4:$versions.legacy_support",
+
+        // endregion
 
 
-        chucker_debug     : "com.github.chuckerteam.chucker:library:$versions.chucker",
-        chucker_release   : "com.github.chuckerteam.chucker:library-no-op:$versions.chucker",
+        // region Jetpack Dependencies
 
         room              : [
                 "androidx.room:room-ktx:$versions.room",
                 "androidx.room:room-migration:$versions.room"
         ],
-
-        debug_banner      : "com.github.armcha:DebugBanner:$versions.debug_banner",
-        validator         : "com.afollestad:vvalidator:$versions.validator",
-
         navigation        : [
                 "androidx.navigation:navigation-fragment-ktx:$versions.navigation",
                 "androidx.navigation:navigation-ui-ktx:$versions.navigation"
         ],
-
         material          : "com.google.android.material:material:$versions.material",
-
         appcompat         : [
                 "androidx.appcompat:appcompat:$versions.appcompat",
                 "androidx.appcompat:appcompat-resources:$versions.appcompat"
         ],
-
         constraint_layout : "androidx.constraintlayout:constraintlayout:$versions.constraint_layout",
+        fragment          : "androidx.fragment:fragment-ktx:$versions.fragment",
+        activity          : "androidx.activity:activity-ktx:$versions.activity",
+        // endregion
+
+
+        // region Testing
 
         junit             : "junit:junit:$versions.junit",
         test_ext_junit_ktx: "androidx.test.ext:junit-ktx:$versions.test_ext_junit_ktx",
         core              : "androidx.core:core-ktx:$versions.core",
 
-        services_maps     : "com.google.android.gms:play-services-maps:$versions.services_maps",
-        legacy_support    : "androidx.legacy:legacy-support-v4:$versions.legacy_support",
-
-        progress_button   : "com.github.razir.progressbutton:progressbutton:$versions.progress_button",
-        keyboard_watcher  : "net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:$versions.keyboard_watcher",
-
-
-        timber            : "com.jakewharton.timber:timber:$versions.timber",
-
         room_compiler     : "androidx.room:room-compiler:$versions.room",
 
+        // endregion
+
+
+        // region Extras
+
+        coil              : "io.coil-kt:coil:$versions.coil",
+        spanner           : "lt.neworld:spanner:$versions.spanner",
+        time_picker       : "com.akexorcist:snap-time-picker:$versions.time_picker",
+        timber            : "com.jakewharton.timber:timber:$versions.timber",
+        shimmer           : "com.facebook.shimmer:shimmer:$versions.shimmer",
+        debug_banner      : "com.github.armcha:DebugBanner:$versions.debug_banner",
+        validator         : "com.afollestad:vvalidator:$versions.validator",
         recycler_view_util: [
                 "com.afollestad:recyclical:$versions.recyclical",
                 "com.afollestad:recyclical-swipe:$versions.recyclical_swipe",
                 "com.github.fondesa:recycler-view-divider:$versions.recycler_view_divider"
         ],
-
+        progress_button   : "com.github.razir.progressbutton:progressbutton:$versions.progress_button",
+        keyboard_watcher  : "net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:$versions.keyboard_watcher",
         glide             : [
                 "com.github.bumptech.glide:glide:$versions.glide",
                 "com.github.bumptech.glide:compiler:$versions.glide"
-        ]
+        ],
+        // endregion
+
+        //region Firebase
+
+        firebase_analytics     : "com.google.firebase:firebase-analytics-ktx:$versions.firebase_analytics",
+        firebase_crashlytics   : "com.google.firebase:firebase-crashlytics-ktx:$versions.firebase_crashlytics",
+        firebase_perf          : "com.google.firebase:firebase-perf:$versions.firebase_perf",
+        firebase_auth          : "com.google.firebase:firebase-auth-ktx:$versions.firebase_auth",
+        firebase_firestore     : "com.google.firebase:firebase-firestore-ktx:$versions.firebase_firestore",
+        coroutine_play_services: "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$versions.coroutine_play_services",
+
+        //endregion
 ]

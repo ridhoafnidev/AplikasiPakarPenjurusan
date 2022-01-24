@@ -1,6 +1,36 @@
 <resources>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="preview">Preview</string>
-    <string name="next">NEXT</string>
+    <string name="create_event">Buat Event</string>
+    <string name="event_name">Nama Event</string>
+    <string name="event_location">Lokasi Event</string>
+    <string name="event_date">Tanggal Event</string>
+    <string name="next">SELANJUTNYA</string>
+    <string name="to_date">Tanggal Hingga</string>
+    <string name="from_date">Tanggal Dari</string>
+    <string name="oclock">Pukul</string>
+    <string name="image_event_description">Pilih gambar yang sesuai event Anda. \nKami merekomendasikan menggunakan 2160x1080px \ndan gambar tidak lebih dari 10MB.</string>
+    <string name="event_description">Deskripsi Event</string>
+    <string name="event_organizer">Penyelenggara Acara</string>
+    <string name="event_description_hint">Masukan deskripsi event Anda</string>
+    <string name="event_organizer_example">Jhon Doe</string>
+    <string name="zero_until_300">0/300</string>
+    <string name="create_new_event">TAMBAHKAN GAMBAR EVENT</string>
+    <string name="image_picker_event">Image Picker Event</string>
+    <string name="event_time_from">Pilih Waktu Mulai</string>
+    <string name="event_date_from">Pilih Tanggal Mulai</string>
+    <string name="event_time_to">Pilih Waktu Akhir</string>
+    <string name="event_date_to">Pilih Tanggal Akhir</string>
+    <string name="time_format">HH:mm</string>
+    <string name="require_event_name">Nama event tidak boleh kosong</string>
+    <string name="require_event_location">Lokasi event tidak boleh kosong</string>
+    <string name="require_event_start_date">Tanggal mulai event tidak boleh kosong</string>
+    <string name="require_start_time">Jam mulai event tidak boleh kosong</string>
+    <string name="require_event_end_date">Tanggal akhir event tidak boleh kosong</string>
+    <string name="require_event_end_time">Jam akhir event tidak boleh kosong</string>
+    <string name="require_event_description">Deskripsi event tidak boleh kosong</string>
+    <string name="require_event_organizer">Penyelenggara event tidak boleh kosong</string>
+    <string name="dialog_button_positive">Pilih</string>
+    <string name="dialog_button_negative">Tutup</string>
+    <string name="pick_image">Pilih gambar</string>
+    <string name="no_permission">No Permission Granted</string>
 </resources>

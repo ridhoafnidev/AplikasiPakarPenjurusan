@@ -17,6 +17,7 @@
     <dimen name="smaller">6dp</dimen>
     <dimen name="small">8dp</dimen>
     <dimen name="small_fit">12dp</dimen>
+    <dimen name="small_medium">14dp</dimen>
     <dimen name="medium">16dp</dimen>
     <dimen name="medium_fit">24dp</dimen>
     <dimen name="large">32dp</dimen>
@@ -38,6 +39,7 @@
     <dimen name="component_huge">26dp</dimen>
     <dimen name="component_special">28dp</dimen>
     <dimen name="component_super">32dp</dimen>
+    <dimen name="component_over_load">-15dp</dimen>
 
     <dimen name="divider">0.8dp</dimen>
     <dimen name="divider_bold">1dp</dimen>

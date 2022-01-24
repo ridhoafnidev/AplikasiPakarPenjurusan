@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.feature_auth">
+    package="com.kemenag_inhu.absensi.feature_auth">
 
     <application>
         <activity
-            android:name="com.example.feature.auth.AuthActivity"
+            android:name="com.kemenag_inhu.absensi.feature.auth.AuthActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/BaseTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

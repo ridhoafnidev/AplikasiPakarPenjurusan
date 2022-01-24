@@ -46,6 +46,53 @@
         <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/layout/layout_question.xml" value="0.25" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/menu/search.xml" value="0.1" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/menu/search_menu.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/app/src/main/res/drawable/ic_launcher_background.xml" value="0.118359375" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.118359375" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.15" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/core-resource/src/main/res/drawable/bg_rounded_left_right.xml" value="0.1972972972972973" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/core-resource/src/main/res/drawable/ic_back.xml" value="0.121875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/core-resource/src/main/res/drawable/shape_circle_image.xml" value="0.15" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/core-resource/src/main/res/drawable/shape_circle_placeholder.xml" value="0.15" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-auth/src/main/res/layout/fragment_login.xml" value="0.1875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-auth/src/main/res/layout/layout_form_login.xml" value="0.1875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/layout_item_current_event.xml" value="0.136" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/layout_item_new_event.xml" value="0.136" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-resource/src/main/res/drawable/bg_event_image.xml" value="0.19722222222222222" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-resource/src/main/res/drawable/ic_add_photo.xml" value="0.19722222222222222" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-resource/src/main/res/drawable/ic_back.xml" value="0.1972972972972973" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-resource/src/main/res/drawable/ic_event.xml" value="0.1972972972972973" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-resource/src/main/res/drawable/ic_notification.xml" value="0.117578125" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-resource/src/main/res/drawable/ic_search.xml" value="0.1972972972972973" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-resource/src/main/res/drawable/shape_circle_placeholder.xml" value="0.117578125" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-resource/src/main/res/drawable/touch_selector.xml" value="0.1972972972972973" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-resource/src/main/res/layout/component_toolbar.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-util/src/main/res/drawable/button_primary.xml" value="0.15694444444444444" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-util/src/main/res/drawable/input_accent.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-util/src/main/res/drawable/input_primary.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-util/src/main/res/drawable/input_secondary.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-auth/src/main/res/layout/activity_auth.xml" value="0.11406844106463879" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-auth/src/main/res/layout/fragment_login.xml" value="0.2" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-auth/src/main/res/layout/layout_form_login.xml" value="0.264" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-home/src/main/res/drawable/bottom_navigation_selector.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-home/src/main/res/drawable/ic_home_fill.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-home/src/main/res/drawable/ic_home_line.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-home/src/main/res/drawable/ic_home_menu.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-home/src/main/res/drawable/ic_profile_fill.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-home/src/main/res/drawable/ic_profile_line.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-home/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-home/src/main/res/layout/fragment_home.xml" value="0.10546875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-home/src/main/res/layout/fragment_profile.xml" value="0.18532818532818532" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-home/src/main/res/layout/layout_item_current_event.xml" value="0.2" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-home/src/main/res/layout/layout_item_menu.xml" value="0.264" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-home/src/main/res/layout/layout_item_new_event.xml" value="0.176" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-home/src/main/res/menu/main_menu.xml" value="0.105078125" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/feature-home/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.105078125" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/sub-feature-create-event/src/main/res/layout/activity_create_event.xml" value="0.16" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/sub-feature-create-event/src/main/res/layout/fragment_create_event.xml" value="0.264" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/sub-feature-create-event/src/main/res/layout/fragment_pakar.xml" value="0.18532818532818532" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/sub-feature-create-event/src/main/res/layout/layout_question.xml" value="0.18532818532818532" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/sub-feature-create-event/src/main/res/menu/search_menu.xml" value="0.105078125" />
       </map>
     </option>
   </component>

@@ -7,18 +7,13 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.feature.auth.splash.SplashFragment"
+        android:name="com.kemenag_inhu.absensi.feature.auth.splash.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" />
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.feature.auth.login.LoginFragment"
+        android:name="com.kemenag_inhu.absensi.feature.auth.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
-    <fragment
-        android:id="@+id/registerFragment"
-        android:name="com.example.feature.auth.register.RegisterFragment"
-        android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
 </navigation>

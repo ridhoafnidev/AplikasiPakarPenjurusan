@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.feature.auth.AuthActivity">
+    tools:context="com.kemenag_inhu.absensi.feature.auth.AuthActivity">
 
     <fragment
         android:id="@+id/activity_auth_nav_host_fragment"

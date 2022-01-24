@@ -16,13 +16,13 @@
         android:background="@color/colorBackgroundSecondary"
         app:popupTheme="@style/BaseTheme">
 
-        <com.example.core_resource.components.BaseTextView
+        <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
             android:id="@+id/toolbarTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:textColor="@color/colorTextAccent"
-            android:textSize="@dimen/text_medium"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/text_medium_fit"
             app:base_font_style="bold" />
 
         <ImageView
@@ -35,7 +35,7 @@
             android:visibility="gone"
             tools:ignore="ContentDescription" />
 
-        <com.example.core_resource.components.BaseEditText
+        <com.kemenag_inhu.absensi.core_resource.components.BaseEditText
             android:id="@+id/toolbarSearch"
             style="@style/BaseTheme.EditText.Accent"
             android:layout_width="match_parent"

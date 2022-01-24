@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_layout_email_or_number_phone"
+        android:layout_width="@dimen/match_constraint"
+        style="@style/BaseTheme.EditText.TextInputLayoutFilledBoxPadding"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:boxBackgroundColor="@color/colorBackgroundSecondary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:hintEnabled="false">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_email_or_number_phone"
+            android:layout_width="match_parent"
+            style="@style/BaseTheme.EditText.Primary"
+            android:layout_height="wrap_content"
+            android:hint="@string/email_or_phone_number"
+            android:lines="1"
+            android:inputType="text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_layout_password"
+        style="@style/BaseTheme.EditText.TextInputLayoutFilledBoxPadding"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_layout_email_or_number_phone"
+        app:passwordToggleEnabled="true"
+        app:hintEnabled="false"
+        android:layout_marginTop="@dimen/small"
+        app:boxBackgroundColor="@color/colorBackgroundSecondary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_password"
+            android:layout_width="match_parent"
+            style="@style/BaseTheme.EditText.Primary"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:lines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.kemenag_inhu.absensi.core_resource.components.BaseCheckBox
+        android:id="@+id/cb_rember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-5dp"
+        android:layout_marginVertical="@dimen/small"
+        android:text="@string/remember_me"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_layout_password" />
+
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+        android:id="@+id/tv_forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:base_font_style="medium"
+        android:text="@string/forgot_password"
+        android:textColor="@color/colorTextAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/cb_rember"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cb_rember" />
+
+    <com.kemenag_inhu.absensi.core_resource.components.BaseButton
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/BaseTheme.Button.Primary"
+        android:text="@string/login"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cb_rember" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

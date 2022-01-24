@@ -5,5 +5,5 @@ plugins {
 apply(from: "../shared_dependencies.gradle")
 
 dependencies {
-
+    implementation project(path: ':core-resource')
 }

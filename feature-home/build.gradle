@@ -8,4 +8,6 @@ apply(from:"../shared_dependencies_feature.gradle")
 
 dependencies {
     implementation deps.validator
+    implementation deps.spanner
+    implementation deps.glide
 }

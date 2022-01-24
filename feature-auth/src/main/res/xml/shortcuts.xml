@@ -8,7 +8,7 @@
         android:shortcutLongLabel="@string/auth_shortcut_restart">
         <intent
             android:action="app.intent.action.RESTART"
-            android:targetPackage="com.example.aplikasipakarpenjurusan"
-            android:targetClass="com.example.feature_auth.AuthActivity" />
+            android:targetPackage="com.ridhoafnidev.edtc"
+            android:targetClass="com.ridhoafnidev.edtc.feature_auth.AuthActivity" />
     </shortcut>
 </shortcuts>

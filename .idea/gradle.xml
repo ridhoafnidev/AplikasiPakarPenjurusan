@@ -11,13 +11,15 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/core-analytics" />
             <option value="$PROJECT_DIR$/core-data" />
+            <option value="$PROJECT_DIR$/core-domain" />
             <option value="$PROJECT_DIR$/core-navigation" />
             <option value="$PROJECT_DIR$/core-resource" />
             <option value="$PROJECT_DIR$/core-util" />
             <option value="$PROJECT_DIR$/feature-auth" />
             <option value="$PROJECT_DIR$/feature-home" />
-            <option value="$PROJECT_DIR$/sub-feature-pakar" />
+            <option value="$PROJECT_DIR$/sub-feature-create-event" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

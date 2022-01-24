@@ -9,75 +9,88 @@
     android:paddingHorizontal="@dimen/medium"
     android:foreground="?attr/selectableItemBackground">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_event"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:cardCornerRadius="@dimen/small"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/iv_event"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:contentDescription="@string/image_event"
-            tools:src="@drawable/photo_male" />
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.ridhoafnidev.edtc.core_resource.components.BaseTextView
-        android:id="@+id/tv_title_new_event"
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+        android:id="@+id/tv_mounth_event"
         android:layout_width="@dimen/match_constraint"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:gravity="left"
         android:lines="1"
         android:padding="@dimen/small"
+        android:textAllCaps="true"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="@dimen/text_medium_fit"
+        app:base_font_style="regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_event"
+        tools:text="Jumat" />
+
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+        android:id="@+id/tv_date_event"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:paddingHorizontal="@dimen/small"
         android:textColor="@color/colorTextPrimary"
         android:textSize="@dimen/text_medium_fit"
         app:base_font_style="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/card_event"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Android Training Day" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_mounth_event"
+        app:layout_constraintStart_toStartOf="@+id/tv_mounth_event"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mounth_event"
+        tools:text="13" />
 
-    <com.ridhoafnidev.edtc.core_resource.components.BaseTextView
-        android:id="@+id/tv_timestame_new_event"
-        android:layout_width="@dimen/match_constraint"
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+        android:id="@+id/tv_time_attendent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:gravity="left"
         android:lines="1"
-        android:paddingHorizontal="@dimen/small"
-        android:paddingVertical="@dimen/very_small"
-        android:textColor="@color/colorTextSecondary"
-        android:textSize="@dimen/text_normal"
+        android:paddingHorizontal="@dimen/medium"
+        android:paddingVertical="@dimen/small"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/text_medium_fit"
         app:base_font_style="bold"
-        android:textAllCaps="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/card_event"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_new_event"
-        tools:text="13 JULY - 9.00 AM" />
+        app:layout_constraintBottom_toBottomOf="@+id/tv_date_event"
+        app:layout_constraintEnd_toStartOf="@+id/tv_title_clock_in_out"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_mounth_event"
+        app:layout_constraintTop_toTopOf="@+id/tv_mounth_event"
+        android:text="08:28" />
 
-    <com.ridhoafnidev.edtc.core_resource.components.BaseTextView
-        android:id="@+id/tv_place_new_event"
-        android:layout_width="@dimen/match_constraint"
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+        android:id="@+id/tv_title_clock_in_out"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:gravity="left"
         android:lines="1"
-        android:paddingHorizontal="@dimen/small"
-        android:paddingVertical="@dimen/very_small"
-        android:textColor="@color/colorTextSecondary"
-        android:textSize="@dimen/text_normal"
+        android:paddingHorizontal="@dimen/medium"
+        android:paddingVertical="@dimen/small"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/text_medium_fit"
         app:base_font_style="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/card_event"
-        app:layout_constraintTop_toBottomOf="@+id/tv_timestame_new_event"
-        tools:text="Conference Room - Elevenia F30" />
+        app:layout_constraintStart_toEndOf="@+id/tv_time_attendent"
+        app:layout_constraintTop_toTopOf="@+id/tv_time_attendent"
+        android:text="Clock In" />
+
+<!--    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView-->
+<!--        android:id="@+id/tv_place_event"-->
+<!--        android:layout_width="@dimen/match_constraint"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:ellipsize="end"-->
+<!--        android:gravity="left"-->
+<!--        android:lines="1"-->
+<!--        android:paddingHorizontal="@dimen/small"-->
+<!--        android:textColor="@color/colorTextSecondary"-->
+<!--        android:textSize="@dimen/text_normal"-->
+<!--        app:base_font_style="regular"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/tv_mounth_event"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tv_title_event"-->
+<!--        tools:text="Conference Room - Elevenia F30" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

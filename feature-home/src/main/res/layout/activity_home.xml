@@ -6,16 +6,7 @@
     android:layout_width="match_parent"
     android:background="@color/colorBackgroundPrimary"
     android:layout_height="match_parent"
-    tools:context="com.example.feature.home.HomeActivity">
-
-    <include
-        android:id="@+id/component_toolbar"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        layout="@layout/component_toolbar" />
+    tools:context="com.kemenag_inhu.absensi.feature.home.HomeActivity">
 
     <fragment
         android:id="@+id/home_navigation"
@@ -24,29 +15,11 @@
         android:layout_height="0dp"
         app:defaultNavHost="true"
         app:navGraph="@navigation/home_navigation"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/component_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
         tools:ignore="FragmentTagUsage" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav"
-        android:layout_width="@dimen/match_constraint"
-        android:layout_height="wrap_content"
-        app:menu="@menu/main_menu"
-        android:layout_marginHorizontal="0dp"
-        android:elevation="@null"
-        app:elevation="@null"
-        app:itemIconTint="@drawable/bottom_navigation_selector"
-        app:itemTextColor="@drawable/bottom_navigation_selector"
-        app:labelVisibilityMode="unlabeled"
-        app:layout_anchorGravity="bottom"
-        android:stateListAnimator="@null"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/shape_bottom_navigation"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
