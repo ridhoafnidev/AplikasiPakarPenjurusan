@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clickable="true"
+    android:paddingVertical="@dimen/small"
+    android:paddingHorizontal="@dimen/medium"
+    android:foreground="?attr/selectableItemBackground">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_event"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:cardCornerRadius="@dimen/small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_event"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/image_event"
+            tools:src="@drawable/photo_male" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.ridhoafnidev.edtc.core_resource.components.BaseTextView
+        android:id="@+id/tv_title_new_event"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:lines="1"
+        android:padding="@dimen/small"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/text_medium_fit"
+        app:base_font_style="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/card_event"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Android Training Day" />
+
+    <com.ridhoafnidev.edtc.core_resource.components.BaseTextView
+        android:id="@+id/tv_timestame_new_event"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:lines="1"
+        android:paddingHorizontal="@dimen/small"
+        android:paddingVertical="@dimen/very_small"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="@dimen/text_normal"
+        app:base_font_style="bold"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/card_event"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_new_event"
+        tools:text="13 JULY - 9.00 AM" />
+
+    <com.ridhoafnidev.edtc.core_resource.components.BaseTextView
+        android:id="@+id/tv_place_new_event"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:lines="1"
+        android:paddingHorizontal="@dimen/small"
+        android:paddingVertical="@dimen/very_small"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="@dimen/text_normal"
+        app:base_font_style="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/card_event"
+        app:layout_constraintTop_toBottomOf="@+id/tv_timestame_new_event"
+        tools:text="Conference Room - Elevenia F30" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
