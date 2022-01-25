@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/home"
-        android:name="com.kemenag_inhu.absensi.feature.home.HomeFragment"
+        android:name="com.kemenag_inhu.absensi.feature.home.home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/profile"
-        android:name="com.kemenag_inhu.absensi.feature.home.ProfileFragment"
+        android:name="com.kemenag_inhu.absensi.feature.home.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 
