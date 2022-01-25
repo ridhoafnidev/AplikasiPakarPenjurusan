@@ -1,8 +1,6 @@
 package com.kemenag_inhu.absensi.feature.home.home
 
 import androidx.recyclerview.widget.LinearLayoutManager
-import coil.load
-import coil.transform.CircleCropTransformation
 import com.afollestad.recyclical.datasource.dataSourceOf
 import com.afollestad.recyclical.setup
 import com.afollestad.recyclical.withItem
@@ -11,13 +9,10 @@ import com.kemenag_inhu.absensi.core_data.domain.ListEvents
 import com.kemenag_inhu.absensi.core_domain.model.Menu
 import com.kemenag_inhu.absensi.core_navigation.ModuleNavigator
 import com.kemenag_inhu.absensi.core_resource.components.base.BaseFragment
-import com.kemenag_inhu.absensi.core_util.dayTimeGreeting
 import com.kemenag_inhu.absensi.feature.home.HomeViewModel
 import com.kemenag_inhu.absensi.feature.home.viewholder.ItemHistoryAttendanceViewHolder
 import com.kemenag_inhu.home.R
 import com.kemenag_inhu.home.databinding.FragmentHomeBinding
-import lt.neworld.spanner.Spanner
-import lt.neworld.spanner.Spans.bold
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate), ModuleNavigator {
@@ -49,7 +44,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     private val homeViewModel: HomeViewModel by viewModel()
 
-    private val recyclerViewHistoryAttendance by lazy { binding.rvHistoryAttendance }
+    private val recyclerViewHistoryAttendance by lazy { binding.homeBottom.rvHistoryAttendance }
 
     override fun initView() {
         getEvent()
@@ -71,14 +66,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     private fun setupItems() {
         with(binding){
-            tvWelcome.text = Spanner().append("Assalamualaikum \n")
-                .append("${dayTimeGreeting(requireContext())}, \n")
-                .append(getString(R.string.welcome_name), bold())
+//            tvWelcome.text = Spanner().append("Assalamualaikum \n")
+//                .append("${dayTimeGreeting(requireContext())}, \n")
+//                .append(getString(R.string.welcome_name), bold())
 
-            ivUser.load(R.drawable.photo_male){
-                crossfade(true)
-                transformations(CircleCropTransformation())
-            }
+//            ivUser.load(R.drawable.photo_male){
+//                crossfade(true)
+//                transformations(CircleCropTransformation())
+//            }
         }
     }
 
@@ -96,7 +91,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     }
 
     override fun initListener(){
-        binding.btnClockIn.setOnClickListener {
+        binding.homeHeader.btnClockIn.setOnClickListener {
             navigateToCreateEventActivity()
         }
     }
