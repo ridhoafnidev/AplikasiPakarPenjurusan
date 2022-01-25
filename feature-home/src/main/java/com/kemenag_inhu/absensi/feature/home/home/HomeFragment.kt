@@ -1,4 +1,4 @@
-package com.kemenag_inhu.absensi.feature.home
+package com.kemenag_inhu.absensi.feature.home.home
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import coil.load
@@ -12,6 +12,7 @@ import com.kemenag_inhu.absensi.core_domain.model.Menu
 import com.kemenag_inhu.absensi.core_navigation.ModuleNavigator
 import com.kemenag_inhu.absensi.core_resource.components.base.BaseFragment
 import com.kemenag_inhu.absensi.core_util.dayTimeGreeting
+import com.kemenag_inhu.absensi.feature.home.HomeViewModel
 import com.kemenag_inhu.absensi.feature.home.viewholder.ItemHistoryAttendanceViewHolder
 import com.kemenag_inhu.home.R
 import com.kemenag_inhu.home.databinding.FragmentHomeBinding

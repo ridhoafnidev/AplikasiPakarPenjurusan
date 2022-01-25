@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/id_row_data_pribadi"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:elevation="@dimen/tiny"
+    android:focusable="true">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_data_pribadi"
+        android:layout_width="@dimen/large"
+        android:layout_height="@dimen/large"
+        android:layout_marginStart="@dimen/small_fit"
+        android:layout_marginTop="@dimen/medium"
+        android:layout_marginBottom="@dimen/medium"
+        android:backgroundTint="@android:color/darker_gray"
+        android:src="@drawable/ic_icon_data_pribadi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_data_pribadi"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/large"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Data Pribadi"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_large"
+        app:layout_constraintEnd_toStartOf="@id/ib_data_pribadi"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/iv_data_pribadi"
+        app:layout_constraintTop_toTopOf="@id/iv_data_pribadi" />
+
+    <ImageView
+        android:id="@+id/ib_data_pribadi"
+        android:layout_width="@dimen/large"
+        android:layout_height="@dimen/large_fit"
+        android:layout_marginEnd="@dimen/medium_fit"
+        android:alpha=".5"
+        android:backgroundTint="@color/colorTextWhite"
+        android:src="@drawable/ic_icon_arrow_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
