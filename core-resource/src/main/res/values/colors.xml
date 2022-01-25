@@ -41,4 +41,5 @@
     <color name="colorBlack">#000</color>
     <color name="colorPlaceHolder">#B6B6B6</color>
     <color name="colorPrimaryDarkTransparent">#90000000</color>
+    <color name="colorRed">#F44336</color>
 </resources>

@@ -95,6 +95,11 @@
         <item name="materialThemeOverlay">@style/Accent</item>
     </style>
 
+    <style name="BaseTheme.Button.Red">
+        <item name="android:textColor">@color/colorInputPrimary</item>
+        <item name="materialThemeOverlay">@style/Red</item>
+    </style>
+
     <style name="Primary">
         <item name="colorPrimary">@color/colorButtonPrimary</item>
     </style>
@@ -105,6 +110,10 @@
 
     <style name="Accent">
         <item name="colorPrimary">@color/colorAccent</item>
+    </style>
+
+    <style name="Red">
+        <item name="colorPrimary">@color/colorRed</item>
     </style>
 
     <style name="BaseTheme.Margin">
