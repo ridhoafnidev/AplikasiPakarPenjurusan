@@ -53,8 +53,12 @@
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/core-resource/src/main/res/drawable/ic_back.xml" value="0.121875" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/core-resource/src/main/res/drawable/shape_circle_image.xml" value="0.15" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/core-resource/src/main/res/drawable/shape_circle_placeholder.xml" value="0.15" />
-        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-auth/src/main/res/layout/fragment_login.xml" value="0.1875" />
-        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-auth/src/main/res/layout/layout_form_login.xml" value="0.1875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/core-resource/src/main/res/layout/component_toolbar.xml" value="0.1875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-auth/src/main/res/layout/fragment_login.xml" value="0.16" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-auth/src/main/res/layout/fragment_splash.xml" value="0.1875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-auth/src/main/res/layout/layout_footer_login.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-auth/src/main/res/layout/layout_form_login.xml" value="0.2" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-auth/src/main/res/layout/layout_header_login.xml" value="0.1" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/layout_item_current_event.xml" value="0.136" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/layout_item_new_event.xml" value="0.136" />

@@ -2,8 +2,16 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="auth_shortcut_restart">Restart</string>
-    <string name="email_or_phone_number">Email atau Nomor Ponsel</string>
-    <string name="password">Kata Sandi</string>
+    <!--region login-->
+
+    <string name="title_nik_nip">NIP/NIP</string>
+    <string name="title_password">Kata Sandi</string>
+    <string name="nik_or_nik">Masukan NIK/NIP Anda</string>
+    <string name="password">Masukan kata sandi Anda</string>
+    <string name="dont_have_account">Belum punya akun?</string>
+    <string name="create_account">Daftar</string>
+
+    <!--endregion-->
     <string name="remember_me">Ingat Saya</string>
     <string name="forgot_password">Lupa Kata Sandi?</string>
     <string name="login">Masuk</string>

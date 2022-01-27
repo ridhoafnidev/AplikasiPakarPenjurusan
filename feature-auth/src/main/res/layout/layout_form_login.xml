@@ -1,43 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+        android:id="@+id/tv_title_nik_nip"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_very_small"
+        android:text="@string/title_nik_nip"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_layout_email_or_number_phone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="@color/colorPrimaryDark"
         android:layout_width="@dimen/match_constraint"
-        style="@style/BaseTheme.EditText.TextInputLayoutFilledBoxPadding"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small"
         app:layout_constraintEnd_toEndOf="parent"
-        app:boxBackgroundColor="@color/colorBackgroundSecondary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/ic_email"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_nik_nip"
         app:hintEnabled="false">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_email_or_number_phone"
             android:layout_width="match_parent"
-            style="@style/BaseTheme.EditText.Primary"
+            style="@style/BaseTheme.EditText.Secondary"
             android:layout_height="wrap_content"
-            android:hint="@string/email_or_phone_number"
+            android:hint="@string/nik_or_nik"
             android:lines="1"
+            android:imeOptions="actionDone"
             android:inputType="text"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+        android:id="@+id/tv_title_password"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_fit"
+        android:textSize="@dimen/text_very_small"
+        app:layout_constraintTop_toBottomOf="@+id/input_layout_email_or_number_phone"
+        android:text="@string/title_password"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_layout_password"
-        style="@style/BaseTheme.EditText.TextInputLayoutFilledBoxPadding"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="@dimen/match_constraint"
         android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/ic_password"
+        app:boxStrokeColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_layout_email_or_number_phone"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_password"
         app:passwordToggleEnabled="true"
         app:hintEnabled="false"
-        android:layout_marginTop="@dimen/small"
-        app:boxBackgroundColor="@color/colorBackgroundSecondary">
+        android:layout_marginTop="@dimen/small">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_password"
@@ -46,40 +69,20 @@
             android:layout_height="wrap_content"
             android:hint="@string/password"
             android:inputType="textPassword"
+            android:imeOptions="actionDone"
             android:lines="1" />
 
     </com.google.android.material.textfield.TextInputLayout>
-
-    <com.kemenag_inhu.absensi.core_resource.components.BaseCheckBox
-        android:id="@+id/cb_rember"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="-5dp"
-        android:layout_marginVertical="@dimen/small"
-        android:text="@string/remember_me"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_layout_password" />
 
     <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
         android:id="@+id/tv_forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:base_font_style="medium"
+        app:base_font_style="bold"
         android:text="@string/forgot_password"
-        android:textColor="@color/colorTextAccent"
-        app:layout_constraintBottom_toBottomOf="@+id/cb_rember"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cb_rember" />
-
-    <com.kemenag_inhu.absensi.core_resource.components.BaseButton
-        android:id="@+id/btn_login"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        style="@style/BaseTheme.Button.Primary"
-        android:text="@string/login"
-        android:textAllCaps="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cb_rember" />
+        android:layout_marginTop="@dimen/medium"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintTop_toBottomOf="@+id/input_layout_password"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

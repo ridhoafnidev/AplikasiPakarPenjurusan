@@ -2,6 +2,7 @@ package com.kemenag_inhu.absensi.feature.auth.login
 
 import android.os.Handler
 import android.os.Looper
+import androidx.constraintlayout.widget.ConstraintSet
 import com.afollestad.vvalidator.form
 import com.google.android.material.snackbar.Snackbar
 import com.kemenag_inhu.absensi.core_util.Resource
@@ -11,6 +12,9 @@ import com.kemenag_inhu.absensi.core_util.*
 import com.kemenag_inhu.absensi.feature.auth.AuthViewModel
 import com.kemenag_inhu.absensi.feature_auth.R
 import com.kemenag_inhu.absensi.feature_auth.databinding.FragmentLoginBinding
+import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent
+import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener
+import net.yslibrary.android.keyboardvisibilityevent.Unregistrar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate), ModuleNavigator {
@@ -29,7 +33,34 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
     private val viewModel by viewModel<AuthViewModel>()
 
+    private lateinit var keyboardWatcher: Unregistrar
+
     override fun initView() {
+
+    keyboardWatcher =
+        KeyboardVisibilityEvent.registerEventListener(requireActivity(), { isOpen ->
+
+//            fun setVertivalBias(bias: Float){
+//                ConstraintSet().apply {
+//                    clone(binding.parentLogin)
+//                    setVerticalBias(R.id.layout_o)
+//                }
+//            }
+
+            with(binding){
+                if (isOpen){
+                    layoutFooterlogin.root.gone()
+                    layoutHeaderLogin.root.gone()
+                }
+                else{
+                    layoutFooterlogin.root.visible()
+                    layoutHeaderLogin.root.visible()
+                    layoutFormLogin.edtEmailOrNumberPhone.clearFocus()
+                    layoutFormLogin.edtPassword.clearFocus()
+                }
+            }
+        })
+
         viewModel.isLogin.observe(viewLifecycleOwner){ auth ->
             when(auth){
                 is Resource.Loading -> {
@@ -53,6 +84,11 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         }
     }
 
+    override fun onDestroyView() {
+        keyboardWatcher.unregister()
+        super.onDestroyView()
+    }
+
     override fun initListener() {
         with(binding.layoutFormLogin) {
             form {
@@ -72,28 +108,28 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                     viewModel.login()
                 }
             }
-            btnLogin.bindLifecycle(viewLifecycleOwner)
+            binding.layoutFooterlogin.btnLogin.bindLifecycle(viewLifecycleOwner)
         }
     }
 
     private fun showProgress() = with(binding.layoutFormLogin) {
         listOf(
-            btnLogin, inputLayoutEmailOrNumberPhone, inputLayoutPassword
+            binding.layoutFooterlogin.btnLogin, inputLayoutEmailOrNumberPhone, inputLayoutPassword
         ).forEach { it.isEnabled = false }
-        btnLogin.showProgress()
+        binding.layoutFooterlogin.btnLogin.showProgress()
     }
 
     private fun hideProgress(isEnable: Boolean) = with(binding.layoutFormLogin){
-        btnLogin.postDelayed(
+        binding.layoutFooterlogin.btnLogin.postDelayed(
             {
                 listOf(
-                    btnLogin, edtEmailOrNumberPhone, edtPassword, inputLayoutEmailOrNumberPhone,
+                    binding.layoutFooterlogin.btnLogin, edtEmailOrNumberPhone, edtPassword, inputLayoutEmailOrNumberPhone,
                     inputLayoutPassword
                 ).forEach { it.isEnabled = true }
             },1000L
         )
 
-        btnLogin.hideProgress(textBtnLogin){
+        binding.layoutFooterlogin.btnLogin.hideProgress(textBtnLogin){
             isEnable && with(binding.layoutFormLogin) {
                 "${edtEmailOrNumberPhone.text}".isNotBlank() && "${edtPassword.text}".isNotBlank()
             }
