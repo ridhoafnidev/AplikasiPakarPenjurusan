@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/small_fit">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                    android:id="@+id/tv_schedule_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Sabtu, 01 Januari 2022"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_normal"
+                    app:base_font_style="medium" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                        android:id="@+id/tv_description_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/smaller"
+                        android:gravity="center"
+                        android:text="Hari Libur"
+                        android:textSize="@dimen/text_normal"
+                        app:base_font_style="medium" />
+
+                    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                        android:id="@+id/tv_clock_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/smaller"
+                        android:layout_marginTop="@dimen/smaller"
+                        android:drawableStart="@drawable/ic_access_time_green"
+                        android:gravity="center"
+                        android:text="07.55"
+                        android:textSize="@dimen/text_normal"
+                        app:base_font_style="medium" />
+
+                    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                        android:id="@+id/tv_clock_out"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/smaller"
+                        android:layout_marginTop="@dimen/smaller"
+                        android:drawableStart="@drawable/ic_access_time_red"
+                        android:gravity="center"
+                        android:text="16.00"
+                        android:textSize="@dimen/text_normal"
+                        app:base_font_style="medium" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_calendar"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:src="@drawable/ic_plus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#4D006316"
+            android:orientation="vertical"
+            android:padding="@dimen/small_fit">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Total Jam Kerja"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_normal"
+                    app:base_font_style="medium" />
+
+                <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                    android:id="@+id/tv_total_jam_kerja"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="8 Jam"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_normal"
+                    app:base_font_style="medium" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/smaller"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Lokasi Kerja"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_normal"
+                    app:base_font_style="medium" />
+
+                <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                    android:id="@+id/tv_lokasi_kerja"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Rumah"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_normal"
+                    app:base_font_style="medium" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/smaller"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Lembur"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_normal"
+                    app:base_font_style="medium" />
+
+                <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+                    android:id="@+id/tv_lembur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="-"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_normal"
+                    app:base_font_style="medium" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
