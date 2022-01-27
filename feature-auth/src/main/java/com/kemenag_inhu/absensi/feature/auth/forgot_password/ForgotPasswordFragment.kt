@@ -1,4 +1,4 @@
-package com.kemenag_inhu.absensi.feature.auth.login
+package com.kemenag_inhu.absensi.feature.auth.forgot_password
 
 import android.os.Handler
 import android.os.Looper
@@ -12,24 +12,21 @@ import com.kemenag_inhu.absensi.core_resource.components.base.BaseFragment
 import com.kemenag_inhu.absensi.core_util.*
 import com.kemenag_inhu.absensi.feature.auth.AuthViewModel
 import com.kemenag_inhu.absensi.feature_auth.R
+import com.kemenag_inhu.absensi.feature_auth.databinding.FragmentForgotPasswordBinding
 import com.kemenag_inhu.absensi.feature_auth.databinding.FragmentLoginBinding
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener
 import net.yslibrary.android.keyboardvisibilityevent.Unregistrar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate), ModuleNavigator {
+class ForgotPasswordFragment : BaseFragment<FragmentForgotPasswordBinding>(FragmentForgotPasswordBinding::inflate), ModuleNavigator {
 
-    private val textBtnLogin by lazy {
-        getString(R.string.text_login)
+    private val textBtnForgotPassword by lazy {
+        getString(R.string.button_reset_passord)
     }
 
-    private val textHintEmptyEmailPhoneNumber by lazy {
+    private val textHintEmptyNikNip by lazy {
         getString(R.string.requeired_nik_nip)
-    }
-
-    private val textHintEmptyPassword by lazy {
-        getString(R.string.required_password)
     }
 
     private val viewModel by viewModel<AuthViewModel>()
@@ -38,21 +35,15 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
     override fun initView() {
 
-    keyboardWatcher =
-        KeyboardVisibilityEvent.registerEventListener(requireActivity()) { isOpen ->
-            with(binding) {
-                if (isOpen) {
-                    layoutFooterlogin.root.gone()
-                    layoutHeaderLogin.root.gone()
-                } else {
-                    layoutFooterlogin.root.visible()
-                    layoutHeaderLogin.root.visible()
-                    layoutFormLogin.edtEmailOrNumberPhone.clearFocus()
-                    layoutFormLogin.edtPassword.clearFocus()
+        keyboardWatcher =
+            KeyboardVisibilityEvent.registerEventListener(requireActivity()) { isOpen ->
+                with(binding){
+                    if (isOpen) layoutHeaderForgotPassword.root.gone()
+                    else layoutHeaderForgotPassword.root.visible()
                 }
             }
-        }
 
+        // TODO change with forgot password logic
         viewModel.isLogin.observe(viewLifecycleOwner){ auth ->
             when(auth){
                 is Resource.Loading -> {
@@ -74,6 +65,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                 }
             }
         }
+        //endTODO
     }
 
     override fun onDestroyView() {
@@ -82,56 +74,48 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     }
 
     override fun initListener() {
-        with(binding.layoutFormLogin) {
+        with(binding.layoutFormForgotPassword) {
             form {
                 useRealTimeValidation(disableSubmit = true)
-                inputLayout(R.id.input_layout_email_or_number_phone) {
-                    isNotEmpty().description(textHintEmptyEmailPhoneNumber)
+                inputLayout(R.id.input_layout_nik_nip) {
+                    isNotEmpty().description(textHintEmptyNikNip)
                 }
-                inputLayout(R.id.input_layout_password) {
-                    isNotEmpty().description(textHintEmptyPassword)
-                }
-                submitWith(R.id.btn_login) {
+                submitWith(R.id.btn_forgot_password) {
                     dismissKeyboard()
-
-                    viewModel.emailOrPhoneNumber = edtEmailOrNumberPhone.text.toString()
-                    viewModel.password = edtPassword.text.toString()
+                    //TODO ganti dengan property nik nip forgot password
+                    viewModel.emailOrPhoneNumber = edtNikNip.text.toString()
 
                     viewModel.login()
                 }
             }
-            binding.layoutFooterlogin.btnLogin.bindLifecycle(viewLifecycleOwner)
+            btnForgotPassword.bindLifecycle(viewLifecycleOwner)
 
-            tvForgotPassword.setOnClickListener {
-                findNavController().navigate(R.id.forgotPasswordFragment)
+            tvBackToLogin.setOnClickListener {
+                findNavController().navigate(R.id.loginFragment)
             }
 
         }
-        with(binding.layoutFooterlogin){
-
-        }
     }
 
-    private fun showProgress() = with(binding.layoutFormLogin) {
+    private fun showProgress() = with(binding.layoutFormForgotPassword) {
         listOf(
-            binding.layoutFooterlogin.btnLogin, inputLayoutEmailOrNumberPhone, inputLayoutPassword
+            btnForgotPassword, inputLayoutNikNip, edtNikNip
         ).forEach { it.isEnabled = false }
-        binding.layoutFooterlogin.btnLogin.showProgress()
+        btnForgotPassword.showProgress()
     }
 
-    private fun hideProgress(isEnable: Boolean) = with(binding.layoutFormLogin){
-        binding.layoutFooterlogin.btnLogin.postDelayed(
+    private fun hideProgress(isEnable: Boolean) = with(binding.layoutFormForgotPassword){
+        btnForgotPassword.postDelayed(
             {
                 listOf(
-                    binding.layoutFooterlogin.btnLogin, edtEmailOrNumberPhone, edtPassword, inputLayoutEmailOrNumberPhone,
-                    inputLayoutPassword
+                    btnForgotPassword, inputLayoutNikNip, edtNikNip
                 ).forEach { it.isEnabled = true }
             },1000L
         )
 
-        binding.layoutFooterlogin.btnLogin.hideProgress(textBtnLogin){
-            isEnable && with(binding.layoutFormLogin) {
-                "${edtEmailOrNumberPhone.text}".isNotBlank() && "${edtPassword.text}".isNotBlank()
+        btnForgotPassword.hideProgress(textBtnForgotPassword){
+            isEnable && with(binding.layoutFormForgotPassword) {
+                "${edtNikNip.text}".isNotBlank()
             }
         }
     }

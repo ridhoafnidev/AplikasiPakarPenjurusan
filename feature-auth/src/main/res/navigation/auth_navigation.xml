@@ -16,4 +16,10 @@
         android:name="com.kemenag_inhu.absensi.feature.auth.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.kemenag_inhu.absensi.feature.auth.forgot_password.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment"
+        tools:layout="@layout/fragment_forgot_password"/>
 </navigation>

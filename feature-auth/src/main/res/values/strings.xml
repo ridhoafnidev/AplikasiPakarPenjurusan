@@ -10,13 +10,18 @@
     <string name="password">Masukan kata sandi Anda</string>
     <string name="dont_have_account">Belum punya akun?</string>
     <string name="create_account">Daftar</string>
-
-    <!--endregion-->
-    <string name="remember_me">Ingat Saya</string>
     <string name="forgot_password">Lupa Kata Sandi?</string>
     <string name="login">Masuk</string>
     <string name="text_login">Login</string>
-    <string name="requeired_email_or_phone_number">Email atau Nomor Ponsel harus diisi</string>
+    <string name="requeired_nik_nip">NIK/NIK harus diisi</string>
     <string name="required_password">Password harus diisi</string>
-    <string name="message_error_login">Email atau Nomor Ponsel atau Password tidak cocok</string>
+    <string name="message_error_login">NIK/NIP atau Password tidak cocok</string>
+
+    <!--endregion-->
+    <!--region forgot password-->
+
+    <string name="button_reset_passord">Reset Password</string>
+    <string name="title_back_to_login">Kembali ke Halaman Login</string>
+
+    <!--endregion-->
 </resources>
