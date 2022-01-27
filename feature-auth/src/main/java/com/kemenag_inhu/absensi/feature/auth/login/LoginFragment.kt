@@ -38,28 +38,20 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     override fun initView() {
 
     keyboardWatcher =
-        KeyboardVisibilityEvent.registerEventListener(requireActivity(), { isOpen ->
+        KeyboardVisibilityEvent.registerEventListener(requireActivity()) { isOpen ->
 
-//            fun setVertivalBias(bias: Float){
-//                ConstraintSet().apply {
-//                    clone(binding.parentLogin)
-//                    setVerticalBias(R.id.layout_o)
-//                }
-//            }
-
-            with(binding){
-                if (isOpen){
+            with(binding) {
+                if (isOpen) {
                     layoutFooterlogin.root.gone()
                     layoutHeaderLogin.root.gone()
-                }
-                else{
+                } else {
                     layoutFooterlogin.root.visible()
                     layoutHeaderLogin.root.visible()
                     layoutFormLogin.edtEmailOrNumberPhone.clearFocus()
                     layoutFormLogin.edtPassword.clearFocus()
                 }
             }
-        })
+        }
 
         viewModel.isLogin.observe(viewLifecycleOwner){ auth ->
             when(auth){
