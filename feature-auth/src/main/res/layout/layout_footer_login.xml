@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.kemenag_inhu.absensi.core_resource.components.BaseButton
+        android:id="@+id/btn_login"
+        style="@style/BaseTheme.Button.Accent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium"
+        android:text="@string/login"
+        android:layout_marginBottom="@dimen/large"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutCompat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+            android:id="@+id/tv_dint_have_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dont_have_account"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/text_normal"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+            android:id="@+id/tv_create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/small"
+            android:text="@string/create_account"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_normal"
+            app:base_font_style="bold"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
