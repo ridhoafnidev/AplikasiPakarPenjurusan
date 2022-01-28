@@ -12,6 +12,12 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/riwayat"
+        android:name="com.kemenag_inhu.absensi.feature.home.riwayat.RiwayatFragment"
+        android:label="fragment_riwayat"
+        tools:layout="@layout/fragment_riwayat" />
+
+    <fragment
         android:id="@+id/profile"
         android:name="com.kemenag_inhu.absensi.feature.home.profile.ProfileFragment"
         android:label="Profile"

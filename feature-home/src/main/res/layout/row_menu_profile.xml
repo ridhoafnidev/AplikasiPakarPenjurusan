@@ -1,48 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<androidx.appcompat.widget.LinearLayoutCompat
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/medium_fit"
-    android:orientation="vertical">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="@dimen/medium"
+    android:background="@drawable/bg_toolbar"
+    android:orientation="horizontal">
 
-    <androidx.cardview.widget.CardView
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="@dimen/smaller"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorTextWhite"
-            android:orientation="horizontal">
+        <include
+            android:id="@+id/row_data_pribadi"
+            layout="@layout/row_data_pribadi" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+        <include
+            android:id="@+id/row_pengaturan"
+            layout="@layout/row_pengaturan" />
 
-                <include
-                    android:id="@+id/row_data_pribadi"
-                    layout="@layout/row_data_pribadi" />
+        <include
+            android:id="@+id/row_bantuan"
+            layout="@layout/row_bantuan" />
 
-                <include
-                    android:id="@+id/row_pengaturan"
-                    layout="@layout/row_pengaturan" />
+        <include
+            android:id="@+id/row_tentang_apikasi"
+            layout="@layout/row_tentang_aplikasi" />
 
-                <include
-                    android:id="@+id/row_bantuan"
-                    layout="@layout/row_bantuan" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <include
-                    android:id="@+id/row_tentang_apikasi"
-                    layout="@layout/row_tentang_aplikasi" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-        </androidx.appcompat.widget.LinearLayoutCompat>
-    </androidx.cardview.widget.CardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

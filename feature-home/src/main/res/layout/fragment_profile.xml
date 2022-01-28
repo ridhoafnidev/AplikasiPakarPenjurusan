@@ -6,14 +6,26 @@
     android:layout_marginStart="@dimen/medium_fit"
     android:layout_marginEnd="@dimen/medium_fit"
     android:orientation="vertical"
+    android:paddingBottom="80dp"
     tools:context="com.kemenag_inhu.absensi.feature.home.profile.ProfileFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/medium"
+        android:layout_marginTop="@dimen/medium"
+        app:cardElevation="@dimen/smaller"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     <include
         android:id="@+id/row_profile_header"
         layout="@layout/row_profile_header"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    </androidx.cardview.widget.CardView>
 
     <View
         android:id="@+id/divider"
@@ -23,9 +35,7 @@
 
     <include
         android:id="@+id/row_menu_profile"
-        layout="@layout/row_menu_profile"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
+        layout="@layout/row_menu_profile"/>
 
     <include
         android:id="@+id/row_keluar"

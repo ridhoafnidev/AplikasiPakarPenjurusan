@@ -22,7 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textview.MaterialTextView
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
         android:id="@+id/tv_data_pribadi"
         android:layout_width="@dimen/match_constraint"
         android:layout_height="wrap_content"
@@ -31,9 +31,10 @@
         android:maxLines="1"
         android:text="Data Pribadi"
         android:textColor="@android:color/black"
-        android:textSize="@dimen/text_large"
+        android:textSize="@dimen/text_normal"
+        app:base_font_style="medium"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_data_pribadi"
         app:layout_constraintEnd_toStartOf="@id/ib_data_pribadi"
-        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toEndOf="@id/iv_data_pribadi"
         app:layout_constraintTop_toTopOf="@id/iv_data_pribadi" />
 
