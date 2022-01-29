@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#006316"
+    android:padding="@dimen/medium_fit">
+
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+        android:id="@+id/tv_schedule_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_medium"
+        android:gravity="center"
+        android:text="Jum'at, 07 Januari 2022"
+        android:textColor="@color/colorTextWhite"
+        android:textSize="@dimen/text_medium"
+        app:base_font_style="medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+        android:id="@+id/tv_office"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/very_large"
+        android:gravity="center"
+        android:text="Jadwal Kerja"
+        android:textColor="@color/colorTextWhite"
+        android:textSize="@dimen/text_medium"
+        app:base_font_style="medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_schedule_date" />
+
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+        android:id="@+id/tv_daily_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/medium"
+        android:text="08:00 - 17:00"
+        android:textColor="@color/colorTextWhite"
+        android:textSize="35sp"
+        app:base_font_style="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_office" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/very_large"
+        android:layout_marginEnd="@dimen/very_large"
+        android:background="@color/colorTextWhite"
+        app:layout_constraintTop_toBottomOf="@+id/tv_daily_date" />
+
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large"
+        android:gravity="center"
+        android:text="10 menit menuju \nabsen masuk kerja"
+        android:textColor="@color/colorTextWhite"
+        android:textSize="@dimen/text_medium"
+        app:base_font_style="medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <com.kemenag_inhu.absensi.core_resource.components.BaseButton
+        android:id="@+id/btn_clock_in"
+        style="@style/BaseTheme.Button.Accent"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/large_fit"
+        android:layout_marginStart="@dimen/medium"
+        android:layout_marginEnd="@dimen/small"
+        android:text="Absen Masuk"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toStartOf="@+id/btn_clock_out"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_info" />
+
+    <com.kemenag_inhu.absensi.core_resource.components.BaseButton
+        android:id="@+id/btn_clock_out"
+        style="@style/BaseTheme.Button.Red"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/large_fit"
+        android:layout_marginStart="@dimen/small"
+        android:layout_marginEnd="@dimen/medium"
+        android:text="Absen Keluar"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_clock_in"
+        app:layout_constraintTop_toBottomOf="@+id/tv_info" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
