@@ -61,9 +61,27 @@
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-auth/src/main/res/layout/layout_form_forgot_password.xml" value="0.1875" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-auth/src/main/res/layout/layout_form_login.xml" value="0.2" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-auth/src/main/res/layout/layout_header_login.xml" value="0.1" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/drawable/bg_bottom_navigation_selector.xml" value="0.1972972972972973" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/drawable/bg_toolbar.xml" value="0.1972972972972973" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/drawable/shape_bottom_navigation.xml" value="0.1972972972972973" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/activity_home.xml" value="0.152" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/bg_toolbar.xml" value="0.1875" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/fragment_profile.xml" value="0.109765625" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/fragment_riwayat.xml" value="0.109765625" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/layout_item_current_event.xml" value="0.136" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/layout_item_new_event.xml" value="0.136" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/layout_toolbar.xml" value="0.176" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_bantuan.xml" value="0.1875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_bottom_home.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_data_pribadi.xml" value="0.1875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_home_header.xml" value="0.1875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_keluar.xml" value="0.1875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_menu_profile.xml" value="0.1875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_pengaturan.xml" value="0.1875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_profile_header.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_tentang_aplikasi.xml" value="0.1875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/menu/main_menu.xml" value="0.1875" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-resource/src/main/res/drawable/bg_event_image.xml" value="0.19722222222222222" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-resource/src/main/res/drawable/ic_add_photo.xml" value="0.19722222222222222" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-resource/src/main/res/drawable/ic_back.xml" value="0.1972972972972973" />

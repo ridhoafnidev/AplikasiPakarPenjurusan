@@ -7,4 +7,7 @@
     <string name="title">Judul</string>
     <string name="time_suffix">>></string>
     <string name="time_prefix"><![CDATA[<<]]></string>
+    <string name="title_home">Home</string>
+    <string name="title_riwayat">Riwayat</string>
+    <string name="title_profil">Akun</string>
 </resources>

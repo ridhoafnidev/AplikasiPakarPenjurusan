@@ -4,65 +4,51 @@
     android:id="@+id/id_row_keluar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/medium_fit"
-    android:background="?attr/selectableItemBackground"
+    android:layout_marginTop="@dimen/medium"
+    android:foreground="?attr/selectableItemBackground"
+    android:background="@drawable/bg_toolbar"
     android:clickable="true"
-    android:elevation="@dimen/tiny"
     android:focusable="true">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="@dimen/smaller"
-        app:layout_constraintEnd_toEndOf="parent"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_keluar"
+        android:layout_width="@dimen/large"
+        android:layout_height="@dimen/large"
+        android:layout_marginStart="@dimen/medium"
+        android:layout_marginTop="@dimen/medium"
+        android:layout_marginBottom="@dimen/medium"
+        android:backgroundTint="@android:color/darker_gray"
+        android:src="@drawable/ic_icon_data_pribadi"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+        android:id="@+id/tv_keluar"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/large"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Keluar"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_normal"
+        app:base_font_style="medium"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_keluar"
+        app:layout_constraintEnd_toStartOf="@id/ib_keluar"
+        app:layout_constraintStart_toEndOf="@id/iv_keluar"
+        app:layout_constraintTop_toTopOf="@id/iv_keluar" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/iv_keluar"
-                android:layout_width="@dimen/large"
-                android:layout_height="@dimen/large"
-                android:layout_marginStart="@dimen/medium"
-                android:layout_marginTop="@dimen/medium"
-                android:layout_marginBottom="@dimen/medium"
-                android:backgroundTint="@android:color/darker_gray"
-                android:src="@drawable/ic_icon_data_pribadi"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_keluar"
-                android:layout_width="@dimen/match_constraint"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/large"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="Keluar"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/text_large"
-                app:layout_constraintEnd_toStartOf="@id/ib_keluar"
-                app:layout_constraintHorizontal_bias="0"
-                app:layout_constraintStart_toEndOf="@id/iv_keluar"
-                app:layout_constraintTop_toTopOf="@id/iv_keluar" />
-
-            <ImageView
-                android:id="@+id/ib_keluar"
-                android:layout_width="@dimen/large"
-                android:layout_height="@dimen/large_fit"
-                android:layout_marginEnd="@dimen/medium_fit"
-                android:alpha=".5"
-                android:backgroundTint="@color/colorTextWhite"
-                android:src="@drawable/ic_icon_arrow_right"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:id="@+id/ib_keluar"
+        android:layout_width="@dimen/large"
+        android:layout_height="@dimen/large_fit"
+        android:layout_marginEnd="@dimen/medium_fit"
+        android:alpha=".5"
+        android:backgroundTint="@color/colorTextWhite"
+        android:src="@drawable/ic_icon_arrow_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

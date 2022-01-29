@@ -1,64 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginHorizontal="@dimen/medium_fit"
-    android:layout_marginTop="@dimen/medium">
-
-    <androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="@dimen/medium"
-        app:layout_constraintEnd_toEndOf="parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_marginHorizontal="@dimen/medium_fit"
+        android:layout_marginTop="@dimen/medium"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/bg_toolbar">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+            android:id="@+id/tv_title_new_event"
+            style="@style/BaseTheme.Margin.Horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_fit"
+            android:text="Riwayat Presensi"
+            android:textSize="@dimen/text_medium_fit"
+            app:base_font_style="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
+            android:id="@+id/tv_history_attendance"
+            style="@style/BaseTheme.Margin.Horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="More"
+            android:textColor="@color/colorButtonTextPrimaryPressed"
+            android:textSize="@dimen/text_medium"
+            app:base_font_style="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title_new_event"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_title_new_event" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_history_attendance"
+            style="@style/BaseTheme.Margin.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorTextWhite">
+            android:layout_marginTop="@dimen/small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_history_attendance"
+            tools:listitem="@layout/item_riwayat_presensi" />
 
-            <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
-                android:id="@+id/tv_title_new_event"
-                style="@style/BaseTheme.Margin.Horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/medium_fit"
-                android:text="Riwayat Presensi"
-                android:textSize="@dimen/text_medium_fit"
-                app:base_font_style="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.kemenag_inhu.absensi.core_resource.components.BaseTextView
-                android:id="@+id/tv_history_attendance"
-                style="@style/BaseTheme.Margin.Horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="More"
-                android:textColor="@color/colorButtonTextPrimaryPressed"
-                android:textSize="@dimen/text_medium"
-                app:base_font_style="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_title_new_event"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_title_new_event" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_history_attendance"
-                style="@style/BaseTheme.Margin.Horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/small"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_history_attendance"
-                tools:listitem="@layout/item_riwayat_presensi" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
