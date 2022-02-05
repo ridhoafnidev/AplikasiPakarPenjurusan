@@ -1,4 +1,4 @@
-package com.example.core_resource.components.base
+package com.example.core_util.base
 
 import android.annotation.SuppressLint
 import android.graphics.PorterDuff

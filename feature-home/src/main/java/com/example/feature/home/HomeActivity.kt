@@ -4,7 +4,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.core_resource.components.base.BaseActivity
+import com.example.core_util.base.BaseActivity
 import com.example.home.R
 import com.example.home.databinding.ActivityHomeBinding
 
