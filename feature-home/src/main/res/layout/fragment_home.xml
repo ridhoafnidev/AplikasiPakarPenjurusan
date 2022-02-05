@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     style="@style/BaseTheme.Layout.Parent">
 
-    <com.example.core_resource.components.BaseTextView
+    <com.example.core_util.BaseTextView
         android:id="@+id/baseTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -14,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.core_resource.components.BaseButton
+    <com.example.core_util.BaseButton
         android:id="@+id/btn_start"
         style="@style/BaseTheme.Button.Accent"
         android:layout_width="wrap_content"

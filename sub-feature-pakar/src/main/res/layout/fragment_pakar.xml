@@ -30,7 +30,7 @@
         app:layout_constraintStart_toEndOf="@+id/preview"
         app:layout_constraintTop_toTopOf="@+id/next" />
 
-    <com.example.core_resource.components.BaseButton
+    <com.example.core_util.BaseButton
         android:id="@+id/preview"
         style="@style/BaseTheme.Button.Primary"
         android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.example.core_resource.components.BaseButton
+    <com.example.core_util.BaseButton
         android:id="@+id/next"
         style="@style/BaseTheme.Button.Accent"
         android:layout_width="wrap_content"
