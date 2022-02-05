@@ -8,13 +8,13 @@
     <fragment
         android:id="@+id/home"
         android:name="com.example.feature.home.HomeFragment"
-        android:label="Home"
+        android:label="Beranda"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/profile"
         android:name="com.example.feature.home.ProfileFragment"
-        android:label="Profile"
+        android:label="Profil"
         tools:layout="@layout/fragment_profile" />
 
 </navigation>
