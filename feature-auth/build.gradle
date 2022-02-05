@@ -7,4 +7,5 @@ apply(from: "../shared_dependencies_feature.gradle")
 dependencies {
     implementation deps.legacy_support
     implementation deps.validator
+
 }

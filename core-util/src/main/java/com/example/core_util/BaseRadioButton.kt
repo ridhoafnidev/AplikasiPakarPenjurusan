@@ -1,25 +1,25 @@
-package com.example.core_resource.components
+package com.example.core_util
 
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
 import com.example.core_util.commons.Constants
 import com.example.core_resource.R
-import com.google.android.material.textview.MaterialTextView
+import com.google.android.material.radiobutton.MaterialRadioButton
 import timber.log.Timber
 
-class BaseTextView : MaterialTextView {
+class BaseRadioButton : MaterialRadioButton {
     private var fontStyle: Int = 0
     private var fontName: Int = 0
 
     constructor(context: Context) : super(context)
 
-    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs){
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
         setValues(attrs)
         init()
     }
 
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr){
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
         init()
     }
 
@@ -44,13 +44,13 @@ class BaseTextView : MaterialTextView {
         setNewTypeFace()
     }
 
+    private fun setNewTypeFace() {
+        val font = Typeface.createFromAsset(context.assets, Constants.View.Name[fontName] + Constants.View.Style[fontStyle] + Constants.View.Type)
+        setTypeface(font, Typeface.NORMAL)
+    }
+
     private fun setFont(font: Int, name: Int) {
         fontStyle = font
         fontName = name
-    }
-
-    private fun setNewTypeFace() {
-        val font = Typeface.createFromAsset(context.assets, Constants.View.Name[fontName]+ Constants.View.Style[fontStyle]+ Constants.View.Type)
-        setTypeface(font, Typeface.NORMAL)
     }
 }

@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
-import com.example.core_resource.databinding.ComponentToolbarBinding
+import com.example.core_util.base.BaseActivity
+import com.example.core_util.databinding.ComponentToolbarBinding
 import java.lang.IllegalArgumentException
 
 abstract class BaseFragment<VB: ViewBinding>(

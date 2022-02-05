@@ -9,6 +9,5 @@ apply(from: "../shared_dependencies.gradle")
 dependencies {
     implementation deps.material
     implementation deps.constraint_layout
-    implementation project(path: ':core-util')
     implementation project(path: ':core-data')
 }

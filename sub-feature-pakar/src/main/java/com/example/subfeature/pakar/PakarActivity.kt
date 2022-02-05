@@ -2,7 +2,7 @@ package com.example.subfeature.pakar
 
 import androidx.annotation.MenuRes
 import androidx.navigation.findNavController
-import com.example.core_resource.components.base.BaseActivity
+import com.example.core_util.base.BaseActivity
 import com.example.subfeature.pakar.databinding.ActivityPakarBinding
 
 class PakarActivity : BaseActivity<ActivityPakarBinding>(ActivityPakarBinding::inflate) {
