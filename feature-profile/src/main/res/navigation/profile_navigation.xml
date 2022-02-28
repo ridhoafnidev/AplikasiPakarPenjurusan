@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/profile_navigation"
+    app:startDestination="@id/personalDataFragment">
+
+    <fragment
+        android:id="@+id/personalDataFragment"
+        android:name="com.example.feature.profile.PersonalDataFragment"
+        android:label="PersonalDataFragment" >
+        <action
+            android:id="@+id/action_personalDataFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_personalDataFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.feature.profile.AboutFragment"
+        android:label="AboutFragment" />
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.example.feature.profile.ChangePasswordFragment"
+        android:label="ChangePasswordFragment" />
+</navigation>

@@ -1,10 +1,11 @@
 package com.example.core_navigation
 
 import android.content.Intent
+import androidx.annotation.MainThread
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
-interface ModuleNavigator{
+interface ModuleNavigator {
 
     fun <T> T.navigateToAuthActivity(
         finnishCurrent: Boolean = false
@@ -18,31 +19,62 @@ interface ModuleNavigator{
         startActivity(ActivityClassPath.Auth, finnishCurrent)
     }
 
-    fun<T> T.navigateToHomeActivity(
+    fun <T> T.navigateToHomeActivity(
         finishCurrent: Boolean = false
-    ) where T :AppCompatActivity, T :ModuleNavigator {
+    ) where T : AppCompatActivity, T : ModuleNavigator {
         startActivity(ActivityClassPath.Home, finishCurrent)
     }
 
-    fun<T> T.navigateToHomeActivity(
+    fun <T> T.navigateToHomeActivity(
         finishCurrent: Boolean = false
     ) where T : Fragment, T : ModuleNavigator {
         startActivity(ActivityClassPath.Home, finishCurrent)
     }
 
-    fun<T> T.navigateToPakarActivity(
+    fun <T> T.navigateToPakarActivity(
         finishCurrent: Boolean = false
     ) where T : Fragment, T : ModuleNavigator {
         startActivity(ActivityClassPath.Pakar, finishCurrent)
     }
 
-    fun<T> T.navigateToPakarActivity(
+    fun <T> T.navigateToPakarActivity(
         finishCurrent: Boolean = false
     ) where T : AppCompatActivity, T : ModuleNavigator {
         startActivity(ActivityClassPath.Pakar, finishCurrent)
     }
 
+    interface ProfileNav : ModuleNavigator {
 
+        companion object {
+            const val STATUS = "status"
+        }
+
+        @MainThread
+        fun <T> T.statusParam(): Lazy<String> where T : AppCompatActivity, T : ProfileNav =
+            lazy(LazyThreadSafetyMode.NONE) {
+                intent.getStringExtra(STATUS).orEmpty()
+            }
+    }
+
+    fun <T> T.navigateToProfileActivity(
+        finishCurrent: Boolean = false,
+        status: String = "",
+    ) where T : Fragment, T : ModuleNavigator {
+        ActivityClassPath.Profile.getIntent(requireContext())
+            .apply {
+                putExtra(ProfileNav.STATUS, status)
+            }.let { startActivity(it, finishCurrent) }
+    }
+
+    fun <T> T.navigateToProfileActivity(
+        finishCurrent: Boolean = false,
+        status: String = "",
+    ) where T : AppCompatActivity, T : ModuleNavigator {
+        ActivityClassPath.Profile.getIntent(this)
+            .apply {
+                putExtra(ProfileNav.STATUS, status)
+            }.let { startActivity(it, finishCurrent) }
+    }
 }
 
 //region Extension functions to start activity in Activities list without parameter
