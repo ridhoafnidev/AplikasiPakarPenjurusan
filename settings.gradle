@@ -6,6 +6,7 @@ dependencyResolutionManagement {
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
+
 rootProject.name = "AplikasiPakarPenjurusan"
 include ':app'
 include ':core-data'
@@ -15,3 +16,4 @@ include ':core-util'
 include ':feature-auth'
 include ':feature-home'
 include ':sub-feature-pakar'
+include ':feature-profile'

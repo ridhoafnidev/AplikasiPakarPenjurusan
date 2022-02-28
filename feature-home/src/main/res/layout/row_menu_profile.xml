@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="@dimen/medium"
+    android:background="@drawable/bg_toolbar"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/row_data_pribadi"
+            layout="@layout/row_data_pribadi" />
+
+        <include
+            android:id="@+id/row_ganti_password"
+            layout="@layout/row_ganti_password" />
+
+        <include
+            android:id="@+id/row_tentang_aplikasi"
+            layout="@layout/row_tentang_aplikasi" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

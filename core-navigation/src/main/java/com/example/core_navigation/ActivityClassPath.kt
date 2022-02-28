@@ -6,7 +6,8 @@ import android.content.Intent
 enum class ActivityClassPath(private val className: String) {
     Auth("$BASE_PATH.auth.AuthActivity"),
     Home("$BASE_PATH.home.HomeActivity"),
-    Pakar("$SUB_PATH.pakar.PakarActivity");
+    Pakar("$SUB_PATH.pakar.PakarActivity"),
+    Profile("$BASE_PATH.profile.ProfileActivity");
 
     fun getIntent(context: Context) = Intent(context, Class.forName(className))
 }
