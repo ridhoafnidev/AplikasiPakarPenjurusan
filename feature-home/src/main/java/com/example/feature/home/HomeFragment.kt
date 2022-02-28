@@ -9,7 +9,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     }
 
     override fun initListener() {
-        binding.btnStart.setOnClickListener {
+        binding.cvPakar.setOnClickListener {
             navigateToPakarActivity()
         }
     }

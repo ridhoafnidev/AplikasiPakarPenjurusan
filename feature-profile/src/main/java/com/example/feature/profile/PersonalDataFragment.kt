@@ -18,8 +18,12 @@ class PersonalDataFragment : BaseFragment<FragmentPersonalDataBinding>(
         if (status == "Password") {
             Log.d("dfdf", "jalankan")
             findNavController().navigate(PersonalDataFragmentDirections.actionPersonalDataFragmentToChangePasswordFragment())
-        } else if (status == "About"){
+        } else if (status == "About") {
             findNavController().navigate(PersonalDataFragmentDirections.actionPersonalDataFragmentToAboutFragment())
+        }
+
+        binding.fabEditPersonalData.setOnClickListener {
+            findNavController().navigate(PersonalDataFragmentDirections.actionPersonalDataFragmentToEditPersonalDataFragment())
         }
     }
 
