@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/profile_navigation"
     app:startDestination="@id/personalDataFragment">
 
@@ -14,6 +15,9 @@
         <action
             android:id="@+id/action_personalDataFragment_to_changePasswordFragment"
             app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_personalDataFragment_to_editPersonalDataFragment"
+            app:destination="@id/editPersonalDataFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
@@ -23,4 +27,9 @@
         android:id="@+id/changePasswordFragment"
         android:name="com.example.feature.profile.ChangePasswordFragment"
         android:label="ChangePasswordFragment" />
+    <fragment
+        android:id="@+id/editPersonalDataFragment"
+        android:name="com.example.feature.profile.EditPersonalDataFragment"
+        android:label="fragment_edit_personal_data"
+        tools:layout="@layout/fragment_edit_personal_data" />
 </navigation>

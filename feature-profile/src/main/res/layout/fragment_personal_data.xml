@@ -6,8 +6,104 @@
     android:layout_height="match_parent"
     tools:context=".PersonalDataFragment">
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+
+        <com.example.core_util.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NISN"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fab_edit_personal_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
