@@ -7,16 +7,13 @@ import com.example.core_resource.components.base.BaseFragment
 import com.example.feature.profile.databinding.FragmentPersonalDataBinding
 
 class PersonalDataFragment : BaseFragment<FragmentPersonalDataBinding>(
-    FragmentPersonalDataBinding::inflate,
-    R.string.app_name
+    FragmentPersonalDataBinding::inflate
 ), ModuleNavigator {
 
     private val status by lazy { (activity as ProfileActivity).status }
 
     override fun initView() {
-        Log.d("dfdf", "statusnya $status")
         if (status == "Password") {
-            Log.d("dfdf", "jalankan")
             findNavController().navigate(PersonalDataFragmentDirections.actionPersonalDataFragmentToChangePasswordFragment())
         } else if (status == "About") {
             findNavController().navigate(PersonalDataFragmentDirections.actionPersonalDataFragmentToAboutFragment())

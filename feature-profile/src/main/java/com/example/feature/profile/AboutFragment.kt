@@ -1,26 +1,14 @@
 package com.example.feature.profile
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
-import androidx.activity.addCallback
+import com.example.core_navigation.ModuleNavigator
+import com.example.core_resource.components.base.BaseFragment
+import com.example.feature.profile.databinding.FragmentAboutBinding
 
-class AboutFragment : Fragment() {
+class AboutFragment : BaseFragment<FragmentAboutBinding>(FragmentAboutBinding::inflate),
+    ModuleNavigator {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_about, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun initView() {
         requireActivity().onBackPressedDispatcher.addCallback(
             requireActivity(),
             object : OnBackPressedCallback(true) {
@@ -29,5 +17,9 @@ class AboutFragment : Fragment() {
                 }
             }
         )
+    }
+
+    override fun initListener() {
+
     }
 }

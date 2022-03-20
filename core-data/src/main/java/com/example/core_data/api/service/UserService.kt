@@ -14,9 +14,7 @@ interface UserService {
 
     companion object {
         //region API Path
-
         const val Login = "login"
-
         //endregion
     }
 
