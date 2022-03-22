@@ -14,7 +14,7 @@ data class UserEntity(
     val level: String,
     val lastLogin: String,
     val loginRemark: String = "",
-    val isCurrent: Boolean = false,
+    val isCurrent: Boolean,
     )
 
 typealias UserEntities = List<UserEntity>
@@ -23,7 +23,7 @@ typealias UserEntities = List<UserEntity>
 
 internal fun UserEntity.toDomain() =
     User(
-       idUser = idUser, username = username, nama = nama, level = level, lastLogin = lastLogin, loginRemark = loginRemark
+       idUser = idUser, username = username, nama = nama, level = level, lastLogin = lastLogin, loginRemark = loginRemark, isCurrent = isCurrent
     )
 
 internal fun UserEntities.toDomain() =
@@ -33,7 +33,7 @@ internal fun UserEntities.toDomain() =
 //region Convert from Domain to Entity
 
 internal fun User.toEntity() =
-    UserEntity(idUser = idUser, username = username, nama = nama, level = level, lastLogin = lastLogin, loginRemark = loginRemark)
+    UserEntity(idUser = idUser, username = username, nama = nama, level = level, lastLogin = lastLogin, loginRemark = loginRemark, isCurrent = isCurrent)
 
 internal fun Users.toEntity() =
     map { it.toEntity() }

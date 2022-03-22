@@ -56,6 +56,8 @@ ext.versions = [
         recycler_view_divider: '3.5.0',
         glide                : '4.12.0',
         circle_image_view    : '3.1.0',
+
+        coil                 : '1.1.1',
 ]
 
 ext.plugin = [
@@ -158,6 +160,8 @@ ext.deps = [
                 "com.github.bumptech.glide:glide:$versions.glide",
                 "com.github.bumptech.glide:compiler:$versions.glide"
         ],
+
+        coil              : "io.coil-kt:coil:$versions.coil",
 
         circle_image_view : "de.hdodenhof:circleimageview:$versions.circle_image_view"
 ]

@@ -1,44 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#053F5E</color>
-    <color name="colorAccent">#FFD700</color>
-    <color name="colorBackgroundPrimary">#F7F7F7</color>
-    <color name="colorBackgroundSecondary">#FFFFFF</color>
     <color name="colorBackgroundAlternative">#f5f5f5</color>
-    <color name="colorDivider">#F5F5F5</color>
-    <color name="colorTextAccent">#053F5E</color>
-    <color name="colorTextPrimary">#101010</color>
-    <color name="colorTextSecondary">#999999</color>
-    <color name="colorTextPressed">#000000</color>
-    <color name="colorTextDisabled">#C9505050</color>
-    <color name="colorInputPrimary">#FFFFFF</color>
-    <color name="colorInputPrimaryPressed">#F3F3F3</color>
-    <color name="colorInputPrimaryFocused">#F0F0F0</color>
-    <color name="colorInputPrimaryDisabled">#6D6D6D</color>
     <color name="colorInputSecondary">#F7F7F7</color>
     <color name="colorInputSecondaryPressed">#F3F3F3</color>
     <color name="colorInputSecondaryFocused">#D5D5D5</color>
-    <color name="colorInputSecondaryDisabled">#6D6D6D</color>
     <color name="colorInputAccent">#053F5E</color>
     <color name="colorInputAccentPressed">#05334B</color>
     <color name="colorInputAccentFocused">#094B6E</color>
     <color name="colorInputAccentDisabled">#6D6D6D</color>
-    <color name="colorTextLight">#FFF</color>
-    <color name="colorTextLightHint">#E5E5E5</color>
-    <color name="colorButtonTextPrimary">#FFF</color>
     <color name="colorButtonTextPrimaryPressed">#B3B3B3</color>
     <color name="colorButtonTextPrimaryDisabled">#A17A7A7A</color>
     <color name="colorButtonPrimary">#053F5E</color>
     <color name="colorButtonPrimaryPressed">#05334B</color>
-    <color name="colorTransparent">#00000000</color>
     <color name="colorIndicator">#95FFFFFF</color>
     <color name="colorIndicatorActive">#FFF</color>
     <color name="colorButtonAccent">#FFD700</color>
     <color name="colorButtonAccentPressed">#F0BE08</color>
-    <color name="colorBlack">#000</color>
-    <color name="colorPlaceHolder">#B6B6B6</color>
     <color name="colorPrimaryDarkTransparent">#90000000</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlackGrade">#222F3E</color>
+    <color name="colorRed">#e21100</color>
+    <color name="colorDarkRed">#AF1004</color>
+    <color name="colorRegular">#555555</color>
+    <color name="purple_700">#FF6200EE</color>
 
     <color name="colorMedsOral">#0076B3</color>
     <color name="colorGrassyGreen">#29af00</color>
@@ -109,6 +97,30 @@
     <color name="grey_95">#1a1a1a</color>
     <color name="grey_100_">#0d0d0d</color>
 
+    <color name="colorBackgroundPrimary">#F7F7F7</color>
+
+    <color name="colorPlaceHolder">#B6B6B6</color>
+
+    <color name="colorBackgroundSecondary">#FFFFFF</color>
+    <color name="colorDivider">#F5F5F5</color>
+
+    <color name="colorTransparent">#00000000</color>
+
+    <color name="colorButtonTextPrimary">#FFF</color>
+
+    <color name="colorInputSecondaryDisabled">#6D6D6D</color>
+
+    <color name="colorTextAccent">#053F5E</color>
+    <color name="colorTextPrimary">#101010</color>
+    <color name="colorTextSecondary">#999999</color>
+    <color name="colorTextPressed">#000000</color>
+    <color name="colorTextDisabled">#C9505050</color>
+
+    <color name="colorInputPrimary">#FFFFFF</color>
+    <color name="colorInputPrimaryPressed">#F3F3F3</color>
+    <color name="colorInputPrimaryFocused">#F0F0F0</color>
+    <color name="colorInputPrimaryDisabled">#6D6D6D</color>
+
     <color name="primary">#1C2E46</color>
     <color name="primary_dark">#142232</color>
     <color name="primary_text">#212121</color>
@@ -120,9 +132,6 @@
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="colorBlackGrade">#222F3E</color>
-    <color name="colorRed">#e21100</color>
-    <color name="colorDarkRed">#AF1004</color>
-    <color name="colorRegular">#555555</color>
-    <color name="purple_700">#FF6200EE</color>
+    <color name="colorTextLight">#FFF</color>
+    <color name="colorTextLightHint">#E5E5E5</color>
 </resources>

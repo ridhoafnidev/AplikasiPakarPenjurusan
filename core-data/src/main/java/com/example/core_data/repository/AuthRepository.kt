@@ -32,14 +32,14 @@ class AuthRepository internal constructor(
         ?.toDomain()
 
     fun login(
-        email: String,
+        username: String,
         password: String
     ): Flow<ApiEvent<User>> = flow {
         runCatching {
             val apiId = UserService.Login
 
             val apiResult = apiExecutor.callApi(apiId) {
-                authService.login(email, password)
+                authService.login(username, password)
             }
 
             val apiEvent: ApiEvent<User> = when (apiResult) {

@@ -11,4 +11,7 @@ dependencies {
     implementation deps.material
 
     implementation deps.core
+    implementation deps.progress_button
+    implementation deps.keyboard_watcher
+    implementation deps.coil
 }

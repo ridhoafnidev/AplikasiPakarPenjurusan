@@ -18,6 +18,9 @@ class AuthViewModel(
         emit(authRepository.getAuth())
     }
 
+    var username = ""
+    var password = ""
+
     private val _loginRequest = MutableLiveData<ApiEvent<User?>>()
     val loginRequest: LiveData<ApiEvent<User?>> = _loginRequest
 
@@ -30,9 +33,9 @@ class AuthViewModel(
     private val _sendMessageRequest = MutableLiveData<ApiEvent<String?>>()
     val sendMessageRequest: LiveData<ApiEvent<String?>> = _sendMessageRequest
 
-    fun login(email: String, password: String) {
+    fun login(username: String, password: String) {
         viewModelScope.launch {
-            authRepository.login(email, password)
+            authRepository.login(username, password)
                 .onStart { emit(ApiEvent.OnProgress()) }
                 .collect { _loginRequest.value = it }
         }

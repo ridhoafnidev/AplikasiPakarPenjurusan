@@ -2,6 +2,7 @@ package com.example.feature.auth.splash
 
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import com.example.core_data.domain.isGuru
 import com.example.core_navigation.ModuleNavigator
 import com.example.core_resource.components.base.BaseFragment
@@ -24,14 +25,13 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
     private fun observeAuth() {
         viewModel.auth.observe(viewLifecycleOwner){ data ->
             data?.let {
+                Log.d("sdsdsd", "cureesdsd ${data.isCurrent}")
                 if (data.isCurrent){
                     data.let {
                         if (it.isGuru) {
                             //observeCurrentSkill(it.teknisiId)
                         }
-                        else {
-                            navigateToHomeActivity(true)
-                        }
+                        navigateToHomeActivity(true)
                     }
                 }
             } ?: goToLogin()

@@ -1,15 +1,18 @@
 package com.example.core_data.api.service
 
 import com.example.core_data.api.response.LoginResponse
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface UserService {
 
+    @FormUrlEncoded
     @POST(Login)
     suspend fun login(
-        @Path("username") username: String,
-        @Path("password") password: String
+        @Field("username") username: String,
+        @Field("password") password: String
     ) : LoginResponse
 
     companion object {
@@ -17,5 +20,4 @@ interface UserService {
         const val Login = "login"
         //endregion
     }
-
 }
