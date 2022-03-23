@@ -1,8 +1,9 @@
 package com.example.core_data.repository
 
-import com.example.core_data.api.ApiEvent
+import com.example.core_data.api.*
 import com.example.core_data.api.ApiExecutor
 import com.example.core_data.api.ApiResult
+import com.example.core_data.api.response.CommonResponse
 import com.example.core_data.api.response.toDomain
 import com.example.core_data.api.service.AuthService
 import com.example.core_data.api.service.UserService
@@ -55,6 +56,37 @@ class AuthRepository internal constructor(
             emit(apiEvent)
         }.onFailure {
             emit(it.toFailedEvent<User>())
+        }
+    }
+
+    fun changePassword(
+        idUser: Int,
+        oldPassword: String,
+        newPassword: String,
+    ): Flow<ApiEvent<CommonResponse?>> = flow {
+        runCatching {
+            val apiId = UserService.ChangePassword
+
+            val apiResult = apiExecutor.callApi(apiId) {
+                authService.changePassword(idUser, oldPassword, newPassword)
+            }
+
+            val apiEvent: ApiEvent<CommonResponse?> = when (apiResult) {
+                is ApiResult.OnFailed -> apiResult.exception.toFailedEvent()
+                is ApiResult.OnSuccess -> with(apiResult.response) {
+                    when {
+                        message.equals(ApiException.FailedResponse.STATUS_FAILED, true) -> {
+                            ApiException.FailedResponse(message).let {
+                                it.toFailedEvent()
+                            }
+                        }
+                        else -> ApiEvent.OnSuccess.fromServer(this)
+                    }
+                }
+            }
+            emit(apiEvent)
+        }.onFailure {
+            emit(it.toFailedEvent<CommonResponse>())
         }
     }
 

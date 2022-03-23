@@ -3,12 +3,12 @@ package com.example.feature.auth
 
 import androidx.lifecycle.*
 import com.example.core_data.api.ApiEvent
+import com.example.core_data.api.response.CommonResponse
 import com.example.core_data.domain.User
 import com.example.core_data.repository.AuthRepository
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.collect
-
 
 class AuthViewModel(
     private val authRepository: AuthRepository
@@ -24,20 +24,30 @@ class AuthViewModel(
     private val _loginRequest = MutableLiveData<ApiEvent<User?>>()
     val loginRequest: LiveData<ApiEvent<User?>> = _loginRequest
 
-    // private val _registerServiceResponse = MutableLiveData<ApiEvent<CommonResponse?>>()
-    // val registerServiceResponse: LiveData<ApiEvent<CommonResponse?>> = _registerServiceResponse
-
-    private val _registerServiceSuccess = MutableLiveData<Boolean>()
-    val registerServiceSuccess: LiveData<Boolean> = _registerServiceSuccess
-
-    private val _sendMessageRequest = MutableLiveData<ApiEvent<String?>>()
-    val sendMessageRequest: LiveData<ApiEvent<String?>> = _sendMessageRequest
+    private val _isChangePassword = MutableLiveData<ApiEvent<CommonResponse?>>()
+    val isChangePassword: LiveData<ApiEvent<CommonResponse?>> = _isChangePassword
 
     fun login(username: String, password: String) {
         viewModelScope.launch {
             authRepository.login(username, password)
                 .onStart { emit(ApiEvent.OnProgress()) }
                 .collect { _loginRequest.value = it }
+        }
+    }
+
+    fun changePassword(
+        idUser: Int,
+        oldPassword: String,
+        newPassword: String,
+    ) {
+        viewModelScope.launch {
+            authRepository.changePassword(idUser, oldPassword, newPassword)
+                .onStart {
+                    emit(ApiEvent.OnProgress())
+                }
+                .collect {
+                    _isChangePassword.value = it
+                }
         }
     }
 
