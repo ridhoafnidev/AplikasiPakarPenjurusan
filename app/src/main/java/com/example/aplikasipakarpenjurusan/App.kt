@@ -3,6 +3,7 @@ package com.example.aplikasipakarpenjurusan
 import android.app.Application
 import com.example.core_data.dataModule
 import com.example.feature.auth.authModule
+import com.example.subfeature.pakar.pakarModule
 import io.armcha.debugBanner.Banner
 import io.armcha.debugBanner.BuildConfig
 import io.armcha.debugBanner.DebugBanner
@@ -15,13 +16,13 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        when (BuildConfig.BUILD_TYPE) {
-            "debug" -> "DEV"
-            else -> ""
-        }.let {
-            val banner = Banner(bannerText = it, bannerColorRes = R.color.colorEnvBanner)
-            DebugBanner.init(this, banner)
-        }
+//        when (BuildConfig.BUILD_TYPE) {
+//            "debug" -> "DEV"
+//            else -> ""
+//        }.let {
+//            val banner = Banner(bannerText = it, bannerColorRes = R.color.colorEnvBanner)
+//            DebugBanner.init(this, banner)
+//        }
 
 
         when(BuildConfig.BUILD_TYPE) {
@@ -33,7 +34,8 @@ class App : Application() {
             modules(
                 listOf(
                     dataModule,
-                    authModule
+                    authModule,
+                    pakarModule
                 )
             )
         }
