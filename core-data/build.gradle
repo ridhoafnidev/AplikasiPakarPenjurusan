@@ -7,7 +7,7 @@ apply(from: "../shared_dependencies.gradle")
 
 android {
     String schemaDatabaseVersion
-    String BASE_URL = "\"http://192.168.100.28/digi-service/public/api/\""
+    String BASE_URL = "\"http://192.168.100.30/api-penjurusan/public/\""
     String COOKIE_NAME = "\"aplikasi_pakar_penjurusan_cookies\""
     String DB_NAME = "\"aplikasi_pakar_penjurusan\""
 

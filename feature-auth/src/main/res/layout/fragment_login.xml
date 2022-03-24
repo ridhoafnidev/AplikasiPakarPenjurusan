@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="@dimen/medium">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/medium">
 
         <ImageView
             android:id="@+id/iv_logo"
@@ -36,22 +36,22 @@
             app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_email"
+            android:id="@+id/til_username"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/match_constraint"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium"
-            android:hint="@string/nip_nisn"
+            android:hint="@string/username"
             app:boxStrokeColor="@color/colorBlack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_sign_in_to_continue">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_email"
+                android:id="@+id/edt_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
+                android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -64,7 +64,7 @@
             app:boxStrokeColor="@color/colorBlack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/til_email"
+            app:layout_constraintTop_toBottomOf="@+id/til_username"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -103,7 +103,7 @@
             app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
         <com.example.core_util.PakarButton
-            android:id="@+id/tv_pelanggan"
+            android:id="@+id/tv_guru_bk"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -127,10 +127,10 @@
             android:textSize="@dimen/medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_pelanggan" />
+            app:layout_constraintTop_toBottomOf="@id/tv_guru_bk" />
 
         <com.example.core_util.PakarButton
-            android:id="@+id/tv_teknisi"
+            android:id="@+id/tv_murid"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

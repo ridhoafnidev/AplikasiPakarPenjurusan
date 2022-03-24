@@ -5,14 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.core_navigation.ModuleNavigator
+import com.example.core_resource.components.base.BaseFragment
+import com.example.feature.profile.databinding.FragmentChangePasswordBinding
+import com.example.feature.profile.databinding.FragmentEditPersonalDataBinding
 
-class EditPersonalDataFragment : Fragment() {
+class EditPersonalDataFragment : BaseFragment<FragmentEditPersonalDataBinding>(
+    FragmentEditPersonalDataBinding::inflate),
+    ModuleNavigator {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_edit_personal_data, container, false)
+    override fun initView() {
+        TODO("Not yet implemented")
+    }
+
+    override fun initListener() {
+        TODO("Not yet implemented")
     }
 }

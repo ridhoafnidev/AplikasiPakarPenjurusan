@@ -25,6 +25,7 @@ ext.versions = [
         //region Common Dependencies
         coroutine            : '1.4.3',
         koin                 : '2.1.5',
+        lifecycle            : '2.4.0-alpha01',
         //endregion
 
         room                 : '2.3.0-rc01',
@@ -55,6 +56,8 @@ ext.versions = [
         recycler_view_divider: '3.5.0',
         glide                : '4.12.0',
         circle_image_view    : '3.1.0',
+
+        coil                 : '1.1.1',
 ]
 
 ext.plugin = [
@@ -89,6 +92,16 @@ ext.deps = [
                 "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutine",
                 "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutine"
         ],
+
+        lifecycle         : [
+                "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle",
+                "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle",
+                "androidx.lifecycle:lifecycle-viewmodel-savedstate:$versions.lifecycle",
+                "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle",
+                "androidx.lifecycle:lifecycle-service:$versions.lifecycle",
+                "androidx.lifecycle:lifecycle-process:$versions.lifecycle"
+        ],
+
         koin              : [
                 "org.koin:koin-core:$versions.koin",
                 "org.koin:koin-androidx-scope:$versions.koin",
@@ -147,6 +160,8 @@ ext.deps = [
                 "com.github.bumptech.glide:glide:$versions.glide",
                 "com.github.bumptech.glide:compiler:$versions.glide"
         ],
+
+        coil              : "io.coil-kt:coil:$versions.coil",
 
         circle_image_view : "de.hdodenhof:circleimageview:$versions.circle_image_view"
 ]

@@ -2,13 +2,6 @@
 <resources>
 
     <!--General Dimension-->
-    <dimen name="activity_horizontal_margin">18dp</dimen>
-    <dimen name="activity_horizontal_margin_small">9dp</dimen>
-    <dimen name="activity_horizontal_margin_big">36dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin_small">8dp</dimen>
-    <dimen name="activity_vertical_margin_big">32dp</dimen>
-
     <dimen name="empty">0dp</dimen>
     <dimen name="micro">0.5dp</dimen>
     <dimen name="very_tiny">1dp</dimen>
@@ -20,13 +13,119 @@
     <dimen name="medium">16dp</dimen>
     <dimen name="medium_fit">24dp</dimen>
     <dimen name="large">32dp</dimen>
+    <dimen name="large_mid">40dp</dimen>
     <dimen name="large_fit">48dp</dimen>
     <dimen name="very_large">64dp</dimen>
+    <dimen name="very_large_plus">78dp</dimen>
     <dimen name="very_large_fit">96dp</dimen>
+    <dimen name="very_large_fit_plus">110dp</dimen>
     <dimen name="huge">128dp</dimen>
     <dimen name="huge_plus">144dp</dimen>
+    <dimen name="huge_fit_min">175dp</dimen>
     <dimen name="huge_fit">192dp</dimen>
+    <dimen name="huge_fit_pluss">208dp</dimen>
     <dimen name="very_huge">256dp</dimen>
+
+    <!--Text Size-->
+    <dimen name="text_very_small">12sp</dimen>
+    <dimen name="text_regular">15sp</dimen>
+    <dimen name="text_medium_fit">18sp</dimen>
+    <dimen name="text_large">20sp</dimen>
+    <dimen name="text_large_fit">22sp</dimen>
+    <dimen name="text_very_large">24sp</dimen>
+    <dimen name="text_huge_fit">28sp</dimen>
+    <dimen name="text_very_huge">30sp</dimen>
+
+    <dimen name="match_constraint">@dimen/empty</dimen>
+
+    <!-- Margin Collections -->
+    <dimen name="margin0x">0dp</dimen>
+    <dimen name="margin0_5x">2dp</dimen>
+    <dimen name="margin1x">4dp</dimen>
+    <dimen name="margin1_5x">6dp</dimen>
+    <dimen name="margin2x">8dp</dimen>
+    <dimen name="margin2_5x">10dp</dimen>
+    <dimen name="margin3x">12dp</dimen>
+    <dimen name="margin4x">16dp</dimen>
+    <dimen name="margin5x">20dp</dimen>
+    <dimen name="margin5_5x">22dp</dimen>
+    <dimen name="margin6x">24dp</dimen>
+    <dimen name="margin7x">28dp</dimen>
+    <dimen name="margin8x">32dp</dimen>
+    <dimen name="margin9x">36dp</dimen>
+    <dimen name="margin9_5x">38dp</dimen>
+    <dimen name="margin10x">40dp</dimen>
+    <dimen name="margin11x">44dp</dimen>
+    <dimen name="margin12x">48dp</dimen>
+    <dimen name="margin13x">52dp</dimen>
+    <dimen name="margin14x">56dp</dimen>
+    <dimen name="margin15x">60dp</dimen>
+    <dimen name="margin16x">64dp</dimen>
+    <dimen name="margin18x">72dp</dimen>
+    <dimen name="margin19x">76dp</dimen>
+    <dimen name="margin20x">80dp</dimen>
+
+    <!-- Icon -->
+    <dimen name="smallIconWidth">16dp</dimen>
+    <dimen name="largeIconWidth">40dp</dimen>
+    <dimen name="checkedIconWidth">20dp</dimen>
+    <dimen name="hourWidth">24dp</dimen>
+    <dimen name="countWidth">24dp</dimen>
+    <dimen name="dotWidthSmall">4dp</dimen>
+    <dimen name="dotWidth">8dp</dimen>
+    <dimen name="dotTitleCardWidth">16dp</dimen>
+    <dimen name="smallDotWidth">4dp</dimen>
+
+    <!-- Shape -->
+    <dimen name="buttonRadius">10dp</dimen>
+    <dimen name="buttonRadiusMedium">6dp</dimen>
+    <dimen name="cornerRadius1x">4dp</dimen>
+    <dimen name="primaryButtonHeight">48dp</dimen>
+    <dimen name="width60">60dp</dimen>
+    <dimen name="height1">1dp</dimen>
+
+
+    <dimen name="radius">20dp</dimen>
+    <dimen name="radiusSmall">6dp</dimen>
+    <dimen name="radiusMedium">8dp</dimen>
+    <dimen name="radiusCircle">200dp</dimen>
+    <dimen name="radiusInput">10dp</dimen>
+
+    <!-- Card -->
+    <dimen name="cardPaddingTop">25dp</dimen>
+    <dimen name="cardPaddingLeft">16dp</dimen>
+    <dimen name="cardPaddingRight">16dp</dimen>
+    <dimen name="cardPaddingBottom">16dp</dimen>
+    <dimen name="cardButtonHeight">60dp</dimen>
+    <dimen name="cardEditTextHeight">80dp</dimen>
+
+    <dimen name="editTextHeight">40dp</dimen>
+    <dimen name="editTextHeight2x">80dp</dimen>
+    <dimen name="paddingEditText">10dp</dimen>
+
+    <!-- Button -->
+    <dimen name="buttonNavigationBottomHeight">44dp</dimen>
+    <dimen name="buttonImportantNotesHeight">40dp</dimen>
+
+    <dimen name="profilePicture">44dp</dimen>
+    <dimen name="profilePictureMedium">55dp</dimen>
+    <dimen name="profilePictureBig">65dp</dimen>
+
+    <dimen name="divider">0.8dp</dimen>
+
+    <dimen name="input_height">40dp</dimen>
+    <dimen name="input_height_big">50dp</dimen>
+
+    <dimen name="text_super">44sp</dimen>
+    <dimen name="text_special">24sp</dimen>
+    <dimen name="text_huge">22sp</dimen>
+    <dimen name="text_extra">20sp</dimen>
+    <dimen name="text_big">18sp</dimen>
+    <dimen name="text_medium">16sp</dimen>
+    <dimen name="text_normal">14sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_tiny">10sp</dimen>
+    <dimen name="text_extra_tiny">8sp</dimen>
 
     <dimen name="component_tiny">2dp</dimen>
     <dimen name="component_small">4dp</dimen>
@@ -38,39 +137,9 @@
     <dimen name="component_huge">26dp</dimen>
     <dimen name="component_special">28dp</dimen>
     <dimen name="component_super">32dp</dimen>
-
-    <dimen name="divider">0.8dp</dimen>
-    <dimen name="divider_bold">1dp</dimen>
-    <dimen name="radius">20dp</dimen>
-    <dimen name="radius_small">6dp</dimen>
-    <dimen name="radius_circle">200dp</dimen>
-    <dimen name="radius_input">10dp</dimen>
-
-    <dimen name="tab">55dp</dimen>
-    <dimen name="input_height">40dp</dimen>
-    <dimen name="input_height_big">50dp</dimen>
-    <dimen name="profile_picture">44dp</dimen>
-    <dimen name="profile_picture_medium">55dp</dimen>
-    <dimen name="profile_picture_big">65dp</dimen>
-    <dimen name="input_small">30dp</dimen>
-    <dimen name="slider">150dp</dimen>
-    <dimen name="slider_caption_frame">55dp</dimen>
-    <dimen name="elevation">10dp</dimen>
-
-    <!--Text Size-->
-    <dimen name="text_tiny">10sp</dimen>
-    <dimen name="text_very_small">12sp</dimen>
-    <dimen name="text_normal">14sp</dimen>
-    <dimen name="text_medium">16sp</dimen>
-    <dimen name="text_medium_fit">18sp</dimen>
-    <dimen name="text_large">20sp</dimen>
-    <dimen name="text_large_fit">22sp</dimen>
-    <dimen name="text_very_large">24sp</dimen>
-    <dimen name="text_huge">26sp</dimen>
-    <dimen name="text_huge_fit">28sp</dimen>
-    <dimen name="text_very_huge">30sp</dimen>
-
-    <dimen name="match_constraint">@dimen/empty</dimen>
-    <dimen name="calendar">300dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin_small">8dp</dimen>
+    <dimen name="activity_vertical_margin_small">8dp</dimen>
 
 </resources>

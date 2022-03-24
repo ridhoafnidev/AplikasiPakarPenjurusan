@@ -3,10 +3,12 @@ package com.example.core_data
 import android.app.Application
 import androidx.room.Room
 import com.chuckerteam.chucker.api.ChuckerInterceptor
+import com.example.core_data.BuildConfig.BASE_URL
 import com.example.core_data.api.ApiExecutor
 import com.example.core_data.api.apiClient
 import com.example.core_data.api.httpClient
 import com.example.core_data.api.service.AuthService
+import com.example.core_data.api.service.UserService
 import com.example.core_data.repository.AuthRepository
 import com.squareup.moshi.Moshi
 import kotlinx.coroutines.Dispatchers
@@ -40,20 +42,17 @@ val Application.dataModule
         single { Moshi.Builder().build() }
         single { ApiExecutor(get()) }
 
-//        single { apiClient<AuthService>(BASE_URL, get()) }
+        single { apiClient<AuthService>(BASE_URL, get()) }
+        single { apiClient<UserService>(BASE_URL, get()) }
 
-//        single {
-//            Room.databaseBuilder(get(), CoreDatabase::class.java, "aplikasi_pakar_db")
-//                .fallbackToDestructiveMigration()
-//                .build()
-//        }
-//        single { get<CoreDatabase>().authDao() }
-//        single { get<CoreDatabase>().technicianDao() }
-//
-//        single { AuthRepository(get(), get(), get(), get(), get()) }
-//        single { TechnicianRepository(get(), get(), get(), get()) }
-//        single { StoreRepository(get(), get()) }
-//        single { ServiceHandphoneRepository(get(), get()) }
+        single {
+            Room.databaseBuilder(get(), CoreDatabase::class.java, "aplikasi_pakar_db")
+                .fallbackToDestructiveMigration()
+                .build()
+        }
+        single { get<CoreDatabase>().userDao() }
+
+        single { AuthRepository(get(), get(), get(), get()) }
     }
 
 private const val TIMEOUT = 30L
@@ -61,11 +60,11 @@ private const val TIMEOUT = 30L
 /**
  * Clear local database
  */
-//suspend fun Koin.clearAppData() {
-//    withContext(Dispatchers.IO) {
-//        getOrNull<CoreDatabase>()?.clearAllTables()
-//    }
-//}
+suspend fun Koin.clearAppData() {
+    withContext(Dispatchers.IO) {
+        getOrNull<CoreDatabase>()?.clearAllTables()
+    }
+}
 
 fun CookieHandler.removeAll() {
     (this as CookieManager).cookieStore.removeAll()
