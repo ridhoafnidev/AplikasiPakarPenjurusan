@@ -5,6 +5,8 @@ import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import com.afollestad.vvalidator.form
 import com.example.core_data.api.ApiEvent
+import com.example.core_data.domain.isGuru
+import com.example.core_data.domain.isSiswa
 import com.example.core_navigation.ModuleNavigator
 import com.example.core_resource.components.base.BaseFragment
 import com.example.core_util.bindLifecycle
@@ -45,8 +47,55 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                     Timber.d("progress ${login.currentResult}")
                 }
                 is ApiEvent.OnSuccess -> {
-                    hideProgress(true)
-                    navigateToHomeActivity(finishCurrent = true)
+                    login.getData()?.let {
+                        if (it.isGuru) {
+                            viewModel.getGuruById(it.idUser.toInt())
+
+                            viewModel.guruRequest.observe(viewLifecycleOwner, { guru ->
+                                when (guru) {
+                                    is ApiEvent.OnProgress -> {
+                                        showProgress()
+                                        Timber.d("progress ${guru.currentResult}")
+                                    }
+                                    is ApiEvent.OnSuccess -> {
+                                        hideProgress(true)
+                                        navigateToHomeActivity(finishCurrent = true)
+                                    }
+                                    is ApiEvent.OnFailed -> {
+                                        hideProgress(true)
+                                        Snackbar.make(
+                                            requireContext(), requireView(),
+                                            guru.getException().toString(), Snackbar.LENGTH_SHORT
+                                        ).show()
+                                        Log.d("sdsdsd", "cureesdsd ${guru.getException().toString()}")
+                                    }
+                                }
+                            })
+                        } else if (it.isSiswa) {
+                            viewModel.getSiswaById(it.idUser.toInt())
+
+                            viewModel.siswaRequest.observe(viewLifecycleOwner, { siswa ->
+                                when (siswa) {
+                                    is ApiEvent.OnProgress -> {
+                                        showProgress()
+                                        Timber.d("progress ${siswa.currentResult}")
+                                    }
+                                    is ApiEvent.OnSuccess -> {
+                                        hideProgress(true)
+                                        navigateToHomeActivity(finishCurrent = true)
+                                    }
+                                    is ApiEvent.OnFailed -> {
+                                        hideProgress(true)
+                                        Snackbar.make(
+                                            requireContext(), requireView(),
+                                            siswa.getException().toString(), Snackbar.LENGTH_SHORT
+                                        ).show()
+                                        Log.d("sdsdsd", "cureesdsd ${siswa.getException().toString()}")
+                                    }
+                                }
+                            })
+                        }
+                    }
                 }
                 is ApiEvent.OnFailed -> {
                     hideProgress(true)
@@ -54,6 +103,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                         requireContext(), requireView(),
                         login.getException().toString(), Snackbar.LENGTH_SHORT
                     ).show()
+                    Log.d("sdsdsd", "cureesdsd ${login.getException().toString()}")
 
                 }
             }

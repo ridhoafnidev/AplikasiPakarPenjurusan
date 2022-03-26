@@ -51,8 +51,10 @@ val Application.dataModule
                 .build()
         }
         single { get<CoreDatabase>().userDao() }
+        single { get<CoreDatabase>().guruDao() }
+        single { get<CoreDatabase>().siswaDao() }
 
-        single { AuthRepository(get(), get(), get(), get()) }
+        single { AuthRepository(get(), get(), get(), get(), get(), get()) }
     }
 
 private const val TIMEOUT = 30L

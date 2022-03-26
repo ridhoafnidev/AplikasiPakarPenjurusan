@@ -7,5 +7,7 @@ plugins {
 apply(from:"../shared_dependencies_feature.gradle")
 
 dependencies {
+    implementation project(':feature-auth')
+
     implementation deps.validator
 }
