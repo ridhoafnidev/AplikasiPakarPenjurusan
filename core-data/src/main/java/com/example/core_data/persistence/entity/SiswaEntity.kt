@@ -30,7 +30,9 @@ data class SiswaEntity(
     val pekerjaanAyah: String,
     val namaIbu: String,
     val umurIbu: String,
-    val pendidikanIbu: String,
+    val agamaIbu: String,
+    val pendidikanTerakhirIbu: String,
+    val pekerjaanIbu: String,
     val tempatLahir: String
 )
 
@@ -60,7 +62,9 @@ internal fun SiswaEntity.toDomain() =
         pekerjaanAyah = pekerjaanAyah,
         namaIbu = namaIbu,
         umurIbu = umurIbu,
-        pendidikanIbu = pendidikanIbu,
+        agamaIbu = agamaIbu,
+        pendidikanTerakhirIbu = pendidikanTerakhirIbu,
+        pekerjaanIbu = pekerjaanIbu,
         tempatLahir = tempatLahir
     )
 
@@ -91,7 +95,9 @@ internal fun Siswa.toEntity() =
         pekerjaanAyah = pekerjaanAyah,
         namaIbu = namaIbu,
         umurIbu = umurIbu,
-        pendidikanIbu = pendidikanIbu,
+        agamaIbu = agamaIbu,
+        pendidikanTerakhirIbu = pendidikanTerakhirIbu,
+        pekerjaanIbu = pekerjaanIbu,
         tempatLahir = tempatLahir
     )
 

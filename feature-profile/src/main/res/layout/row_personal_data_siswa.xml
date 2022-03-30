@@ -316,18 +316,52 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium"
-            android:text="@string/pendidikan_ibu"
+            android:text="@string/agama_ibu"
             android:textColor="@color/black"
             android:textSize="@dimen/text_medium"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_pendidikan_ibu"
+            android:id="@+id/tv_agama_ibu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:textSize="@dimen/text_normal"
+            tools:text="Agama Ibu" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium"
+            android:text="@string/pendidikan_terakhir_ibu"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_pendidikan_terakhir_ibu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:textSize="@dimen/text_normal"
+            tools:text="Pendidikan Terakhir Ibu" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium"
+            android:text="@string/pekerjaan_ibu"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_pekerjaan_ibu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small"
             android:layout_marginBottom="@dimen/medium_fit"
             android:textSize="@dimen/text_normal"
-            tools:text="Pendidikan Ibu" />
+            tools:text="Pekerjaan Ayah" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>

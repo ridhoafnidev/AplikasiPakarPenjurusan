@@ -11,7 +11,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_nama"
+            android:id="@+id/til_nama_siswa"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
             app:boxStrokeColor="@color/colorBlack">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_nama"
+                android:id="@+id/edt_nama_siswa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
@@ -42,7 +42,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_alamat"
+            android:id="@+id/til_alamat_siswa"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,27 +51,21 @@
             app:boxStrokeColor="@color/colorBlack">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_alamat"
+                android:id="@+id/edt_alamat_siswa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_kelas"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            android:id="@+id/spinner_kelas"
+            style="@style/spinnerStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small"
-            android:hint="@string/kelas"
-            app:boxStrokeColor="@color/colorBlack">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_kelas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:spinnerMode="dropdown"
+            app:smsp_hint="@string/kelas"
+            app:smsp_isOutlined="true" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_tempat_lahir"
@@ -95,6 +89,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:hint="@string/tanggal_lahir"
             app:boxStrokeColor="@color/colorBlack">
 
@@ -102,24 +98,20 @@
                 android:id="@+id/edt_tanggal_lahir"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_agama"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            android:id="@+id/spinner_agama"
+            style="@style/spinnerStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small"
-            android:hint="@string/agama"
-            app:boxStrokeColor="@color/colorBlack">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_agama"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:spinnerMode="dropdown"
+            app:smsp_hint="@string/agama"
+            app:smsp_isOutlined="true" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_asal_sekolah"
@@ -185,21 +177,25 @@
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_pendidikan_terakhir_ayah"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            android:id="@+id/spinner_agama_ayah"
+            style="@style/spinnerStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small"
-            android:hint="@string/pendidikan_terakhir_ayah"
-            app:boxStrokeColor="@color/colorBlack">
+            android:spinnerMode="dropdown"
+            app:smsp_hint="@string/agama_ayah"
+            app:smsp_isOutlined="true" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_pendidikan_terakhir_ayah"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            android:id="@+id/spinner_pendidikan_terakhir_ayah"
+            style="@style/spinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:spinnerMode="dropdown"
+            app:smsp_hint="@string/pendidikan_terakhir_ayah"
+            app:smsp_isOutlined="true" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_pekerjaan_ayah"
@@ -249,51 +245,52 @@
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            android:id="@+id/spinner_agama_ibu"
+            style="@style/spinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:spinnerMode="dropdown"
+            app:smsp_hint="@string/agama_ibu"
+            app:smsp_isOutlined="true" />
+
+        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            android:id="@+id/spinner_pendidikan_terakhir_ibu"
+            style="@style/spinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:spinnerMode="dropdown"
+            app:smsp_hint="@string/pendidikan_terakhir_ibu"
+            app:smsp_isOutlined="true" />
+
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_pendidikan_ibu"
+            android:id="@+id/til_pekerjaan_ibu"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small"
-            android:hint="@string/pendidikan_ibu"
+            android:hint="@string/pekerjaan_ibu"
             app:boxStrokeColor="@color/colorBlack">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_pendidikan_ibu"
+                android:id="@+id/edt_pekerjaan_ibu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_email"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/small"
-            android:hint="@string/email"
-            app:boxStrokeColor="@color/colorBlack">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_submit"
-            style="@style/ThemeOverlay.PakarPenjurusan.Button.Secondary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/medium_fit"
-            android:enabled="false"
-            android:paddingVertical="@dimen/small_fit"
-            android:text="@string/submit"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/til_password"
-            tools:ignore="TooManyViews" />
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/btn_submit"-->
+<!--            style="@style/ThemeOverlay.PakarPenjurusan.Button.Secondary"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/medium_fit"-->
+<!--            android:enabled="false"-->
+<!--            android:paddingVertical="@dimen/small_fit"-->
+<!--            android:text="@string/submit"-->
+<!--            android:textColor="@color/white"-->
+<!--            tools:ignore="TooManyViews" />-->
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>

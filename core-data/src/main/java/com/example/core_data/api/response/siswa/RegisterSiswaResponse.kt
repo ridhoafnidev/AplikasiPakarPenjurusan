@@ -1,14 +1,13 @@
 package com.example.core_data.api.response.siswa
 
-import com.example.core_data.api.response.guru.GuruDataResponse
-import com.example.core_data.api.response.guru.toDomain
-import com.example.core_data.domain.Siswa
-import com.example.core_data.domain.User
+import com.example.core_data.api.response.guru.RegisterGuruDataResponse
+import com.example.core_data.domain.RegisterGuru
+import com.example.core_data.domain.RegisterSiswa
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class SiswaResponse(
+data class RegisterSiswaResponse(
     @Json(name = "status")
     val status: String = "",
     @Json(name = "code")
@@ -16,37 +15,31 @@ data class SiswaResponse(
     @Json(name = "message")
     val message: String = "",
     @Json(name = "result")
-    val data: SiswaDataResponse
+    val data: RegisterSiswaDataResponse
 )
 
 @JsonClass(generateAdapter = true)
-data class SiswaDataResponse(
-    @Json(name = "id_user")
+data class RegisterSiswaDataResponse(
+    @Json(name = "id")
     val idUser: Long = 0L,
+    @Json(name = "user_id")
+    val userId: Long = 0L,
     @Json(name = "username")
     val username: String = "",
-    @Json(name = "level")
-    val level: String = "",
-    @Json(name = "last_login")
-    val lastLogin: String = "",
-    @Json(name = "created_at")
-    val createdAt: String = "",
-    @Json(name = "updated_at")
-    val updatedAt: String? = "",
     @Json(name = "nisn")
     val nisn: String = "",
     @Json(name = "nama")
     val nama: String = "",
     @Json(name = "kelas")
     val kelas: String = "",
+    @Json(name = "tempat_lahir")
+    val tempatLahir: String = "",
     @Json(name = "tanggal_lahir")
     val tanggalLahir: String = "",
     @Json(name = "agama")
     val agama: String = "",
     @Json(name = "alamat")
     val alamat: String = "",
-    @Json(name = "foto")
-    val foto: String = "",
     @Json(name = "asal_sekolah")
     val asalSekolah: String = "",
     @Json(name = "status_asal_sekolah")
@@ -70,34 +63,21 @@ data class SiswaDataResponse(
     @Json(name = "pendidikan_terakhir_ibu")
     val pendidikanTerakhirIbu: String = "",
     @Json(name = "pekerjaan_ibu")
-    val pekerjaanIbu: String = "",
-    @Json(name = "tempat_lahir")
-    val tempatLahir: String = ""
+    val pekerjaanIbu: String = ""
 )
 
-typealias ListSiswaResponse = List<SiswaDataResponse>
-
-fun ListSiswaResponse.toDomain() = map {
-    it.toDomain()
-}
-
-//region Convert from Response to Domain
-
-internal fun SiswaDataResponse.toDomain() =
-    Siswa(
+internal fun RegisterSiswaDataResponse.toDomain() =
+    RegisterSiswa(
         idUser = idUser,
+        userId = userId,
         username = username,
-        level = level,
-        lastLogin = lastLogin,
-        createdAt = createdAt,
-        updatedAt = updatedAt ?: "",
         nisn = nisn,
         nama = nama,
         kelas = kelas,
+        tempatLahir = tempatLahir,
         tanggalLahir = tanggalLahir,
         agama = agama,
         alamat = alamat,
-        foto = foto,
         asalSekolah = asalSekolah,
         statusAsalSekolah = statusAsalSekolah,
         namaAyah = namaAyah,
@@ -109,6 +89,6 @@ internal fun SiswaDataResponse.toDomain() =
         umurIbu = umurIbu,
         agamaIbu = agamaIbu,
         pendidikanTerakhirIbu = pendidikanTerakhirIbu,
-        pekerjaanIbu = pekerjaanIbu,
-        tempatLahir = tempatLahir
+        pekerjaanIbu = pekerjaanIbu
     )
+

@@ -70,19 +70,16 @@
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_submit"
-        style="@style/ThemeOverlay.PakarPenjurusan.Button.Secondary"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/medium_fit"
-        android:enabled="false"
-        android:paddingVertical="@dimen/small_fit"
-        android:text="@string/submit"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/til_password"
-        tools:ignore="TooManyViews" />
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/btn_submit"-->
+<!--        style="@style/ThemeOverlay.PakarPenjurusan.Button.Secondary"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/medium_fit"-->
+<!--        android:enabled="false"-->
+<!--        android:paddingVertical="@dimen/small_fit"-->
+<!--        android:text="@string/submit"-->
+<!--        android:textColor="@color/white"-->
+<!--        tools:ignore="TooManyViews" />-->
 
 </androidx.appcompat.widget.LinearLayoutCompat>

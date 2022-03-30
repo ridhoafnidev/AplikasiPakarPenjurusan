@@ -8,8 +8,12 @@ import com.example.core_data.api.ApiExecutor
 import com.example.core_data.api.apiClient
 import com.example.core_data.api.httpClient
 import com.example.core_data.api.service.AuthService
+import com.example.core_data.api.service.GuruService
+import com.example.core_data.api.service.SiswaService
 import com.example.core_data.api.service.UserService
 import com.example.core_data.repository.AuthRepository
+import com.example.core_data.repository.GuruRepository
+import com.example.core_data.repository.SiswaRepository
 import com.squareup.moshi.Moshi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -33,7 +37,7 @@ val Application.dataModule
         single {
             httpClient(
                 TIMEOUT,
-                HttpLoggingInterceptor.Level.BASIC,
+                HttpLoggingInterceptor.Level.BODY,
                 get(),
                 ChuckerInterceptor.Builder(get()).build()
             )
@@ -44,6 +48,8 @@ val Application.dataModule
 
         single { apiClient<AuthService>(BASE_URL, get()) }
         single { apiClient<UserService>(BASE_URL, get()) }
+        single { apiClient<GuruService>(BASE_URL, get()) }
+        single { apiClient<SiswaService>(BASE_URL, get()) }
 
         single {
             Room.databaseBuilder(get(), CoreDatabase::class.java, "aplikasi_pakar_db")
@@ -55,6 +61,8 @@ val Application.dataModule
         single { get<CoreDatabase>().siswaDao() }
 
         single { AuthRepository(get(), get(), get(), get(), get(), get()) }
+        single { GuruRepository(get(), get(), get(), get()) }
+        single { SiswaRepository(get(), get(), get(), get()) }
     }
 
 private const val TIMEOUT = 30L

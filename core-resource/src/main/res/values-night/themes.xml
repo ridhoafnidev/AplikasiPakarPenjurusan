@@ -186,4 +186,29 @@
         <item name="android:textColor">@color/colorTextPrimary</item>
     </style>
 
+    <style name="defaultViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="spinnerStyle" parent="defaultViewStyle">
+        <item name="hintEnabled">false</item>
+        <item name="smsp_itemSize">@dimen/text_medium</item>
+        <item name="smsp_enableFloatingLabel">false</item>
+        <item name="smsp_outlinedBoxColor">#868d94</item>
+        <item name="smsp_outlinedBoxRadius">@dimen/small</item>
+        <item name="smsp_outlinedStrokeWidth">@dimen/very_tiny</item>
+    </style>
+
+    <style name="SpinnerDatePickerDialog" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:calendarViewShown">false</item>
+        <item name="android:datePickerMode">spinner</item>
+    </style>
+
 </resources>

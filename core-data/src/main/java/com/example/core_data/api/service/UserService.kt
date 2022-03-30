@@ -1,8 +1,12 @@
 package com.example.core_data.api.service
 
+import com.example.core_data.api.request.guru.RegisterGuruRequest
+import com.example.core_data.api.request.siswa.RegisterSiswaRequest
 import com.example.core_data.api.response.CommonResponse
 import com.example.core_data.api.response.LoginResponse
 import com.example.core_data.api.response.guru.GuruResponse
+import com.example.core_data.api.response.guru.RegisterGuruResponse
+import com.example.core_data.api.response.siswa.RegisterSiswaResponse
 import com.example.core_data.api.response.siswa.SiswaResponse
 import retrofit2.http.*
 
@@ -33,11 +37,26 @@ interface UserService {
         @Path("id_user") idUser: Int
     ): SiswaResponse
 
+    @FormUrlEncoded
+    @POST(Register)
+    suspend fun registerGuru(
+        @Body body: RegisterGuruRequest
+    ): RegisterGuruResponse
+
+    @FormUrlEncoded
+    @POST(Register)
+    suspend fun registerSiswa(
+        @Body body: RegisterSiswaRequest
+    ): RegisterSiswaResponse
+
     companion object {
         //region API Path
         const val Login = "login"
+        const val Register = "register"
         const val ChangePassword = "change-password/{id_user}"
         const val GetUserById = "user-detail/{id_user}"
         //endregion
     }
+
+
 }

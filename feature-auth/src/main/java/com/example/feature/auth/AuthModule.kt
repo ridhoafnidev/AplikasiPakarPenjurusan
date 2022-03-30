@@ -7,4 +7,6 @@ import org.koin.dsl.module
 val Application.authModule
     get() = module {
         viewModel { AuthViewModel(get()) }
+        viewModel { GuruViewModel(get()) }
+        viewModel { SiswaViewModel(get()) }
     }

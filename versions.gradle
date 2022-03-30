@@ -58,6 +58,8 @@ ext.versions = [
         circle_image_view    : '3.1.0',
 
         coil                 : '1.1.1',
+
+        chivorns_material_spinner : '1.5.0',
 ]
 
 ext.plugin = [
@@ -163,5 +165,7 @@ ext.deps = [
 
         coil              : "io.coil-kt:coil:$versions.coil",
 
-        circle_image_view : "de.hdodenhof:circleimageview:$versions.circle_image_view"
+        circle_image_view : "de.hdodenhof:circleimageview:$versions.circle_image_view",
+
+        chivorns_material_spinner : "com.github.chivorns:smartmaterialspinner:$versions.chivorns_material_spinner"
 ]

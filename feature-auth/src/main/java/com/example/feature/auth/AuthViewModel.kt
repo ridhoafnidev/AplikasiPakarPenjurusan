@@ -1,12 +1,11 @@
 package com.example.feature.auth
 
-
 import androidx.lifecycle.*
 import com.example.core_data.api.ApiEvent
+import com.example.core_data.api.request.guru.RegisterGuruRequest
+import com.example.core_data.api.request.siswa.RegisterSiswaRequest
 import com.example.core_data.api.response.CommonResponse
-import com.example.core_data.domain.Guru
-import com.example.core_data.domain.Siswa
-import com.example.core_data.domain.User
+import com.example.core_data.domain.*
 import com.example.core_data.repository.AuthRepository
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
@@ -43,6 +42,12 @@ class AuthViewModel(
 
     private val _siswaRequest = MutableLiveData<ApiEvent<Siswa?>>()
     val siswaRequest: LiveData<ApiEvent<Siswa?>> = _siswaRequest
+
+    private val _registerGuruRequest = MutableLiveData<ApiEvent<RegisterGuru?>>()
+    val registerGuruRequest: LiveData<ApiEvent<RegisterGuru?>> = _registerGuruRequest
+
+    private val _registerSiswaRequest = MutableLiveData<ApiEvent<RegisterSiswa?>>()
+    val registerSiswaRequest: LiveData<ApiEvent<RegisterSiswa?>> = _registerSiswaRequest
 
     fun login(username: String, password: String) {
         viewModelScope.launch {
@@ -93,6 +98,22 @@ class AuthViewModel(
                 .collect {
                     _siswaRequest.value = it
                 }
+        }
+    }
+
+    fun registerGuru(registerGuruRequest: RegisterGuruRequest) {
+        viewModelScope.launch {
+            authRepository.registerGuru(registerGuruRequest)
+                .onStart { emit(ApiEvent.OnProgress()) }
+                .collect { _registerGuruRequest.value = it }
+        }
+    }
+
+    fun registerSiswa(registerSiswaRequest: RegisterSiswaRequest) {
+        viewModelScope.launch {
+            authRepository.registerSiswa(registerSiswaRequest)
+                .onStart { emit(ApiEvent.OnProgress()) }
+                .collect { _registerSiswaRequest.value = it }
         }
     }
 

@@ -7,6 +7,8 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="date_format_d_MMM_yyyy">d MMM yyyy</string>
+    <string name="date_format_yyyy_MM_dd">yyyy-MM-dd</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
@@ -30,7 +32,6 @@
     <string name="pekerjaan_ayah">Pekerjaan Ayah</string>
     <string name="nama_ibu">Nama Ibu</string>
     <string name="umur_ibu">Umur Ibu</string>
-    <string name="pendidikan_ibu">Pendidikan Ibu</string>
     <string name="nip">NIP</string>
     <string name="email">Email</string>
     <string name="informasi_pribadi">Informasi Pribadi</string>
@@ -38,4 +39,7 @@
     <string name="informasi_ibu">Informasi Ibu</string>
     <string name="edit">Edit</string>
     <string name="submit">Submit</string>
+    <string name="pendidikan_terakhir_ibu">Pendidikan Terakhir Ibu</string>
+    <string name="agama_ibu">Agama Ibu</string>
+    <string name="pekerjaan_ibu">Pekerjaan Ibu</string>
 </resources>
