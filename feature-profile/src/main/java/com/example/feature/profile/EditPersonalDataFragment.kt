@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.afollestad.vvalidator.form
@@ -68,7 +69,24 @@ class EditPersonalDataFragment : BaseFragment<FragmentEditPersonalDataBinding>(
                 }
                 is ApiEvent.OnSuccess -> {
                     hideProgress(true)
-                    requireActivity().finish()
+                    val snackBar = Snackbar.make(
+                        requireView(),
+                        "Data Berhasil diperbarui",
+                        Snackbar.LENGTH_INDEFINITE
+                    )
+                        .setActionTextColor(
+                            (activity as AppCompatActivity).getColorStateList(R.color.white)
+                        )
+                        .setBackgroundTint(
+                            (activity as AppCompatActivity).getColor(R.color.colorBlackGrade)
+                        ).setActionTextColor(
+                            (activity as AppCompatActivity).getColorStateList(R.color.colorSecondaryBase)
+                        )
+                    snackBar.setAction("OK") {
+                        snackBar.dismiss()
+                    }
+                    snackBar.show()
+                    findNavController().navigateUp()
                 }
                 is ApiEvent.OnFailed -> {
                     Log.d("sdsdsd", "cureesdsd ${updateSiswa.getException().toString()}")
@@ -89,7 +107,24 @@ class EditPersonalDataFragment : BaseFragment<FragmentEditPersonalDataBinding>(
                 }
                 is ApiEvent.OnSuccess -> {
                     hideProgress(true)
-                    requireActivity().finish()
+                    val snackBar = Snackbar.make(
+                        requireView(),
+                        "Data Berhasil diperbarui",
+                        Snackbar.LENGTH_INDEFINITE
+                    )
+                        .setActionTextColor(
+                            (activity as AppCompatActivity).getColorStateList(R.color.white)
+                        )
+                        .setBackgroundTint(
+                            (activity as AppCompatActivity).getColor(R.color.colorBlackGrade)
+                        ).setActionTextColor(
+                            (activity as AppCompatActivity).getColorStateList(R.color.colorSecondaryBase)
+                        )
+                    snackBar.setAction("OK") {
+                        snackBar.dismiss()
+                    }
+                    snackBar.show()
+                    findNavController().navigateUp()
                 }
                 is ApiEvent.OnFailed -> {
                     Log.d("sdsdsd", "cureesdsd ${updateGuru.getException().toString()}")
@@ -316,7 +351,7 @@ class EditPersonalDataFragment : BaseFragment<FragmentEditPersonalDataBinding>(
                         }
                     }
                 }
-            } else if (args.level == "guru"){
+            } else if (args.level == "guru") {
                 with(rowPersonalDataGuruEdit) {
                     form {
                         useRealTimeValidation(disableSubmit = true)
