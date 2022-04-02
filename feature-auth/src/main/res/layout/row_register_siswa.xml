@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,22 +10,55 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_nama_siswa"
+            android:id="@+id/til_username_register"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nama"
+            android:hint="@string/username"
             app:boxStrokeColor="@color/colorBlack">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_nama_siswa"
+                android:id="@+id/edt_username_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_nisn"
+            android:id="@+id/til_password_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:hint="@string/password"
+            app:boxStrokeColor="@color/colorBlack"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_password_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nama_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:hint="@string/nama"
+            app:boxStrokeColor="@color/colorBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_nama_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nisn_register"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,14 +67,14 @@
             app:boxStrokeColor="@color/colorBlack">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_nisn"
+                android:id="@+id/edt_nisn_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number" />
+                android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_alamat_siswa"
+            android:id="@+id/til_alamat_register"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,24 +83,24 @@
             app:boxStrokeColor="@color/colorBlack">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_alamat_siswa"
+                android:id="@+id/edt_alamat_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
-            android:id="@+id/spinner_kelas"
+            android:id="@+id/spinner_kelas_register"
             style="@style/spinnerStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small"
             android:spinnerMode="dropdown"
-            app:smsp_hint="@string/kelas"
+            app:smsp_hint="Kelas"
             app:smsp_isOutlined="true" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_tempat_lahir"
+            android:id="@+id/til_tempat_lahir_register"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -77,14 +109,14 @@
             app:boxStrokeColor="@color/colorBlack">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_tempat_lahir"
+                android:id="@+id/edt_tempat_lahir_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_tanggal_lahir"
+            android:id="@+id/til_tanggal_lahir_register"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -95,7 +127,7 @@
             app:boxStrokeColor="@color/colorBlack">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_tanggal_lahir"
+                android:id="@+id/edt_tanggal_lahir_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:focusable="false"
@@ -104,17 +136,17 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
-            android:id="@+id/spinner_agama"
+            android:id="@+id/spinner_agama_register"
             style="@style/spinnerStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small"
             android:spinnerMode="dropdown"
-            app:smsp_hint="@string/agama"
+            app:smsp_hint="Agama"
             app:smsp_isOutlined="true" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_asal_sekolah"
+            android:id="@+id/til_asal_sekolah_register"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -123,14 +155,14 @@
             app:boxStrokeColor="@color/colorBlack">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_asal_sekolah"
+                android:id="@+id/edt_asal_sekolah_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_status_asal_sekolah"
+            android:id="@+id/til_status_asal_sekolah_register"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -139,14 +171,14 @@
             app:boxStrokeColor="@color/colorBlack">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_status_asal_sekolah"
+                android:id="@+id/edt_status_asal_sekolah_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_nama_ayah"
+            android:id="@+id/til_nama_ayah_register"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -155,14 +187,14 @@
             app:boxStrokeColor="@color/colorBlack">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_nama_ayah"
+                android:id="@+id/edt_nama_ayah_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_umur_ayah"
+            android:id="@+id/til_umur_ayah_register"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -171,7 +203,7 @@
             app:boxStrokeColor="@color/colorBlack">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_umur_ayah"
+                android:id="@+id/edt_umur_ayah_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -179,27 +211,27 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
-            android:id="@+id/spinner_agama_ayah"
+            android:id="@+id/spinner_agama_ayah_register"
             style="@style/spinnerStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small"
             android:spinnerMode="dropdown"
-            app:smsp_hint="@string/agama_ayah"
+            app:smsp_hint="Agama Ayah"
             app:smsp_isOutlined="true" />
 
         <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
-            android:id="@+id/spinner_pendidikan_terakhir_ayah"
+            android:id="@+id/spinner_pendidikan_terakhir_ayah_register"
             style="@style/spinnerStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small"
             android:spinnerMode="dropdown"
-            app:smsp_hint="@string/pendidikan_terakhir_ayah"
+            app:smsp_hint="Pendidikan Terakhir Ayah"
             app:smsp_isOutlined="true" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_pekerjaan_ayah"
+            android:id="@+id/til_pekerjaan_ayah_register"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -208,14 +240,14 @@
             app:boxStrokeColor="@color/colorBlack">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_pekerjaan_ayah"
+                android:id="@+id/edt_pekerjaan_ayah_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_nama_ibu"
+            android:id="@+id/til_nama_ibu_register"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -224,14 +256,14 @@
             app:boxStrokeColor="@color/colorBlack">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_nama_ibu"
+                android:id="@+id/edt_nama_ibu_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_umur_ibu"
+            android:id="@+id/til_umur_ibu_register"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -240,7 +272,7 @@
             app:boxStrokeColor="@color/colorBlack">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_umur_ibu"
+                android:id="@+id/edt_umur_ibu_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -248,27 +280,27 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
-            android:id="@+id/spinner_agama_ibu"
+            android:id="@+id/spinner_agama_ibu_register"
             style="@style/spinnerStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small"
             android:spinnerMode="dropdown"
-            app:smsp_hint="@string/agama_ibu"
+            app:smsp_hint="Agama Ibu"
             app:smsp_isOutlined="true" />
 
         <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
-            android:id="@+id/spinner_pendidikan_terakhir_ibu"
+            android:id="@+id/spinner_pendidikan_terakhir_ibu_register"
             style="@style/spinnerStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small"
             android:spinnerMode="dropdown"
-            app:smsp_hint="@string/pendidikan_terakhir_ibu"
+            app:smsp_hint="Pendidikan Terakhir Ibu"
             app:smsp_isOutlined="true" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_pekerjaan_ibu"
+            android:id="@+id/til_pekerjaan_ibu_register"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -277,7 +309,7 @@
             app:boxStrokeColor="@color/colorBlack">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_pekerjaan_ibu"
+                android:id="@+id/edt_pekerjaan_ibu_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />

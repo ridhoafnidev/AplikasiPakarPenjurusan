@@ -40,75 +40,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     override fun initView() {
         setupInput()
 
-        viewModel.loginRequest.observe(viewLifecycleOwner, { login ->
-            when (login) {
-                is ApiEvent.OnProgress -> {
-                    showProgress()
-                    Timber.d("progress ${login.currentResult}")
-                }
-                is ApiEvent.OnSuccess -> {
-                    login.getData()?.let {
-                        if (it.isGuru) {
-                            viewModel.getGuruById(it.idUser.toInt())
-
-                            viewModel.guruRequest.observe(viewLifecycleOwner, { guru ->
-                                when (guru) {
-                                    is ApiEvent.OnProgress -> {
-                                        showProgress()
-                                        Timber.d("progress ${guru.currentResult}")
-                                    }
-                                    is ApiEvent.OnSuccess -> {
-                                        hideProgress(true)
-                                        navigateToHomeActivity(finishCurrent = true)
-                                    }
-                                    is ApiEvent.OnFailed -> {
-                                        hideProgress(true)
-                                        Snackbar.make(
-                                            requireContext(), requireView(),
-                                            guru.getException().toString(), Snackbar.LENGTH_SHORT
-                                        ).show()
-                                        Log.d("sdsdsd", "cureesdsd ${guru.getException().toString()}")
-                                    }
-                                }
-                            })
-                        } else if (it.isSiswa) {
-                            viewModel.getSiswaById(it.idUser.toInt())
-
-                            viewModel.siswaRequest.observe(viewLifecycleOwner, { siswa ->
-                                when (siswa) {
-                                    is ApiEvent.OnProgress -> {
-                                        showProgress()
-                                        Timber.d("progress ${siswa.currentResult}")
-                                    }
-                                    is ApiEvent.OnSuccess -> {
-                                        hideProgress(true)
-                                        navigateToHomeActivity(finishCurrent = true)
-                                    }
-                                    is ApiEvent.OnFailed -> {
-                                        hideProgress(true)
-                                        Snackbar.make(
-                                            requireContext(), requireView(),
-                                            siswa.getException().toString(), Snackbar.LENGTH_SHORT
-                                        ).show()
-                                        Log.d("sdsdsd", "cureesdsd ${siswa.getException().toString()}")
-                                    }
-                                }
-                            })
-                        }
-                    }
-                }
-                is ApiEvent.OnFailed -> {
-                    hideProgress(true)
-                    Snackbar.make(
-                        requireContext(), requireView(),
-                        login.getException().toString(), Snackbar.LENGTH_SHORT
-                    ).show()
-                    Log.d("sdsdsd", "cureesdsd ${login.getException().toString()}")
-
-                }
-            }
-        })
-
         requireActivity().onBackPressedDispatcher.addCallback(
             viewLifecycleOwner,
             object : OnBackPressedCallback(true) {
@@ -120,13 +51,13 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
         binding.tvGuruBk.setOnClickListener {
             val directionRegister =
-                LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+                LoginFragmentDirections.actionLoginFragmentToRegisterFragment("guru")
             findNavController().navigate(directionRegister)
         }
 
         binding.tvMurid.setOnClickListener {
             val directionRegister =
-                LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+                LoginFragmentDirections.actionLoginFragmentToRegisterFragment("siswa")
             findNavController().navigate(directionRegister)
         }
     }
@@ -154,6 +85,97 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                     viewModel.password = password
 
                     viewModel.login(username, password)
+
+                    viewModel.loginRequest.observe(viewLifecycleOwner, { login ->
+                        when (login) {
+                            is ApiEvent.OnProgress -> {
+                                showProgress()
+                                Timber.d("progress ${login.currentResult}")
+                            }
+                            is ApiEvent.OnSuccess -> {
+                                if (login.hasNotBeenConsumed) {
+                                    login.getData(true)
+                                    login.getData()?.let {
+                                        if (it.isGuru) {
+                                            viewModel.getGuruById(it.idUser.toInt())
+
+                                            viewModel.guruRequest.observe(
+                                                viewLifecycleOwner,
+                                                { guru ->
+                                                    when (guru) {
+                                                        is ApiEvent.OnProgress -> {
+                                                            showProgress()
+                                                            Timber.d("progress ${guru.currentResult}")
+                                                        }
+                                                        is ApiEvent.OnSuccess -> {
+                                                            hideProgress(true)
+                                                            navigateToHomeActivity(finishCurrent = true)
+                                                        }
+                                                        is ApiEvent.OnFailed -> {
+                                                            hideProgress(true)
+                                                            Snackbar.make(
+                                                                requireContext(),
+                                                                requireView(),
+                                                                guru.getException().toString(),
+                                                                Snackbar.LENGTH_SHORT
+                                                            ).show()
+                                                            Log.d(
+                                                                "sdsdsd",
+                                                                "cureesdsd ${
+                                                                    guru.getException().toString()
+                                                                }"
+                                                            )
+                                                        }
+                                                    }
+                                                })
+                                        } else if (it.isSiswa) {
+                                            viewModel.getSiswaById(it.idUser.toInt())
+
+                                            viewModel.siswaRequest.observe(
+                                                viewLifecycleOwner,
+                                                { siswa ->
+                                                    when (siswa) {
+                                                        is ApiEvent.OnProgress -> {
+                                                            showProgress()
+                                                            Timber.d("progress ${siswa.currentResult}")
+                                                        }
+                                                        is ApiEvent.OnSuccess -> {
+                                                            hideProgress(true)
+                                                            navigateToHomeActivity(finishCurrent = true)
+                                                        }
+                                                        is ApiEvent.OnFailed -> {
+                                                            hideProgress(true)
+                                                            Snackbar.make(
+                                                                requireContext(),
+                                                                requireView(),
+                                                                siswa.getException().toString(),
+                                                                Snackbar.LENGTH_SHORT
+                                                            ).show()
+                                                            Log.d(
+                                                                "sdsdsd",
+                                                                "cureesdsd ${
+                                                                    siswa.getException().toString()
+                                                                }"
+                                                            )
+                                                        }
+                                                    }
+                                                })
+                                        }
+                                    }
+                                }
+
+                            }
+                            is ApiEvent.OnFailed -> {
+                                hideProgress(true)
+                                Snackbar.make(
+                                    requireContext(), requireView(),
+                                    login.getException().toString(), Snackbar.LENGTH_SHORT
+                                ).show()
+                                Log.d("sdsdsd", "cureesdsd ${login.getException().toString()}")
+
+                            }
+                        }
+                    })
                 }
             }
             btnLogin.bindLifecycle(viewLifecycleOwner)

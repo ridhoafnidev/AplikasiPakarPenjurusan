@@ -17,20 +17,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_foto"
-            android:layout_width="74dp"
-            android:layout_height="@dimen/very_large_fit"
-            app:cardCornerRadius="@dimen/smaller">
-
-            <ImageView
-                android:id="@+id/iv_photo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/ic_launcher" />
-
-        </androidx.cardview.widget.CardView>
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="@dimen/profilePictureBig"
+            android:layout_height="@dimen/profilePictureBig"
+            android:layout_marginTop="@dimen/medium"
+            android:background="@drawable/shape_circle_placeholder"
+            android:contentDescription="Photo Profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"

@@ -63,7 +63,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(
     override fun initView() {
         observeAuth()
 
-        binding.rowProfileHeader.cvFoto.setOnClickListener {
+        binding.rowProfileHeader.ivPhoto.setOnClickListener {
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
                 Log.d("ksdskd", "sdsdjsd 1")
                 navigateToGallery()

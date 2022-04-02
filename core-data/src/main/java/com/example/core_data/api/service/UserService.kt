@@ -37,13 +37,11 @@ interface UserService {
         @Path("id_user") idUser: Int
     ): SiswaResponse
 
-    @FormUrlEncoded
     @POST(Register)
     suspend fun registerGuru(
         @Body body: RegisterGuruRequest
     ): RegisterGuruResponse
 
-    @FormUrlEncoded
     @POST(Register)
     suspend fun registerSiswa(
         @Body body: RegisterSiswaRequest

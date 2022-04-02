@@ -6,5 +6,22 @@
     <string name="password">Password</string>
     <string name="nip_nisn">NIP/NISN</string>
     <string name="username">Username</string>
-
+    <string name="submit">Submit</string>
+    <string name="nama">Nama</string>
+    <string name="nip">NIP</string>
+    <string name="alamat">Alamat</string>
+    <string name="email">Email</string>
+    <string name="nisn">NISN</string>
+    <string name="tempat_lahir">Tempat Lahir</string>
+    <string name="tanggal_lahir">Tanggal Lahir</string>
+    <string name="asal_sekolah">Asal Sekolah</string>
+    <string name="status_asal_sekolah">Status Asal Sekolah</string>
+    <string name="nama_ayah">Nama Ayah</string>
+    <string name="umur_ayah">Umur Ayah</string>
+    <string name="pekerjaan_ayah">Pekerjaan Ayah</string>
+    <string name="nama_ibu">Nama Ibu</string>
+    <string name="umur_ibu">Umur Ibu</string>
+    <string name="pekerjaan_ibu">Pekerjaan Ibu</string>
+    <string name="date_format_d_MMM_yyyy">d MMM yyyy</string>
+    <string name="date_format_yyyy_MM_dd">yyyy-MM-dd</string>
 </resources>
