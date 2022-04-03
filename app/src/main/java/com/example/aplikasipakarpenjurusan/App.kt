@@ -3,6 +3,7 @@ package com.example.aplikasipakarpenjurusan
 import android.app.Application
 import com.example.core_data.dataModule
 import com.example.feature.auth.authModule
+import com.example.subfeature.nilai_siswa.nilaiSiswaModule
 import io.armcha.debugBanner.Banner
 import io.armcha.debugBanner.BuildConfig
 import io.armcha.debugBanner.DebugBanner
@@ -33,7 +34,8 @@ class App : Application() {
             modules(
                 listOf(
                     dataModule,
-                    authModule
+                    authModule,
+                    nilaiSiswaModule
                 )
             )
         }

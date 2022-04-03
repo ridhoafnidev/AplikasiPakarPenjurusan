@@ -7,7 +7,8 @@ enum class ActivityClassPath(private val className: String) {
     Auth("$BASE_PATH.auth.AuthActivity"),
     Home("$BASE_PATH.home.HomeActivity"),
     Pakar("$SUB_PATH.pakar.PakarActivity"),
-    Profile("$BASE_PATH.profile.ProfileActivity");
+    Profile("$BASE_PATH.profile.ProfileActivity"),
+    NilaiSiswa("$SUB_PATH.nilai_siswa.NilaiSiswaActivity");
 
     fun getIntent(context: Context) = Intent(context, Class.forName(className))
 }
