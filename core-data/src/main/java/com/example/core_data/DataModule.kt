@@ -7,8 +7,10 @@ import com.example.core_data.BuildConfig.BASE_URL
 import com.example.core_data.api.ApiExecutor
 import com.example.core_data.api.apiClient
 import com.example.core_data.api.httpClient
+import com.example.core_data.api.service.AnswerService
 import com.example.core_data.api.service.AuthService
 import com.example.core_data.api.service.UserService
+import com.example.core_data.repository.AnswerRepository
 import com.example.core_data.repository.AuthRepository
 import com.squareup.moshi.Moshi
 import kotlinx.coroutines.Dispatchers
@@ -44,15 +46,20 @@ val Application.dataModule
 
         single { apiClient<AuthService>(BASE_URL, get()) }
         single { apiClient<UserService>(BASE_URL, get()) }
+        single { apiClient<AnswerService>(BASE_URL, get()) }
 
         single {
             Room.databaseBuilder(get(), CoreDatabase::class.java, "aplikasi_pakar_db")
                 .fallbackToDestructiveMigration()
                 .build()
         }
+
         single { get<CoreDatabase>().userDao() }
 
         single { AuthRepository(get(), get(), get(), get()) }
+
+        single { AnswerRepository(get(), get(), get(), get()) }
+
     }
 
 private const val TIMEOUT = 30L

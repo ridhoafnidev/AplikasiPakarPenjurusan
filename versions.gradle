@@ -163,5 +163,6 @@ ext.deps = [
 
         coil              : "io.coil-kt:coil:$versions.coil",
 
-        circle_image_view : "de.hdodenhof:circleimageview:$versions.circle_image_view"
+        circle_image_view : "de.hdodenhof:circleimageview:$versions.circle_image_view",
+
 ]

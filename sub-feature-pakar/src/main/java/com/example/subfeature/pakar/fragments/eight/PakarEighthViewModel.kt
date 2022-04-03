@@ -1,17 +1,18 @@
-package com.example.subfeature.pakar.fragments
+package com.example.subfeature.pakar.fragments.eight
 
 import androidx.lifecycle.ViewModel
 import com.example.core_data.domain.Answer
 import com.example.core_data.domain.Answers
 
 
-class PakarSecondViewModel : ViewModel() {
+class PakarEighthViewModel : ViewModel() {
 
     private val formDataQuestions = HashMap<String, String>()
     fun putFormDataValue(
         id: String,
         value: String = "0"
     ) {
+        formDataQuestions.clear()
         formDataQuestions[id] = value
     }
 

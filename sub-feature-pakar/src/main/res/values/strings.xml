@@ -3,4 +3,21 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="preview">Preview</string>
     <string name="next">NEXT</string>
+    <string name="desc">Ketrangan</string>
+    <string name="finish">Selesai</string>
+    <string name="back">Kembali</string>
+
+    <!--  region title  -->
+
+    <string name="title_first">Pilih salah satu dari 2 jurusan berikut.</string>
+    <string name="title_second">Pilihlah 2 mata pelajaran yang kamu inginkan.</string>
+    <string name="title_thirth">Pilihlah 2 mata pelajaran yang kamu inginkan.</string>
+    <string name="title_fourth">Pilihlah 5 mata pelajaran yang kamu senangi.</string>
+    <string name="title_fifth">Pilihlah pekerjaan yang kamu senangi pada bidang apa.</string>
+    <string name="title_sixth">Keterangan Minat Pekerjaan</string>
+    <string name="title_seventh">Pilih 1 fakultas yang kamu inginkan jika sudah lulu SMA.</string>
+    <string name="title_eighth">Pilih salah satu bidang yang kamu cita-citakan.</string>
+    <string name="title_ninth">Halo bapak/ibu pilihlah salah satu penjurusan yang diinginkan untuk anak Bapa/Ibu pada SMA Negeri 1 Lareh Sogo Halaban.</string>
+    <string name="result">Berdasarkan pertanyaan dari angket yang telah diisi, maka prediksi jurusan yang akan diterima adala</string>
+    <!--  endregion  -->
 </resources>

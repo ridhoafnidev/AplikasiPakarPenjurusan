@@ -15,9 +15,9 @@ import com.example.subfeature.pakar.databinding.LayoutItemBoardingBinding
 
 class OnBoardingItemViewHolder(val binding: LayoutItemBoardingBinding, val context: Context) : RecyclerView.ViewHolder(binding.root){
 
-    private val pakarViewModel: PakarViewModel by lazy {
-        PakarViewModel()
-    }
+//    private val pakarViewModel: PakarViewModel by lazy {
+//        PakarViewModel()
+//    }
 
     fun bind(onBoardingItem: OnBoardingData){
         with(binding){
@@ -29,10 +29,10 @@ class OnBoardingItemViewHolder(val binding: LayoutItemBoardingBinding, val conte
                     onBind(::QuestionViewHolder){ index, data ->
                         titleCheckBox.text = data.question
                         titleCheckBox.setOnCheckedChangeListener { _, isChecked ->
-                            pakarViewModel.putFormDataValue(
-                                data.id,
-                                if (isChecked) "1" else "0"
-                            )
+//                            pakarViewModel.putFormDataValue(
+//                                data.id,
+//                                if (isChecked) "1" else "0"
+//                            )
                         }
                     }
                 }

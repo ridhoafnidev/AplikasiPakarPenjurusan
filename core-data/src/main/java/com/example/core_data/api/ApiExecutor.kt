@@ -67,4 +67,15 @@ internal class ApiExecutor(private val jsonParser: Moshi) {
         } ?: ApiException.FailedResponse<Nothing>()
     }
 
+    suspend fun logException(apiId: String, apiException: ApiException) {
+        Log.d("LogException", apiId)
+        Log.d("LogException", apiException.toString())
+//        analytics.logApiException(
+//            apiException = apiException,
+//            apiId = apiId.key,
+//            orgId = getCurrentOrganization()?.id ?: 0L,
+//            wardId = getCurrentWard()?.id ?: 0L
+//        )
+    }
+
 }

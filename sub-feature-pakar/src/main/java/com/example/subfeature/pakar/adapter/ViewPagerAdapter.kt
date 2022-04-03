@@ -3,10 +3,12 @@ package com.example.subfeature.pakar.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.subfeature.pakar.fragments.FirstFragment
-import com.example.subfeature.pakar.fragments.SecondFragment
+import com.example.subfeature.pakar.fragments.one.FirstFragment
+import com.example.subfeature.pakar.fragments.one.PakarFirstViewModel
+import com.example.subfeature.pakar.fragments.two.SecondFragment
+import com.example.subfeature.pakar.fragments.three.ThirdFragment
 
-class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+class ViewPagerAdapter(fm: FragmentManager, val firstViewModel: PakarFirstViewModel) : FragmentPagerAdapter(fm) {
 
     private val count = 2
 
@@ -14,10 +16,13 @@ class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
         return count
     }
 
+
     override fun getItem(position: Int): Fragment {
         return when(position){
             0 -> FirstFragment()
-            1 -> SecondFragment()
+            1 -> {
+                if (firstViewModel.getFinalData().get(0).answer == "J01" ) SecondFragment() else ThirdFragment()
+            }
             else -> FirstFragment()
         }
     }
