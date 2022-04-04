@@ -17,6 +17,7 @@ dependencies {
     implementation project(':core-util')
 
     implementation deps.koin
+    implementation deps.coil
     implementation deps.coroutines
     implementation deps.lifecycle
 
@@ -29,5 +30,6 @@ dependencies {
     implementation deps.circle_image_view
     implementation deps.glide
     annotationProcessor deps.glide
+    implementation deps.chivorns_material_spinner
 
 }

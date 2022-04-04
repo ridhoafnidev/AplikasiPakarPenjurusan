@@ -1,15 +1,16 @@
 package com.example.core_data.repository
 
 import com.example.core_data.api.*
-import com.example.core_data.api.ApiExecutor
-import com.example.core_data.api.ApiResult
+import com.example.core_data.api.request.guru.RegisterGuruRequest
+import com.example.core_data.api.request.siswa.RegisterSiswaRequest
 import com.example.core_data.api.response.CommonResponse
+import com.example.core_data.api.response.guru.toDomain
+import com.example.core_data.api.response.siswa.toDomain
 import com.example.core_data.api.response.toDomain
-import com.example.core_data.api.service.AuthService
 import com.example.core_data.api.service.UserService
-import com.example.core_data.api.toFailedEvent
-import com.example.core_data.domain.User
-import com.example.core_data.domain.Users
+import com.example.core_data.domain.*
+import com.example.core_data.persistence.dao.GuruDao
+import com.example.core_data.persistence.dao.SiswaDao
 import com.example.core_data.persistence.dao.UserDao
 import com.example.core_data.persistence.entity.toDomain
 import com.example.core_data.persistence.entity.toEntity
@@ -22,6 +23,8 @@ class AuthRepository internal constructor(
     private val apiExecutor: ApiExecutor,
     private val authService: UserService,
     private val dao: UserDao,
+    private val guruDao: GuruDao,
+    private val siswaDao: SiswaDao,
     private val jsonParser: Moshi,
 ) {
 
@@ -30,6 +33,12 @@ class AuthRepository internal constructor(
     }
 
     suspend fun getAuth() = dao.selectAuth()
+        ?.toDomain()
+
+    suspend fun getGuruDetail(idUser: Int) = guruDao.selectGuruById(idUser)
+        ?.toDomain()
+
+    suspend fun getSiswaDetail(idUser: Int) = siswaDao.selectSiswaById(idUser)
         ?.toDomain()
 
     fun login(
@@ -87,6 +96,100 @@ class AuthRepository internal constructor(
             emit(apiEvent)
         }.onFailure {
             emit(it.toFailedEvent<CommonResponse>())
+        }
+    }
+
+    fun getGuruById(idUser: Int): Flow<ApiEvent<Guru?>> = flow {
+        runCatching {
+            val apiId = UserService.GetUserById
+
+            val apiResult = apiExecutor.callApi(apiId) {
+                authService.getGuruById(idUser)
+            }
+
+            val apiEvent: ApiEvent<Guru?> = when (apiResult) {
+                is ApiResult.OnFailed -> apiResult.exception.toFailedEvent()
+                is ApiResult.OnSuccess -> with(apiResult.response.data) {
+                    toDomain().run {
+                        guruDao.replaceById(idUser, this.toEntity())
+                        ApiEvent.OnSuccess.fromServer(this)
+                    }
+                }
+            }
+
+            emit(apiEvent)
+        }.onFailure {
+            emit(it.toFailedEvent<Guru>())
+        }
+    }
+
+    fun getSiswaById(idUser: Int): Flow<ApiEvent<Siswa?>> = flow {
+        runCatching {
+            val apiId = UserService.GetUserById
+
+            val apiResult = apiExecutor.callApi(apiId) {
+                authService.getSiswaById(idUser)
+            }
+
+            val apiEvent: ApiEvent<Siswa?> = when (apiResult) {
+                is ApiResult.OnFailed -> apiResult.exception.toFailedEvent()
+                is ApiResult.OnSuccess -> with(apiResult.response.data) {
+                    toDomain().run {
+                        siswaDao.replaceById(idUser, this.toEntity())
+                        ApiEvent.OnSuccess.fromServer(this)
+                    }
+                }
+            }
+
+            emit(apiEvent)
+        }.onFailure {
+            emit(it.toFailedEvent<Siswa>())
+        }
+    }
+
+    fun registerGuru(
+        registerGuruRequest: RegisterGuruRequest
+    ): Flow<ApiEvent<RegisterGuru>> = flow {
+        runCatching {
+            val apiId = UserService.Register
+
+            val apiResult = apiExecutor.callApi(apiId) {
+                authService.registerGuru(registerGuruRequest)
+            }
+
+            val apiEvent: ApiEvent<RegisterGuru> = when (apiResult) {
+                is ApiResult.OnFailed -> apiResult.exception.toFailedEvent()
+
+                is ApiResult.OnSuccess -> with(apiResult.response.data) {
+                    ApiEvent.OnSuccess.fromServer(this.toDomain())
+                }
+            }
+            emit(apiEvent)
+        }.onFailure {
+            emit(it.toFailedEvent<RegisterGuru>())
+        }
+    }
+
+    fun registerSiswa(
+        registerSiswaRequest: RegisterSiswaRequest
+    ): Flow<ApiEvent<RegisterSiswa>> = flow {
+        runCatching {
+            val apiId = UserService.Register
+
+            val apiResult = apiExecutor.callApi(apiId) {
+                authService.registerSiswa(registerSiswaRequest)
+            }
+
+            val apiEvent: ApiEvent<RegisterSiswa> = when (apiResult) {
+                is ApiResult.OnFailed -> apiResult.exception.toFailedEvent()
+
+                is ApiResult.OnSuccess -> with(apiResult.response.data) {
+                    ApiEvent.OnSuccess.fromServer(this.toDomain())
+                }
+            }
+            emit(apiEvent)
+        }.onFailure {
+            emit(it.toFailedEvent<RegisterSiswa>())
         }
     }
 

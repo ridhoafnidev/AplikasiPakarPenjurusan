@@ -18,11 +18,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_foto"
             android:layout_width="74dp"
             android:layout_height="@dimen/very_large_fit"
             app:cardCornerRadius="@dimen/smaller">
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <ImageView
+                android:id="@+id/iv_photo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
@@ -37,7 +39,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_nama"
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ahmad Aldi"
@@ -46,7 +48,7 @@
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_alamat"
+                android:id="@+id/tv_nip_nisn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/small_fit"
@@ -55,6 +57,7 @@
                 android:textSize="@dimen/text_very_small" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_alamat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/smaller"
@@ -63,6 +66,7 @@
                 android:textSize="@dimen/text_very_small" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_asal_sekolah"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/smaller"

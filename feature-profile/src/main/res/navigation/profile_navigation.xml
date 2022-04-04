@@ -31,5 +31,13 @@
         android:id="@+id/editPersonalDataFragment"
         android:name="com.example.feature.profile.EditPersonalDataFragment"
         android:label="fragment_edit_personal_data"
-        tools:layout="@layout/fragment_edit_personal_data" />
+        tools:layout="@layout/fragment_edit_personal_data">
+
+        <argument
+            android:name="level"
+            app:argType="string" />
+        <argument
+            android:name="idUser"
+            app:argType="string" />
+    </fragment>
 </navigation>

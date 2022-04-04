@@ -11,95 +11,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
+        <include
+            android:id="@+id/row_personal_data_guru"
+            layout="@layout/row_personal_data_guru"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NISN"/>
+            android:visibility="gone" />
 
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
+        <include
+            android:id="@+id/row_personal_data_siswa"
+            layout="@layout/row_personal_data_siswa"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NISN"/>
+            android:visibility="gone" />
 
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NISN"/>
-
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NISN"/>
-
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NISN"/>
-
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NISN"/>
-
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NISN"/>
-
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NISN"/>
-
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NISN"/>
-
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NISN"/>
-
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NISN"/>
-
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NISN"/>
-
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NISN"/>
-
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NISN"/>
-
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NISN"/>
-
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NISN"/>
-
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NISN"/>
-
-        <com.example.core_util.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NISN"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -109,5 +34,6 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
+        android:contentDescription="@string/edit"
         app:srcCompat="@drawable/ic_create_24" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

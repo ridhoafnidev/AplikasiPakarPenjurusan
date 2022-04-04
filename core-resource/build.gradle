@@ -10,4 +10,6 @@ dependencies {
     implementation deps.material
     implementation deps.constraint_layout
     implementation project(path: ':core-data')
+
+    implementation deps.chivorns_material_spinner
 }
