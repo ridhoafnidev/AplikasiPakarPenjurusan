@@ -26,18 +26,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             cvHasilAngket.setOnClickListener {
                 navigateToHasilAngketActivity()
             }
-        }
 
-        binding.cvNilaiSiswa.setOnClickListener {
-            navigateToNilaiSiswaActivity(level = level)
-        }
+            cvNilaiSiswa.setOnClickListener {
+                navigateToNilaiSiswaActivity(level = level)
+            }
 
-        binding.cvHasilAngket.setOnClickListener {
+            cvHasilPenjurusan.setOnClickListener {
 //            navigateToNilaiSiswaActivity()
-        }
-
-        binding.cvHasilPenjurusan.setOnClickListener {
-//            navigateToNilaiSiswaActivity()
+            }
         }
     }
 

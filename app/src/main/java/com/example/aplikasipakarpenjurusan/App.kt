@@ -38,8 +38,7 @@ class App : Application() {
                     dataModule,
                     authModule,
                     pakarModule,
-                    hasilAngketModule
-                    authModule,
+                    hasilAngketModule,
                     nilaiSiswaModule
                 )
             )

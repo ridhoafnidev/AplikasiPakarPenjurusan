@@ -72,7 +72,6 @@ val Application.dataModule
         single { AuthRepository(get(), get(), get(), get(), get(), get()) }
         single { GuruRepository(get(), get(), get(), get()) }
         single { SiswaRepository(get(), get(), get(), get()) }
-        single { AuthRepository(get(), get(), get(), get()) }
         single { AnswerRepository(get(), get(), get(), get()) }
         single { LastResultRepository(get(), get(), get()) }
 
