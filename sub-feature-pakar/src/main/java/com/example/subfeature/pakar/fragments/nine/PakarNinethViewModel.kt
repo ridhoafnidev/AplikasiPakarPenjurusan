@@ -1,20 +1,24 @@
 package com.example.subfeature.pakar.fragments.nine
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.core_data.api.ApiEvent
 import com.example.core_data.domain.Answer
 import com.example.core_data.domain.Answers
+import com.example.core_data.domain.User
 import com.example.core_data.repository.AnswerRepository
+import com.example.core_data.repository.AuthRepository
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
 class PakarNinethViewModel(
+    val authRepository: AuthRepository,
     val answerRepository: AnswerRepository
 ) : ViewModel() {
+
+    val auth: LiveData<User?> = liveData {
+        emit(authRepository.getAuth())
+    }
 
     private val formDataQuestions = HashMap<String, String>()
     fun putFormDataValue(
@@ -40,6 +44,8 @@ class PakarNinethViewModel(
 
     private val _result = MutableLiveData<String>()
     val result: LiveData<String> = _result
+
+    var siswaId: Long = 0L
 
     fun saveQuestionAnswer(
         siswaId: Long,
