@@ -5,6 +5,7 @@
     <color name="colorInputSecondaryPressed">#F3F3F3</color>
     <color name="colorInputSecondaryFocused">#D5D5D5</color>
     <color name="colorInputAccent">#053F5E</color>
+    <color name="colorSecondaryBase">#6AB04C</color>
     <color name="colorInputAccentPressed">#05334B</color>
     <color name="colorInputAccentFocused">#094B6E</color>
     <color name="colorInputAccentDisabled">#6D6D6D</color>

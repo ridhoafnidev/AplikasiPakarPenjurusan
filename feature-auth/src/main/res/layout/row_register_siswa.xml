@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_username_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/username"
+            app:boxStrokeColor="@color/colorBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_username_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_password_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:hint="@string/password"
+            app:boxStrokeColor="@color/colorBlack"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_password_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nama_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:hint="@string/nama"
+            app:boxStrokeColor="@color/colorBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_nama_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nisn_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:hint="@string/nisn"
+            app:boxStrokeColor="@color/colorBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_nisn_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_alamat_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:hint="@string/alamat"
+            app:boxStrokeColor="@color/colorBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_alamat_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            android:id="@+id/spinner_kelas_register"
+            style="@style/spinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:spinnerMode="dropdown"
+            app:smsp_hint="Kelas"
+            app:smsp_isOutlined="true" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_tempat_lahir_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:hint="@string/tempat_lahir"
+            app:boxStrokeColor="@color/colorBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_tempat_lahir_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_tanggal_lahir_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="@string/tanggal_lahir"
+            app:boxStrokeColor="@color/colorBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_tanggal_lahir_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            android:id="@+id/spinner_agama_register"
+            style="@style/spinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:spinnerMode="dropdown"
+            app:smsp_hint="Agama"
+            app:smsp_isOutlined="true" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_asal_sekolah_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:hint="@string/asal_sekolah"
+            app:boxStrokeColor="@color/colorBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_asal_sekolah_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_status_asal_sekolah_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:hint="@string/status_asal_sekolah"
+            app:boxStrokeColor="@color/colorBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_status_asal_sekolah_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nama_ayah_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:hint="@string/nama_ayah"
+            app:boxStrokeColor="@color/colorBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_nama_ayah_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_umur_ayah_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:hint="@string/umur_ayah"
+            app:boxStrokeColor="@color/colorBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_umur_ayah_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLength="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            android:id="@+id/spinner_agama_ayah_register"
+            style="@style/spinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:spinnerMode="dropdown"
+            app:smsp_hint="Agama Ayah"
+            app:smsp_isOutlined="true" />
+
+        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            android:id="@+id/spinner_pendidikan_terakhir_ayah_register"
+            style="@style/spinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:spinnerMode="dropdown"
+            app:smsp_hint="Pendidikan Terakhir Ayah"
+            app:smsp_isOutlined="true" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_pekerjaan_ayah_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:hint="@string/pekerjaan_ayah"
+            app:boxStrokeColor="@color/colorBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_pekerjaan_ayah_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nama_ibu_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:hint="@string/nama_ibu"
+            app:boxStrokeColor="@color/colorBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_nama_ibu_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_umur_ibu_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:hint="@string/umur_ibu"
+            app:boxStrokeColor="@color/colorBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_umur_ibu_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLength="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            android:id="@+id/spinner_agama_ibu_register"
+            style="@style/spinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:spinnerMode="dropdown"
+            app:smsp_hint="Agama Ibu"
+            app:smsp_isOutlined="true" />
+
+        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            android:id="@+id/spinner_pendidikan_terakhir_ibu_register"
+            style="@style/spinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:spinnerMode="dropdown"
+            app:smsp_hint="Pendidikan Terakhir Ibu"
+            app:smsp_isOutlined="true" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_pekerjaan_ibu_register"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:hint="@string/pekerjaan_ibu"
+            app:boxStrokeColor="@color/colorBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_pekerjaan_ibu_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

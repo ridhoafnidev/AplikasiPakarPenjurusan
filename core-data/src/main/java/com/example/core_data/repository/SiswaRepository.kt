@@ -14,6 +14,7 @@ import com.example.core_data.api.request.siswa.UpdateSiswaRequest
 import com.example.core_data.api.response.siswa.toDomain
 import com.example.core_data.api.service.SiswaService
 import com.example.core_data.api.toFailedEvent
+import com.example.core_data.domain.ListSiswa
 import com.example.core_data.domain.Siswa
 import com.example.core_data.persistence.dao.SiswaDao
 import com.example.core_data.persistence.entity.toEntity
@@ -101,6 +102,32 @@ class SiswaRepository internal constructor(
             emit(apiEvent)
         }.onFailure {
             emit(it.toFailedEvent<Siswa?>())
+        }
+    }
+
+    fun getSiswaAll(): Flow<ApiEvent<ListSiswa?>> = flow {
+        runCatching {
+            val apiId = SiswaService.GetAllSiswa
+
+            val apiResult = apiExecutor.callApi(apiId) {
+                siswaService.getAllSiswa()
+            }
+
+            val apiEvent: ApiEvent<ListSiswa?> = when (apiResult) {
+                is ApiResult.OnFailed -> apiResult.exception.toFailedEvent()
+                is ApiResult.OnSuccess -> with(apiResult.response.data) {
+                    toDomain().run {
+                        if (isEmpty()) {
+                            ApiEvent.OnSuccess.fromServer(emptyList())
+                        } else {
+                            ApiEvent.OnSuccess.fromServer(this)
+                        }
+                    }
+                }
+            }
+            emit(apiEvent)
+        }.onFailure {
+            emit(it.toFailedEvent<ListSiswa>())
         }
     }
 }

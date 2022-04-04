@@ -13,8 +13,10 @@ import com.example.core_data.api.service.GuruService
 import com.example.core_data.api.service.SiswaService
 import com.example.core_data.api.service.UserService
 import com.example.core_data.repository.AnswerRepository
+import com.example.core_data.api.service.*
 import com.example.core_data.repository.AuthRepository
 import com.example.core_data.repository.GuruRepository
+import com.example.core_data.repository.NilaiSiswaRepository
 import com.example.core_data.repository.SiswaRepository
 import com.example.core_data.repository.LastResultRepository
 import com.squareup.moshi.Moshi
@@ -54,6 +56,7 @@ val Application.dataModule
         single { apiClient<GuruService>(BASE_URL, get()) }
         single { apiClient<SiswaService>(BASE_URL, get()) }
         single { apiClient<AnswerService>(BASE_URL, get()) }
+        single { apiClient<NilaiSiswaService>(BASE_URL, get()) }
 
         single {
             Room.databaseBuilder(get(), CoreDatabase::class.java, "aplikasi_pakar_db")
@@ -69,10 +72,10 @@ val Application.dataModule
         single { AuthRepository(get(), get(), get(), get(), get(), get()) }
         single { GuruRepository(get(), get(), get(), get()) }
         single { SiswaRepository(get(), get(), get(), get()) }
-        single { AuthRepository(get(), get(), get(), get(), get(), get()) }
         single { AnswerRepository(get(), get(), get(), get()) }
         single { LastResultRepository(get(), get(), get()) }
 
+        single { NilaiSiswaRepository(get(), get(), get()) }
     }
 
 private const val TIMEOUT = 30L

@@ -1,7 +1,5 @@
 package com.example.core_data.domain
 
-import com.squareup.moshi.Json
-
 data class Siswa(
     val idUser: Long = 0L,
     val username: String = "",

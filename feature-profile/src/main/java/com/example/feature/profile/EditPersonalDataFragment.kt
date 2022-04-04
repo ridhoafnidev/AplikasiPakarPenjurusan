@@ -6,9 +6,8 @@ import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
-import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.navigation.fragment.findNavController
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.navArgs
 import com.afollestad.vvalidator.form
 import com.example.core_data.api.ApiEvent
@@ -68,7 +67,30 @@ class EditPersonalDataFragment : BaseFragment<FragmentEditPersonalDataBinding>(
                 }
                 is ApiEvent.OnSuccess -> {
                     hideProgress(true)
-                    requireActivity().finish()
+                    val snackBar = Snackbar.make(
+                        requireView(),
+                        "Data Berhasil diperbarui",
+                        Snackbar.LENGTH_INDEFINITE
+                    )
+                        .setActionTextColor(
+                            (activity as AppCompatActivity).getColorStateList(R.color.white)
+                        )
+                        .setBackgroundTint(
+                            (activity as AppCompatActivity).getColor(R.color.colorBlackGrade)
+                        ).setActionTextColor(
+                            (activity as AppCompatActivity).getColorStateList(R.color.colorSecondaryBase)
+                        )
+                    snackBar.setAction("OK") {
+                        snackBar.dismiss()
+                        requireActivity().finish()
+                    }
+                    snackBar.show()
+
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        snackBar.dismiss()
+                        requireActivity().finish()
+                    }, 1000)
+
                 }
                 is ApiEvent.OnFailed -> {
                     Log.d("sdsdsd", "cureesdsd ${updateSiswa.getException().toString()}")
@@ -89,7 +111,29 @@ class EditPersonalDataFragment : BaseFragment<FragmentEditPersonalDataBinding>(
                 }
                 is ApiEvent.OnSuccess -> {
                     hideProgress(true)
-                    requireActivity().finish()
+                    val snackBar = Snackbar.make(
+                        requireView(),
+                        "Data Berhasil diperbarui",
+                        Snackbar.LENGTH_INDEFINITE
+                    )
+                        .setActionTextColor(
+                            (activity as AppCompatActivity).getColorStateList(R.color.white)
+                        )
+                        .setBackgroundTint(
+                            (activity as AppCompatActivity).getColor(R.color.colorBlackGrade)
+                        ).setActionTextColor(
+                            (activity as AppCompatActivity).getColorStateList(R.color.colorSecondaryBase)
+                        )
+                    snackBar.setAction("OK") {
+                        snackBar.dismiss()
+                        requireActivity().finish()
+                    }
+                    snackBar.show()
+
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        snackBar.dismiss()
+                        requireActivity().finish()
+                    }, 1000)
                 }
                 is ApiEvent.OnFailed -> {
                     Log.d("sdsdsd", "cureesdsd ${updateGuru.getException().toString()}")
@@ -316,7 +360,7 @@ class EditPersonalDataFragment : BaseFragment<FragmentEditPersonalDataBinding>(
                         }
                     }
                 }
-            } else if (args.level == "guru"){
+            } else if (args.level == "guru") {
                 with(rowPersonalDataGuruEdit) {
                     form {
                         useRealTimeValidation(disableSubmit = true)
@@ -497,7 +541,7 @@ class EditPersonalDataFragment : BaseFragment<FragmentEditPersonalDataBinding>(
                     position: Int,
                     id: Long
                 ) {
-                    Toast.makeText(context, agamaList[position], Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, agamaList[position], Toast.LENGTH_SHORT).show()
                     Log.d("dfdfdf", "agamaList ${agamaList[position]}")
                     siswaViewModel.agamaId = agamaList[position]
                 }
@@ -535,7 +579,7 @@ class EditPersonalDataFragment : BaseFragment<FragmentEditPersonalDataBinding>(
                     position: Int,
                     id: Long
                 ) {
-                    Toast.makeText(context, agamaAyahList[position], Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, agamaAyahList[position], Toast.LENGTH_SHORT).show()
                     Log.d("dfdfdf", "Dfdfdfdf agamaAyahList ${agamaAyahList[position]}")
                     siswaViewModel.agamaAyahId = agamaAyahList[position]
                 }
@@ -573,7 +617,7 @@ class EditPersonalDataFragment : BaseFragment<FragmentEditPersonalDataBinding>(
                     position: Int,
                     id: Long
                 ) {
-                    Toast.makeText(context, agamaIbuList[position], Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, agamaIbuList[position], Toast.LENGTH_SHORT).show()
                     Log.d("dfdfdf", "agamaIbuList ${agamaIbuList[position]}")
                     siswaViewModel.agamaIbuId = agamaIbuList[position]
                 }
@@ -611,7 +655,7 @@ class EditPersonalDataFragment : BaseFragment<FragmentEditPersonalDataBinding>(
                     position: Int,
                     id: Long
                 ) {
-                    Toast.makeText(context, kelasList[position], Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, kelasList[position], Toast.LENGTH_SHORT).show()
                     Log.d("dfdfdf", "kelasList ${kelasList[position]}")
                     siswaViewModel.kelas = kelasList[position]
                 }
@@ -650,7 +694,7 @@ class EditPersonalDataFragment : BaseFragment<FragmentEditPersonalDataBinding>(
                     position: Int,
                     id: Long
                 ) {
-                    Toast.makeText(context, pendidikanAyahList[position], Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, pendidikanAyahList[position], Toast.LENGTH_SHORT).show()
                     Log.d("dfdfdf", "pendidikanAyahList ${pendidikanIbuList[position]}")
                     siswaViewModel.pendidikanAyah = pendidikanAyahList[position]
                 }
@@ -689,7 +733,7 @@ class EditPersonalDataFragment : BaseFragment<FragmentEditPersonalDataBinding>(
                     position: Int,
                     id: Long
                 ) {
-                    Toast.makeText(context, pendidikanIbuList[position], Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, pendidikanIbuList[position], Toast.LENGTH_SHORT).show()
                     Log.d("dfdfdf", "pendidikanIbuList ${pendidikanIbuList[position]}")
                     siswaViewModel.pendidikanIbu = pendidikanIbuList[position]
                 }

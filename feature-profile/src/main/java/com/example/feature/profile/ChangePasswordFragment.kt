@@ -1,9 +1,12 @@
 package com.example.feature.profile
 
+import android.os.Build
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.afollestad.vvalidator.form
 import com.example.core_data.api.ApiEvent
 import com.example.core_data.domain.isGuru
@@ -44,6 +47,7 @@ class ChangePasswordFragment :
         "Konfirmasi Password baru harus diisi"
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun initView() {
         requireActivity().onBackPressedDispatcher.addCallback(
             requireActivity(),
@@ -70,6 +74,23 @@ class ChangePasswordFragment :
                 }
                 is ApiEvent.OnSuccess -> {
                     hideProgress(true)
+                    val snackBar = Snackbar.make(
+                        requireView(),
+                        "Data Password berhasil diubah",
+                        Snackbar.LENGTH_INDEFINITE
+                    )
+                        .setActionTextColor(
+                            (activity as AppCompatActivity).getColorStateList(R.color.white)
+                        )
+                        .setBackgroundTint(
+                            (activity as AppCompatActivity).getColor(R.color.colorBlackGrade)
+                        ).setActionTextColor(
+                            (activity as AppCompatActivity).getColorStateList(R.color.colorSecondaryBase)
+                        )
+                    snackBar.setAction("OK") {
+                        snackBar.dismiss()
+                    }
+                    snackBar.show()
 //                    navigateToHomeActivity(finishCurrent = true)
                 }
                 is ApiEvent.OnFailed -> {
@@ -79,7 +100,6 @@ class ChangePasswordFragment :
                         requireContext(), requireView(),
                         login.getException().toString(), Snackbar.LENGTH_SHORT
                     ).show()
-
                 }
             }
         })

@@ -20,9 +20,23 @@ data class SiswaResponse(
 )
 
 @JsonClass(generateAdapter = true)
+data class SiswaGetAllResponse(
+    @Json(name = "status")
+    val status: String = "",
+    @Json(name = "code")
+    val code: Int = 0,
+    @Json(name = "message")
+    val message: String = "",
+    @Json(name = "result")
+    val data: ListSiswaResponse
+)
+
+@JsonClass(generateAdapter = true)
 data class SiswaDataResponse(
     @Json(name = "id_user")
-    val idUser: Long = 0L,
+    val idUser: Long?,
+    @Json(name = "user_id")
+    val userId: Long?,
     @Json(name = "username")
     val username: String = "",
     @Json(name = "level")
@@ -85,7 +99,7 @@ fun ListSiswaResponse.toDomain() = map {
 
 internal fun SiswaDataResponse.toDomain() =
     Siswa(
-        idUser = idUser,
+        idUser = idUser ?: (userId ?: 0L),
         username = username,
         level = level,
         lastLogin = lastLogin,

@@ -88,6 +88,39 @@ interface ModuleNavigator {
             }.let { startActivity(it, finishCurrent) }
     }
 
+
+    interface NilaiSiswaNav : ModuleNavigator {
+
+        companion object {
+            const val LEVEL = "level"
+        }
+
+        @MainThread
+        fun <T> T.levelParam(): Lazy<String> where T : AppCompatActivity, T : NilaiSiswaNav =
+            lazy(LazyThreadSafetyMode.NONE) {
+                intent.getStringExtra(LEVEL).orEmpty()
+            }
+    }
+
+    fun <T> T.navigateToNilaiSiswaActivity(
+        finishCurrent: Boolean = false,
+        level: String = ""
+    ) where T : Fragment, T : ModuleNavigator {
+        ActivityClassPath.NilaiSiswa.getIntent(requireContext())
+            .apply {
+                putExtra(NilaiSiswaNav.LEVEL, level)
+            }.let { startActivity(it, finishCurrent) }
+    }
+
+    fun <T> T.navigateToNilaiSiswaActivity(
+        finishCurrent: Boolean = false,
+        level: String = ""
+    ) where T : AppCompatActivity, T : ModuleNavigator {
+        ActivityClassPath.NilaiSiswa.getIntent(this)
+            .apply {
+                putExtra(NilaiSiswaNav.LEVEL, level)
+            }.let { startActivity(it, finishCurrent) }
+    }
 }
 
 //region Extension functions to start activity in Activities list without parameter

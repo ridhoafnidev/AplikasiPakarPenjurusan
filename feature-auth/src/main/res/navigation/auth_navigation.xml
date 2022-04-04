@@ -28,5 +28,9 @@
         android:id="@+id/registerFragment"
         android:name="com.example.feature.auth.register.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <argument
+            android:name="level"
+            app:argType="string" />
+    </fragment>
 </navigation>

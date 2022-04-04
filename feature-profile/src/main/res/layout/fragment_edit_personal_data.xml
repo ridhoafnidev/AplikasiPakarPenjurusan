@@ -31,7 +31,7 @@
             style="@style/ThemeOverlay.PakarPenjurusan.Button.Secondary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/medium_fit"
+            android:layout_margin="@dimen/small_fit"
             android:enabled="false"
             android:paddingVertical="@dimen/small_fit"
             android:text="@string/submit"

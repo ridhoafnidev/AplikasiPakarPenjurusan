@@ -27,6 +27,14 @@ class AuthViewModel(
         emit(authRepository.getSiswaDetail(idUser.toInt()))
     }
 
+    var agamaId: String? = ""
+    var agamaAyahId: String? = ""
+    var agamaIbuId: String? = ""
+    var tanggalLahir: String? = ""
+    var kelas: String? = ""
+    var pendidikanAyah: String? = ""
+    var pendidikanIbu: String? = ""
+
     var username = ""
     var password = ""
     var idUser = ""
@@ -109,9 +117,48 @@ class AuthViewModel(
         }
     }
 
-    fun registerSiswa(registerSiswaRequest: RegisterSiswaRequest) {
+    fun registerSiswa(
+        level: String,
+        usernames: String,
+        passwords: String,
+        nama: String,
+        nisn: String,
+        alamat: String,
+        asalSekolah: String,
+        statusAsalSekolah: String,
+        namaAyah: String,
+        pekerjaanAyah: String,
+        namaIbu: String,
+        umurIbu: String,
+        pekerjaanIbu: String,
+        tempatLahir: String
+    ) {
         viewModelScope.launch {
-            authRepository.registerSiswa(registerSiswaRequest)
+            authRepository.registerSiswa(
+                RegisterSiswaRequest(
+                    level = level,
+                    username = usernames,
+                    password = passwords,
+                    nama = nama,
+                    nisn = nisn,
+                    kelas = kelas.toString(),
+                    tanggalLahir = tanggalLahir.toString(),
+                    agama = agamaId.toString(),
+                    alamat = alamat,
+                    asalSekolah = asalSekolah,
+                    statusAsalSekolah = statusAsalSekolah,
+                    namaAyah = namaAyah,
+                    agamaAyah = agamaAyahId.toString(),
+                    pendidikanTerakhirAyah = pendidikanAyah.toString(),
+                    pekerjaanAyah = pekerjaanAyah,
+                    namaIbu = namaIbu,
+                    umurIbu = umurIbu,
+                    agamaIbu = agamaIbuId.toString(),
+                    pendidikanTerakhirIbu = pendidikanIbu.toString(),
+                    pekerjaanIbu = pekerjaanIbu,
+                    tempatLahir = tempatLahir
+                )
+            )
                 .onStart { emit(ApiEvent.OnProgress()) }
                 .collect { _registerSiswaRequest.value = it }
         }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nilaisiswa_navigation"
+    app:startDestination="@id/nilaiSiswaFragment">
+
+    <fragment
+        android:id="@+id/nilaiSiswaFragment"
+        android:name="com.example.subfeature.nilai_siswa.NilaiSiswaFragment"
+        android:label="fragment_nilai_siswa"
+        tools:layout="@layout/fragment_nilai_siswa" >
+        <action
+            android:id="@+id/action_nilaiSiswaFragment_to_addNilaiSiswaFragment"
+            app:destination="@id/addNilaiSiswaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNilaiSiswaFragment"
+        android:name="com.example.subfeature.nilai_siswa.AddNilaiSiswaFragment"
+        android:label="fragment_add_nilai_siswa"
+        tools:layout="@layout/fragment_add_nilai_siswa" />
+</navigation>

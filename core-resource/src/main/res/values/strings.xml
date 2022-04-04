@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="text_search_chat">Cari</string>
+    <string name="date_format_d_MMM_yyyy">d MMM yyyy</string>
+    <string name="date_format_yyyy_MM_dd">yyyy-MM-dd</string>
 </resources>

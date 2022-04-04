@@ -34,6 +34,7 @@ dependencies {
     implementation project(':feature-profile')
 
     implementation project(':sub-feature-pakar')
+    implementation project(':sub-feature-nilai-siswa')
     implementation project(':hasilangket')
 
     implementation deps.koin

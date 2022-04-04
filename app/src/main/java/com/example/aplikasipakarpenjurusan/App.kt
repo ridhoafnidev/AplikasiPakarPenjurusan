@@ -5,6 +5,7 @@ import com.example.core_data.dataModule
 import com.example.feature.auth.authModule
 import com.example.subfeature.hasilangket.hasilAngketModule
 import com.example.subfeature.pakar.pakarModule
+import com.example.subfeature.nilai_siswa.nilaiSiswaModule
 import io.armcha.debugBanner.Banner
 import io.armcha.debugBanner.BuildConfig
 import io.armcha.debugBanner.DebugBanner
@@ -36,7 +37,8 @@ class App : Application() {
                     dataModule,
                     authModule,
                     pakarModule,
-                    hasilAngketModule
+                    hasilAngketModule,
+                    nilaiSiswaModule
                 )
             )
         }

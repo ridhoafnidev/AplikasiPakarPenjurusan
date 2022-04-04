@@ -35,7 +35,7 @@
             android:id="@+id/edt_nip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text" />
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -67,19 +67,7 @@
             android:id="@+id/edt_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text" />
+            android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
-
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/btn_submit"-->
-<!--        style="@style/ThemeOverlay.PakarPenjurusan.Button.Secondary"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="@dimen/medium_fit"-->
-<!--        android:enabled="false"-->
-<!--        android:paddingVertical="@dimen/small_fit"-->
-<!--        android:text="@string/submit"-->
-<!--        android:textColor="@color/white"-->
-<!--        tools:ignore="TooManyViews" />-->
 
 </androidx.appcompat.widget.LinearLayoutCompat>

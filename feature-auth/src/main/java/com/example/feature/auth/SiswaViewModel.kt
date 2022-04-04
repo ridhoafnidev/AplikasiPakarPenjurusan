@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core_data.api.ApiEvent
 import com.example.core_data.api.request.siswa.UpdateSiswaRequest
+import com.example.core_data.domain.ListSiswa
 import com.example.core_data.domain.Siswa
 import com.example.core_data.repository.SiswaRepository
 import kotlinx.coroutines.flow.collect
@@ -34,6 +35,9 @@ class SiswaViewModel(
 
     private val _updateSiswa = MutableLiveData<ApiEvent<Siswa?>>()
     val updateSiswa: LiveData<ApiEvent<Siswa?>> = _updateSiswa
+
+    private val _siswaGetAll = MutableLiveData<ApiEvent<ListSiswa?>>()
+    val siswaGetAll: LiveData<ApiEvent<ListSiswa?>> = _siswaGetAll
 
     @RequiresApi(Build.VERSION_CODES.Q)
     fun updateFotoSiswa(
@@ -91,6 +95,14 @@ class SiswaViewModel(
             )
                 .onStart { emit(ApiEvent.OnProgress()) }
                 .collect { _updateSiswa.value = it }
+        }
+    }
+
+    fun getSiswaAll() {
+        viewModelScope.launch {
+            siswaRepository.getSiswaAll()
+                .onStart { emit(ApiEvent.OnProgress()) }
+                .collect { _siswaGetAll.value = it }
         }
     }
 }
