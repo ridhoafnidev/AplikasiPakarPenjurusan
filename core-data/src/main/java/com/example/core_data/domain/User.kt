@@ -7,6 +7,8 @@ import com.squareup.moshi.Moshi
 @JsonClass(generateAdapter = true)
 data class User(
     val idUser: Long,
+    val idSiswa: Long = 0,
+    val idGuru: Long = 0,
     val username: String,
     val nama: String,
     val level: String,

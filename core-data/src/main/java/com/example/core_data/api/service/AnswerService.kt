@@ -18,14 +18,15 @@ interface AnswerService {
 
     @GET(Result)
     suspend fun getHasilBySiswaId(
-        @Path("siswa_id") siswaId: Int
+        @Path("siswa_id") siswaId: Int,
+        @Path("is_teacher") isTeacher: Int
     ) : HasilResponse
 
     companion object {
         //region API Path
 
         const val Answer = "hasil-jawaban-insert"
-        const val Result = "hasil-by-siswa-id/{siswa-id}"
+        const val Result = "hasil-by-siswa-id/{siswa_id}/{is_teacher}"
 
         //endregion
     }

@@ -5,5 +5,5 @@ import org.koin.dsl.module
 
 val hasilAngketModule
     get() = module {
-        viewModel { HasilAngketViewModel(get()) }
+        viewModel { HasilAngketViewModel(get(), get()) }
     }

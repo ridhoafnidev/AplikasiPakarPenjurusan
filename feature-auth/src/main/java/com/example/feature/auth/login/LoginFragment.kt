@@ -1,6 +1,5 @@
 package com.example.feature.auth.login
 
-import android.util.Log
 import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import com.afollestad.vvalidator.form

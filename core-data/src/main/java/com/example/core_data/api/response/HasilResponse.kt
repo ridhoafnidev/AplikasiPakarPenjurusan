@@ -26,15 +26,18 @@ class HasilDataResponse(
     val siswaId: Int = 0,
     @Json(name = "hasil_akhir")
     val hasilAkhir: String = "",
+    @Json(name = "nama")
+    val nama: String = ""
 )
 
 fun ListHasilResponse.toDomain() = map {
-    it
+    it.toDomain()
 }
 
 fun HasilDataResponse.toDomain() = LastResult(
     idHasil = idHasil,
     siswaId = siswaId,
-    hasilAkhir = hasilAkhir
+    hasilAkhir = hasilAkhir,
+    nama = nama
 )
 

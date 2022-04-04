@@ -12,6 +12,7 @@ import com.example.core_data.api.service.AuthService
 import com.example.core_data.api.service.UserService
 import com.example.core_data.repository.AnswerRepository
 import com.example.core_data.repository.AuthRepository
+import com.example.core_data.repository.LastResultRepository
 import com.squareup.moshi.Moshi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -55,10 +56,11 @@ val Application.dataModule
         }
 
         single { get<CoreDatabase>().userDao() }
+        single { get<CoreDatabase>().lastResultDao() }
 
         single { AuthRepository(get(), get(), get(), get()) }
-
         single { AnswerRepository(get(), get(), get(), get()) }
+        single { LastResultRepository(get(), get(), get()) }
 
     }
 

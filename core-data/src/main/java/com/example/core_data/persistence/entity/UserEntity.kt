@@ -9,6 +9,8 @@ import com.example.core_data.domain.Users
 data class UserEntity(
     @PrimaryKey
     val idUser: Long,
+    val idSiswa: Long,
+    val idGuru: Long,
     val username: String,
     val nama: String,
     val level: String,
@@ -23,7 +25,7 @@ typealias UserEntities = List<UserEntity>
 
 internal fun UserEntity.toDomain() =
     User(
-       idUser = idUser, username = username, nama = nama, level = level, lastLogin = lastLogin, loginRemark = loginRemark, isCurrent = isCurrent
+       idUser = idUser, idSiswa = idSiswa, idGuru = idGuru, username = username, nama = nama, level = level, lastLogin = lastLogin, loginRemark = loginRemark, isCurrent = isCurrent
     )
 
 internal fun UserEntities.toDomain() =
@@ -33,7 +35,7 @@ internal fun UserEntities.toDomain() =
 //region Convert from Domain to Entity
 
 internal fun User.toEntity() =
-    UserEntity(idUser = idUser, username = username, nama = nama, level = level, lastLogin = lastLogin, loginRemark = loginRemark, isCurrent = isCurrent)
+    UserEntity(idUser = idUser, idSiswa = idSiswa, idGuru = idGuru, username = username, nama = nama, level = level, lastLogin = lastLogin, loginRemark = loginRemark, isCurrent = isCurrent)
 
 internal fun Users.toEntity() =
     map { it.toEntity() }

@@ -3,6 +3,7 @@ package com.example.aplikasipakarpenjurusan
 import android.app.Application
 import com.example.core_data.dataModule
 import com.example.feature.auth.authModule
+import com.example.subfeature.hasilangket.hasilAngketModule
 import com.example.subfeature.pakar.pakarModule
 import io.armcha.debugBanner.Banner
 import io.armcha.debugBanner.BuildConfig
@@ -35,7 +36,8 @@ class App : Application() {
                 listOf(
                     dataModule,
                     authModule,
-                    pakarModule
+                    pakarModule,
+                    hasilAngketModule
                 )
             )
         }
