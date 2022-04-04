@@ -5,6 +5,7 @@ import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -20,12 +21,6 @@ abstract class BaseActivity<VB: ViewBinding>(
     val binding: VB by lazy {
         bindingInflater(layoutInflater)
     }
-
-    /*
-    val bindingToolbar by lazy {
-        ComponentToolbarBinding.inflate(layoutInflater)
-    }
-     */
 
     protected abstract fun initView()
 
@@ -82,5 +77,14 @@ abstract class BaseActivity<VB: ViewBinding>(
     fun setToolbarSearch(state: Boolean){
         toolbarSearch.visibility = if(state) View.VISIBLE else View.GONE
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item?.itemId == android.R.id.home) {
+            finish()
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 
 }

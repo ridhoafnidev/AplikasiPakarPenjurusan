@@ -16,7 +16,6 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
     private val viewModel by sharedViewModel<AuthViewModel>()
 
     override fun initView() {
-        //(activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         Handler(Looper.getMainLooper()).postDelayed({
             observeAuth()
         }, 2000)
@@ -25,11 +24,9 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
     private fun observeAuth() {
         viewModel.auth.observe(viewLifecycleOwner){ data ->
             data?.let {
-                Log.d("sdsdsd", "cureesdsd ${data.isCurrent}")
                 if (data.isCurrent){
                     data.let {
                         if (it.isGuru) {
-                            //observeCurrentSkill(it.teknisiId)
                         }
                         navigateToHomeActivity(true)
                     }
