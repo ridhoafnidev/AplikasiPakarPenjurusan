@@ -6,6 +6,7 @@ import android.os.Looper
 import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.core_data.api.ApiEvent
@@ -31,15 +32,20 @@ class NilaiSiswaFragment : BaseFragment<FragmentNilaiSiswaBinding>(
     override fun initView() {
         if (level == "guru") {
             siswaViewModel.getSiswaAll()
+
             nilaiSiswaViewModel.getNilaiSiswaAll()
+
+            binding.fabAddNilaiSiswa.setOnClickListener {
+                findNavController().navigate(NilaiSiswaFragmentDirections.actionNilaiSiswaFragmentToAddNilaiSiswaFragment())
+            }
 
             siswaViewModel.siswaGetAll.observe(viewLifecycleOwner, { siswa ->
                 when (siswa) {
                     is ApiEvent.OnProgress -> {
-                        Timber.d("progress ${siswa.currentResult}")
+                        Timber.d("progress h${siswa.currentResult}")
                     }
                     is ApiEvent.OnSuccess -> {
-                        Log.d("dfdf", "progressprogressprogress ${siswa.getData()!!}")
+                        Log.d("dfdf", "pfgfofhjghjighdsdsrogressprogressprogress ${siswa.getData()!!}")
 //
                         nilaiSiswaViewModel.nilaiSiswaGetAll.observe(
                             viewLifecycleOwner,
