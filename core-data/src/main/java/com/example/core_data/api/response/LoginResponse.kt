@@ -20,6 +20,10 @@ data class LoginResponse(
 data class LoginDataResponse(
     @Json(name = "id_user")
     val idUser: Long = 0L,
+    @Json(name = "id_siswa")
+    val idSiswa: Long = 0L,
+    @Json(name = "id_guru")
+    val idGuru: Long = 0L,
     @Json(name = "username")
     val username: String = "",
     @Json(name = "nama")
@@ -33,7 +37,7 @@ data class LoginDataResponse(
 //region Convert from Response to Domain
 
 internal fun LoginDataResponse.toDomain() =
-    User(idUser = idUser, username = username, level = level, lastLogin = lastLogin, nama = nama, isCurrent = false)
+    User(idUser = idUser, idSiswa = idSiswa, idGuru = idGuru, username = username, level = level, lastLogin = lastLogin, nama = nama, isCurrent = false)
 
 
 //endregion

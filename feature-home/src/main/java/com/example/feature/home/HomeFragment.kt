@@ -19,8 +19,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     }
 
     override fun initListener() {
-        binding.cvPakar.setOnClickListener {
-            navigateToPakarActivity()
+        with(binding){
+            cvPakar.setOnClickListener {
+                navigateToPakarActivity()
+            }
+            cvHasilAngket.setOnClickListener {
+                navigateToHasilAngketActivity()
+            }
         }
 
         binding.cvNilaiSiswa.setOnClickListener {
@@ -54,5 +59,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 }
             }
         }
+
     }
 }

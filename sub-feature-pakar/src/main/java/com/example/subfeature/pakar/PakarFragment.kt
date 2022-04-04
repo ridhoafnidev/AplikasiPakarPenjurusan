@@ -4,43 +4,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.viewpager2.widget.ViewPager2
-import com.example.core_data.domain.OnBoardingData
-import com.example.core_data.domain.Questions
+import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+import com.example.core_data.domain.Answer
 import com.example.core_resource.components.base.BaseFragment
-import com.example.subfeature.pakar.adapter.OnBoardingItemAdapter
+import com.example.subfeature.pakar.adapter.ViewPagerAdapter
 import com.example.subfeature.pakar.databinding.FragmentPakarBinding
+import com.example.subfeature.pakar.fragments.one.PakarFirstViewModel
+import com.example.subfeature.pakar.fragments.two.PakarSecondViewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class PakarFragment : BaseFragment<FragmentPakarBinding>(FragmentPakarBinding::inflate) {
 
-    private val itemsAdapter by lazy {
-        OnBoardingItemAdapter(
-            listOf(
-                OnBoardingData(
-                    "Title1",
-                    "Desc1",
-                    listOf(Questions("A"), Questions("B"), Questions("C"))
-                ),
-                OnBoardingData(
-                    "Title2",
-                    "Desc2",
-                    listOf(Questions("D"), Questions("E"), Questions("F"))
-                ),
-                OnBoardingData(
-                    "Title3",
-                    "Desc3",
-                    listOf(Questions("G"), Questions("H"), Questions("I"))
-                ),
-                OnBoardingData(
-                    "Title4",
-                    "Desc4",
-                    listOf(Questions("H"), Questions("I"), Questions("J"))
-                )
-            )
-        )
-    }
+    private val pakarViewModel: PakarViewModel by sharedViewModel()
+    private val firstPakarViewModel: PakarFirstViewModel by sharedViewModel()
+    private val secondPakarViewModel: PakarSecondViewModel by sharedViewModel()
 
     private val itemViewPager2 by lazy {
         binding.viewPager
@@ -58,21 +36,34 @@ class PakarFragment : BaseFragment<FragmentPakarBinding>(FragmentPakarBinding::i
         binding.preview
     }
 
+    private val itemAdapter by lazy {
+        ViewPagerAdapter(requireActivity().supportFragmentManager, firstPakarViewModel)
+    }
 
     override fun initView(){
         setupIndicators()
         setupCurrentIndicator(0)
-        itemViewPager2.adapter = itemsAdapter
-        itemViewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
+        itemViewPager2.adapter = itemAdapter
+        itemViewPager2.addOnPageChangeListener(object : OnPageChangeListener {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
                 setupCurrentIndicator(position)
+            }
+
+            override fun onPageSelected(position: Int) {
+                setupCurrentIndicator(position)
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {
             }
         })
     }
 
     private fun setupIndicators() {
-        val indicator = arrayOfNulls<ImageView>(itemsAdapter.itemCount)
+        val indicator = arrayOfNulls<ImageView>(itemAdapter.count)
         val layoutParams: LinearLayout.LayoutParams = LinearLayout.LayoutParams(
             ViewGroup.LayoutParams.WRAP_CONTENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
@@ -129,13 +120,21 @@ class PakarFragment : BaseFragment<FragmentPakarBinding>(FragmentPakarBinding::i
 
     override fun initListener() {
         with(binding){
+            val data = arrayListOf<Answer>()
             next.setOnClickListener {
-                if (itemViewPager2.currentItem + 1 < itemsAdapter.itemCount){
+                if (itemViewPager2.currentItem + 1 < itemAdapter.count){
                     itemViewPager2.currentItem += 1
+                }
+                else {
+                    if (next.text.equals("SELESAI")){
+                        data.addAll(firstPakarViewModel.getFinalData())
+                        data.addAll(secondPakarViewModel.getFinalData())
+                        pakarViewModel.saveQuestionAnswer(1L, data)
+                    }
                 }
             }
             preview.setOnClickListener {
-                if (itemViewPager2.currentItem -1 < itemsAdapter.itemCount){
+                if (itemViewPager2.currentItem -1 < itemAdapter.count){
                     itemViewPager2.currentItem -= 1
                 }
             }

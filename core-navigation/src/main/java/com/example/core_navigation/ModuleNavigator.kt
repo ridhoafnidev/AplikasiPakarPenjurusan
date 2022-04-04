@@ -43,6 +43,18 @@ interface ModuleNavigator {
         startActivity(ActivityClassPath.Pakar, finishCurrent)
     }
 
+    fun <T> T.navigateToHasilAngketActivity(
+        finishCurrent: Boolean = false
+    ) where T : Fragment, T : ModuleNavigator {
+        startActivity(ActivityClassPath.HasilAngket, finishCurrent)
+    }
+
+    fun <T> T.navigateToHasilAngketActivity(
+        finishCurrent: Boolean = false
+    ) where T : AppCompatActivity, T : ModuleNavigator {
+        startActivity(ActivityClassPath.HasilAngket, finishCurrent)
+    }
+
     interface ProfileNav : ModuleNavigator {
 
         companion object {
@@ -75,6 +87,7 @@ interface ModuleNavigator {
                 putExtra(ProfileNav.STATUS, status)
             }.let { startActivity(it, finishCurrent) }
     }
+
 
     interface NilaiSiswaNav : ModuleNavigator {
 
