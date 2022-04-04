@@ -25,7 +25,6 @@ class App : Application() {
 //            DebugBanner.init(this, banner)
 //        }
 
-
         when(BuildConfig.BUILD_TYPE) {
             "debug" -> Timber.plant(Timber.DebugTree())
         }

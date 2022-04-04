@@ -9,6 +9,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import com.example.core_data.domain.Answer
 import com.example.core_data.domain.Questions
+import com.example.core_data.domain.isGuru
 import com.example.subfeature.pakar.databinding.*
 import com.example.subfeature.pakar.fragments.eight.PakarEighthViewModel
 import com.example.subfeature.pakar.fragments.five.PakarFifthViewModel
@@ -92,6 +93,11 @@ class NinethFragment : Fragment() {
                 }
             }
 
+            ninethPakarViewModel.auth.observe(viewLifecycleOwner) { user ->
+                user?.let {
+                   ninethPakarViewModel.siswaId = it.idSiswa
+                }
+            }
             next.setOnClickListener {
                 val data = arrayListOf<Answer>()
                 data.addAll(firstPakarViewModel.getFinalData())
@@ -102,7 +108,8 @@ class NinethFragment : Fragment() {
                 data.addAll(seventhPakarViewModel.getFinalData())
                 data.addAll(eighthPakarViewModel.getFinalData())
                 data.addAll(ninethPakarViewModel.getFinalData())
-                ninethPakarViewModel.saveQuestionAnswer(1L, data)
+
+                ninethPakarViewModel.saveQuestionAnswer(ninethPakarViewModel.siswaId, data)
             }
         }
     }

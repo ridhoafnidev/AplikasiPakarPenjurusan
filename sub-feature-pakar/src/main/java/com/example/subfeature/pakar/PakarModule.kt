@@ -21,5 +21,5 @@ val pakarModule
         viewModel { PakarFifthViewModel() }
         viewModel { PakarSeventhViewModel() }
         viewModel { PakarEighthViewModel() }
-        viewModel { PakarNinethViewModel(get()) }
+        viewModel { PakarNinethViewModel(get(), get()) }
     }

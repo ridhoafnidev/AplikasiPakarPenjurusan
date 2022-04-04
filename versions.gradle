@@ -168,6 +168,5 @@ ext.deps = [
         circle_image_view : "de.hdodenhof:circleimageview:$versions.circle_image_view",
 
         chivorns_material_spinner : "com.github.chivorns:smartmaterialspinner:$versions.chivorns_material_spinner"
-        circle_image_view : "de.hdodenhof:circleimageview:$versions.circle_image_view",
 
 ]

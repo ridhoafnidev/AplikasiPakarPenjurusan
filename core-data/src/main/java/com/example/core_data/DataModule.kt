@@ -62,14 +62,14 @@ val Application.dataModule
         }
 
         single { get<CoreDatabase>().userDao() }
-        single { get<CoreDatabase>().guruDao() }
-        single { get<CoreDatabase>().siswaDao() }
         single { get<CoreDatabase>().lastResultDao() }
+        single { get<CoreDatabase>().siswaDao() }
+        single { get<CoreDatabase>().guruDao() }
 
         single { AuthRepository(get(), get(), get(), get(), get(), get()) }
         single { GuruRepository(get(), get(), get(), get()) }
         single { SiswaRepository(get(), get(), get(), get()) }
-        single { AuthRepository(get(), get(), get(), get()) }
+        single { AuthRepository(get(), get(), get(), get(), get(), get()) }
         single { AnswerRepository(get(), get(), get(), get()) }
         single { LastResultRepository(get(), get(), get()) }
 
