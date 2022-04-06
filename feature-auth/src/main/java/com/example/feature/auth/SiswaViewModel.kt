@@ -39,6 +39,10 @@ class SiswaViewModel(
     private val _siswaGetAll = MutableLiveData<ApiEvent<ListSiswa?>>()
     val siswaGetAll: LiveData<ApiEvent<ListSiswa?>> = _siswaGetAll
 
+    init {
+        getSiswaAll()
+    }
+
     @RequiresApi(Build.VERSION_CODES.Q)
     fun updateFotoSiswa(
         id: Int,

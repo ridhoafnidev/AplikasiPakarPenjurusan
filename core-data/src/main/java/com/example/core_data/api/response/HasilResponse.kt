@@ -24,6 +24,8 @@ class HasilDataResponse(
     val idHasil: Int = 0,
     @Json(name = "siswa_id")
     val siswaId: Int = 0,
+    @Json(name = "user_id")
+    val userId: Int = 0,
     @Json(name = "hasil_akhir")
     val hasilAkhir: String = "",
     @Json(name = "nama")
@@ -37,6 +39,7 @@ fun ListHasilResponse.toDomain() = map {
 fun HasilDataResponse.toDomain() = LastResult(
     idHasil = idHasil,
     siswaId = siswaId,
+    userId = userId,
     hasilAkhir = hasilAkhir,
     nama = nama
 )

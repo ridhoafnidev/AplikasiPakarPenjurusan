@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.core_data.dataModule
 import com.example.feature.auth.authModule
 import com.example.subfeature.hasilangket.hasilAngketModule
+import com.example.subfeature.nilai_penjurusan.nilaiPenjurusanModule
 import com.example.subfeature.pakar.pakarModule
 import com.example.subfeature.nilai_siswa.nilaiSiswaModule
 import io.armcha.debugBanner.Banner
@@ -38,7 +39,8 @@ class App : Application() {
                     authModule,
                     pakarModule,
                     hasilAngketModule,
-                    nilaiSiswaModule
+                    nilaiSiswaModule,
+                    nilaiPenjurusanModule
                 )
             )
         }

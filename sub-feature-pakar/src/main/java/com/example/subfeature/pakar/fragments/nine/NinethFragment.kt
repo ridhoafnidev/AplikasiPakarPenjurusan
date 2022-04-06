@@ -95,7 +95,7 @@ class NinethFragment : Fragment() {
 
             ninethPakarViewModel.auth.observe(viewLifecycleOwner) { user ->
                 user?.let {
-                   ninethPakarViewModel.siswaId = it.idSiswa
+                   ninethPakarViewModel.siswaId = it.idUser
                 }
             }
             next.setOnClickListener {

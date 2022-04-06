@@ -4,6 +4,7 @@ import com.example.core_data.api.request.RequestAnswerInsert
 import com.example.core_data.api.response.CommonResponse
 import com.example.core_data.api.response.HasilDataResponse
 import com.example.core_data.api.response.HasilResponse
+import com.example.core_data.api.service.AnswerService.Companion.ResultAll
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -22,11 +23,15 @@ interface AnswerService {
         @Path("is_teacher") isTeacher: Int
     ) : HasilResponse
 
+    @GET(ResultAll)
+    suspend fun getHasilAll() : HasilResponse
+
     companion object {
         //region API Path
 
         const val Answer = "hasil-jawaban-insert"
         const val Result = "hasil-by-siswa-id/{siswa_id}/{is_teacher}"
+        const val ResultAll = "hasil-all"
 
         //endregion
     }

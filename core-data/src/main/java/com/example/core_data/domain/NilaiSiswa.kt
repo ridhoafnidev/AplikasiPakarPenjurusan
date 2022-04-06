@@ -9,3 +9,7 @@ data class NilaiSiswa(
 )
 
 typealias ListNilaiSiswa = List<NilaiSiswa>
+
+fun NilaiSiswa.isIpa() = rata_akhir >= 70
+fun NilaiSiswa.isIps() = rata_akhir < 70
+fun NilaiSiswa.isIpaOrIps() = if(rata_akhir >= 70) IPA else IPS
