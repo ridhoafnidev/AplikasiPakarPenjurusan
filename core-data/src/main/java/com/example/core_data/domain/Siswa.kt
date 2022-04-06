@@ -8,7 +8,7 @@ data class Siswa(
     val createdAt: String = "",
     val updatedAt: String = "",
     val nisn: String = "",
-    val nama: String = "",
+    var nama: String = "",
     val kelas: String = "",
     val tanggalLahir: String = "",
     val agama: String = "",

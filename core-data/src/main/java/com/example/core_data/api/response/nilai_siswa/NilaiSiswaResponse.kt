@@ -17,6 +17,18 @@ data class NilaiSiswaGetAllResponse(
 )
 
 @JsonClass(generateAdapter = true)
+data class NilaiSiswaResponse(
+    @Json(name = "status")
+    val status: String = "",
+    @Json(name = "code")
+    val code: Int = 0,
+    @Json(name = "message")
+    val message: String = "",
+    @Json(name = "result")
+    val data: NilaiSiswaResponseData
+)
+
+@JsonClass(generateAdapter = true)
 data class NilaiSiswaResponseData(
     @Json(name = "id")
     val id: Long = 0L,
