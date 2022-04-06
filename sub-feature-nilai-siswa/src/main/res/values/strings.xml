@@ -1,4 +1,7 @@
 <resources>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tambah">Tambah</string>
+    <string name="rata_rata_akhir">Rata-Rata Akhir</string>
+    <string name="rata_rata_ips">Rata-Rata IPS</string>
+    <string name="rata_rata_ipa">Rata-Rata IPA</string>
 </resources>
