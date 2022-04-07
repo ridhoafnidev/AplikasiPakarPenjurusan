@@ -32,7 +32,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             }
 
             cvHasilPenjurusan.setOnClickListener {
-//            navigateToNilaiSiswaActivity()
+                navigateToNilaiPenjurusanActivity(level = level)
             }
         }
     }

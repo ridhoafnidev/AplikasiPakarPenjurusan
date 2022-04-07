@@ -10,6 +10,7 @@ data class LastResultEntity(
     @PrimaryKey
     val idHasil: Int = 0,
     val siswaId: Int = 0,
+    val userId: Int = 0,
     val hasilAkhir: String = "",
     val nama: String = "",
     )
@@ -22,6 +23,7 @@ internal fun LastResultEntity.toDomain() =
     LastResult(
        idHasil = idHasil,
        siswaId = siswaId,
+       userId = userId,
        hasilAkhir = hasilAkhir,
        nama = nama
     )
@@ -33,7 +35,7 @@ internal fun LastResultEntities.toDomain() =
 //region Convert from Domain to Entity
 
 internal fun LastResult.toEntity() =
-    LastResultEntity(idHasil = idHasil, siswaId = siswaId, hasilAkhir = hasilAkhir, nama = nama)
+    LastResultEntity(idHasil = idHasil, siswaId = siswaId, userId = userId, hasilAkhir = hasilAkhir, nama = nama)
 
 internal fun LastResults.toEntity() =
     map { it.toEntity() }

@@ -102,6 +102,43 @@ interface ModuleNavigator {
             }
     }
 
+    //region Nilai Penjurusan
+
+    interface NilaiPenjurusanNav : ModuleNavigator {
+
+        companion object {
+            const val LEVEL = "level"
+        }
+
+        @MainThread
+        fun <T> T.levelParam(): Lazy<String> where T : AppCompatActivity, T : NilaiPenjurusanNav =
+            lazy(LazyThreadSafetyMode.NONE) {
+                intent.getStringExtra(LEVEL).orEmpty()
+            }
+    }
+
+    fun <T> T.navigateToNilaiPenjurusanActivity(
+        finishCurrent: Boolean = false,
+        level: String = ""
+    ) where T : Fragment, T : ModuleNavigator {
+        ActivityClassPath.NilaiPenjurusan.getIntent(requireContext())
+            .apply {
+                putExtra(NilaiPenjurusanNav.LEVEL, level)
+            }.let { startActivity(it, finishCurrent) }
+    }
+
+    fun <T> T.navigateToNilaiPenjurusanActivity(
+        finishCurrent: Boolean = false,
+        level: String = ""
+    ) where T : AppCompatActivity, T : ModuleNavigator {
+        ActivityClassPath.NilaiPenjurusan.getIntent(this)
+            .apply {
+                putExtra(NilaiPenjurusanNav.LEVEL, level)
+            }.let { startActivity(it, finishCurrent) }
+    }
+
+    //endregion
+
     fun <T> T.navigateToNilaiSiswaActivity(
         finishCurrent: Boolean = false,
         level: String = ""
