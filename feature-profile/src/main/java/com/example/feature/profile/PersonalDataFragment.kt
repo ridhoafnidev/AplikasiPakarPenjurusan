@@ -29,7 +29,6 @@ class PersonalDataFragment : BaseFragment<FragmentPersonalDataBinding>(
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun initView() {
-        setTitle("heiii", true, Gravity.NO_GRAVITY)
         if (status == "Password") {
 
             findNavController().navigate(PersonalDataFragmentDirections.actionPersonalDataFragmentToChangePasswordFragment())
