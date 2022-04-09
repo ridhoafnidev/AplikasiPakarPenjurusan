@@ -1,5 +1,6 @@
 package com.example.subfeature.hasilangket
 
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.afollestad.recyclical.datasource.dataSourceTypedOf
 import com.afollestad.recyclical.setup
@@ -18,6 +19,7 @@ class HasilAngketFragment : BaseFragment<FragmentHasilAngketBinding>(FragmentHas
 
     override fun initView(){
         pakarViewModel.auth.observe(viewLifecycleOwner) { user ->
+            Log.d("dgf", "ooom ${user!!.isGuru}")
             user?.let {
                 pakarViewModel.getLastResult(it.idSiswa.toInt(), if (it.isGuru) 1 else 0)
             }

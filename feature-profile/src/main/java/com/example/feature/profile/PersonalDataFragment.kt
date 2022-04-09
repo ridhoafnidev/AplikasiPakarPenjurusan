@@ -2,6 +2,7 @@ package com.example.feature.profile
 
 import android.os.Build
 import android.util.Log
+import android.view.Gravity
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
@@ -17,7 +18,8 @@ import com.example.feature.profile.databinding.FragmentPersonalDataBinding
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class PersonalDataFragment : BaseFragment<FragmentPersonalDataBinding>(
-    FragmentPersonalDataBinding::inflate
+    FragmentPersonalDataBinding::inflate,
+    R.string.data_pribadi
 ), ModuleNavigator {
 
     private val status by lazy { (activity as ProfileActivity).status }
@@ -28,6 +30,7 @@ class PersonalDataFragment : BaseFragment<FragmentPersonalDataBinding>(
     @RequiresApi(Build.VERSION_CODES.O)
     override fun initView() {
         if (status == "Password") {
+
             findNavController().navigate(PersonalDataFragmentDirections.actionPersonalDataFragmentToChangePasswordFragment())
         } else if (status == "About") {
             findNavController().navigate(PersonalDataFragmentDirections.actionPersonalDataFragmentToAboutFragment())

@@ -46,7 +46,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                     binding.cvPakar.visible()
                     binding.cvNilaiSiswa.gone()
                     binding.cvHasilAngket.visible()
-                    binding.cvHasilPenjurusan.visible()
+                    binding.cvHasilPenjurusan.gone()
                 } else {
                     binding.cvPakar.gone()
                     binding.cvNilaiSiswa.visible()

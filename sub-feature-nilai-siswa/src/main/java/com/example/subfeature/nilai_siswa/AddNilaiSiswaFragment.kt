@@ -133,6 +133,13 @@ class AddNilaiSiswaFragment : BaseFragment<FragmentAddNilaiSiswaBinding>(
     }
 
     private fun initNama(data: ListSiswa) {
+
+        if (namaList.isEmpty()){
+            if (data.isNotEmpty()){
+                nilaiSiswaViewModel.nama = data[0].nama
+            }
+        }
+
         data.map {
             namaList.add(it.nama)
             idUserList.add(it.idUser.toString())

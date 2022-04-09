@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -85,6 +86,4 @@ abstract class BaseActivity<VB: ViewBinding>(
         }
         return super.onOptionsItemSelected(item)
     }
-
-
 }
