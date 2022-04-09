@@ -1,9 +1,6 @@
 package com.example.feature.profile
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import com.example.core_navigation.ModuleNavigator
 import com.example.core_util.base.BaseActivity
@@ -17,8 +14,10 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding>(ActivityProfileBind
     val status by statusParam()
 
     override fun initView() {
+//        toolbar.title = "Profil"
         Log.d("sdsd", "sdsdsdsdsd $status")
         setSupportActionBar(toolbar)
+        setPageName("Profil")
     }
 
     override fun initListener() {

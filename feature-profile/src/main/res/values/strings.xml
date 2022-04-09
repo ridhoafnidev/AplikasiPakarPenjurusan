@@ -42,4 +42,5 @@
     <string name="pendidikan_terakhir_ibu">Pendidikan Terakhir Ibu</string>
     <string name="agama_ibu">Agama Ibu</string>
     <string name="pekerjaan_ibu">Pekerjaan Ibu</string>
+    <string name="data_pribadi">Data Pribadi</string>
 </resources>

@@ -183,7 +183,7 @@ class PakarNinethViewModel(
 
             //endregion IPC
             else -> {
-                ""
+                "IPS"
             }
         }
     }

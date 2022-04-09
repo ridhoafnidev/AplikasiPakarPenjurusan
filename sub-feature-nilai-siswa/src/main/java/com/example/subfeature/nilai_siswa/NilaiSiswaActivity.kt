@@ -11,13 +11,12 @@ import com.example.subfeature.nilai_siswa.databinding.ActivityNilaiSiswaBinding
 class NilaiSiswaActivity : BaseActivity<ActivityNilaiSiswaBinding>(ActivityNilaiSiswaBinding::inflate), ModuleNavigator.NilaiSiswaNav  {
 
     private val navController by lazy { findNavController(R.id.nilai_siswa_navigation) }
-    private val toolbar by lazy { binding.componentToolbar.toolbar }
 
     val level by levelParam()
 
     override fun initView() {
-        Log.d("sdsd", "sdsdsdsdsd $level")
-        setSupportActionBar(toolbar)
+        initToolbar(back = true, primary = true)
+        setPageName("Nilai Siswa")
     }
 
     override fun initListener() {
