@@ -13,7 +13,7 @@ class NilaiPenjurusanActivity : BaseActivity<ActivityNilaiPenjurusanBinding>(Act
 
     override fun initView() {
         initToolbar(back = true, primary = true)
-        setPageName("Nilai Penjurusan")
+        setPageName("Hasil Penjurusan")
     }
 
     override fun initListener() {
