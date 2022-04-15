@@ -2,8 +2,10 @@ package com.kemenag_inhu.absensi.core_data.data.local.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.kemenag_inhu.absensi.core_data.BuildConfig
 import com.kemenag_inhu.absensi.core_data.data.local.entity.*
+import com.kemenag_inhu.absensi.core_domain.model.AbsensiConverter
 
 @Database(
     entities = [
@@ -19,8 +21,16 @@ import com.kemenag_inhu.absensi.core_data.data.local.entity.*
         MasterUnitKerjaEntity::class,
         UserEntity::class,
         PegawaiProfileEntity::class,
+        ListDataAbsensiEntity::class,
     ],
     version = BuildConfig.schemaDatabaseVersion,
+    exportSchema = false
+)
+
+@TypeConverters(
+    value = [
+        AbsensiConverter::class
+    ]
 )
 
 internal abstract class CoreDatabase : RoomDatabase() {
@@ -36,5 +46,6 @@ internal abstract class CoreDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun masterPegawaiDao(): MasterPegawaiDao
     abstract fun pegawaiProfileDao(): PegawaiProfileDao
+    abstract fun listDataAbsensi(): ListDataAbsensiDao
 }
 

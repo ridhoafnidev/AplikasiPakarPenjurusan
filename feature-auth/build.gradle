@@ -6,6 +6,13 @@ plugins {
 apply(from: "../shared_dependencies_feature.gradle")
 
 dependencies {
+
+    //region Sub Feature Module
+
+    implementation project(':subfeature-dialog-api-failed')
+
+    //endregion
+
     implementation deps.legacy_support
     implementation deps.validator
     implementation deps.keyboard_watcher

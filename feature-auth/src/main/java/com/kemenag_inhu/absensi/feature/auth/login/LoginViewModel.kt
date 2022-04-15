@@ -70,7 +70,7 @@ class LoginViewModel(
                 }
                 .filterNot { it is ApiEvent.OnLoading }
                 .onStart { emit(ApiEvent.OnLoading(null)) }
-                .collect { _login.value }
+                .collect { _login.value = it }
         }
     }
 

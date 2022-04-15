@@ -12,6 +12,8 @@ dependencies {
     kapt deps.moshi_compiler
     implementation deps.okhttp
     implementation deps.retrofit
+    implementation deps.room
+    kapt deps.room_compiler
 
     implementation project(path: ':core-util')
 

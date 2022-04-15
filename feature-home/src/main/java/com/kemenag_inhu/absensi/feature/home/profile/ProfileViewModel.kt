@@ -34,7 +34,6 @@ class ProfileViewModel(
     val logoutEvent: LiveData<Boolean?> = _logoutEvent
 
     init {
-        loadProfile()
         getCurrentProfile()
     }
 

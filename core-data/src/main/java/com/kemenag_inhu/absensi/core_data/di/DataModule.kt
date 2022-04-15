@@ -88,6 +88,7 @@ val Application.dataModule
         single { get<CoreDatabase>().masterUnitKerjaDao() }
         single { get<CoreDatabase>().userDao() }
         single { get<CoreDatabase>().pegawaiProfileDao() }
+        single { get<CoreDatabase>().listDataAbsensi() }
 
         //endregion
 
@@ -105,6 +106,7 @@ val Application.dataModule
         single { LocalDataSourceMasterUnitKerja(get()) }
         single { LocalDataSourcePegawai(get()) }
         single { LocalDataSourceUser(get()) }
+        single { LocalDataSourceAbsensi(get()) }
 
         //endregion
         //region Repository
@@ -116,6 +118,7 @@ val Application.dataModule
         single { MasterJabatanStrukturalRepository(get(), get(), get()) }
         single { PegawaiProfileRepository(get(), get(), get(), get()) }
         single { MasterJabatanFungsionalRepository(get(), get(), get()) }
+        single { AbsensiRepository(get(), get(), get(), get()) }
         single { MasterJenisTenagaRepository(get(), get(), get()) }
         single { MasterLevelRepository(get(), get(), get()) }
         single { MasterPangkatGolonganRepository(get(), get(), get()) }

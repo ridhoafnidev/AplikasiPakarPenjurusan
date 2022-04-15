@@ -14,6 +14,7 @@ import com.kemenag_inhu.absensi.core_data.data.remote.api.ApiEvent
 import com.kemenag_inhu.absensi.core_util.utility.dismissKeyboard
 import com.kemenag_inhu.absensi.feature_auth.R
 import com.kemenag_inhu.absensi.feature_auth.databinding.FragmentLoginBinding
+import com.kemenag_inhu.absensi.subfeature.dialog.apifailed.showApiFailedDialog
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent
 import net.yslibrary.android.keyboardvisibilityevent.Unregistrar
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -55,8 +56,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
         onBackpress()
 
-        loginObserver()
-
     }
 
     private fun onBackpress() {
@@ -71,27 +70,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     }
 
     private fun loginObserver() {
-        viewModel.login.observe(viewLifecycleOwner){ auth ->
-            when(auth){
-                is ApiEvent.OnLoading -> {
-                    showProgress()
-                }
-                is ApiEvent.OnSuccess -> {
-                    Handler(Looper.getMainLooper()).postDelayed({
-                        hideProgress(true)
-                        navigateToHomeActivity()
-                    }, 1000L)
-                }
-                is ApiEvent.OnFailed -> {
-                    Handler(Looper.getMainLooper()).postDelayed({
-                        hideProgress(true)
-                    }, 1000L)
-                    auth?.getException()?.let { errorMessage ->
-                        showSnackBar(requireContext(), binding.parentLogin, "Error", Snackbar.LENGTH_LONG)
-                    }
-                }
-            }
-        }
+
     }
 
     override fun onDestroyView() {
@@ -112,6 +91,25 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                 submitWith(R.id.btn_login) {
                     dismissKeyboard()
                     viewModel.login(edtEmailOrNumberPhone.text.toString(), edtPassword.text.toString())
+                    viewModel.login.observe(viewLifecycleOwner){ auth ->
+                        when(auth){
+                            is ApiEvent.OnLoading -> {
+                                showProgress()
+                            }
+                            is ApiEvent.OnSuccess -> {
+                                    navigateToHomeActivity()
+                            }
+                            is ApiEvent.OnFailed -> {
+                                Handler(Looper.getMainLooper()).postDelayed({
+                                    hideProgress(true)
+                                }, 1000L)
+                                auth?.getException()?.let { errorMessage ->
+                                    showApiFailedDialog(errorMessage)
+                                }
+                            }
+                        }
+                    }
+                    //loginObserver()
                 }
             }
 

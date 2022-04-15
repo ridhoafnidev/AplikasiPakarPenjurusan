@@ -8,7 +8,7 @@ import com.kemenag_inhu.absensi.core_domain.model.ListDataAbsensi
 @Entity
 data class ListDataAbsensiEntity(
     @PrimaryKey
-    val userId: Int = 0,
+    val userId: String = "0",
     val absensi: ListAbsensi = emptyList(),
     val hadir: Int = 0,
     val cuti: Int = 0,

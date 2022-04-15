@@ -33,6 +33,11 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
         //endregion
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.loadProfile()
+    }
+
     private fun observerLogout() {
         viewModel.logoutEvent.observe(viewLifecycleOwner) {
             it?.let { isSuccess ->

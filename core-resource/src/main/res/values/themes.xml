@@ -193,8 +193,8 @@
     <style name="BaseTheme.BottomSheet.ShapeAppearanceOverlay" parent="ShapeAppearance.MaterialComponents.LargeComponent">
         <item name="cornerFamilyTopLeft">rounded</item>
         <item name="cornerFamilyTopRight">rounded</item>
-        <item name="cornerSizeTopLeft">@dimen/small</item>
-        <item name="cornerSizeTopRight">@dimen/small</item>
+        <item name="cornerSizeTopLeft">@dimen/medium</item>
+        <item name="cornerSizeTopRight">@dimen/medium</item>
         <item name="cornerSizeBottomLeft">@dimen/empty</item>
         <item name="cornerSizeBottomRight">@dimen/empty</item>
     </style>
