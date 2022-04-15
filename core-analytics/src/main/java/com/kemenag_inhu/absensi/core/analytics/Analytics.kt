@@ -12,7 +12,7 @@ class Analytics(
 
     // region Analytics& Crash Tracker
 
-    fun setUser(userId: Long){
+    fun setUser(userId: Int){
         crashTracker.setUserId("$userId")
         analyticsTracker.setUserId("$userId")
     }

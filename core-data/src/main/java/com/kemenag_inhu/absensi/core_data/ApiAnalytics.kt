@@ -30,7 +30,7 @@ fun Analytics.logApiResult(
 }
 
 fun Analytics.logApiException(
-    apiException: ApiException,
+    apiException:ApiException,
     apiId: String,
     userId: Long,
     nikNip: Long

@@ -3,7 +3,7 @@ package com.kemenag_inhu.absensi.core_data.data
 import com.kemenag_inhu.absensi.core_domain.model.Auth
 import com.kemenag_inhu.absensi.core_domain.model.isSuccessLogin
 import com.kemenag_inhu.absensi.core_domain.repository.IAuthRepository
-import com.kemenag_inhu.absensi.core_util.Resource
+import com.kemenag_inhu.absensi.core_util.api.Resource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

@@ -188,4 +188,38 @@
         <item name="android:paddingBottom">12dp</item>
     </style>
 
+    <!--    region Bottom Sheet   -->
+
+    <style name="BaseTheme.BottomSheet.ShapeAppearanceOverlay" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/small</item>
+        <item name="cornerSizeTopRight">@dimen/small</item>
+        <item name="cornerSizeBottomLeft">@dimen/empty</item>
+        <item name="cornerSizeBottomRight">@dimen/empty</item>
+    </style>
+
+    <style name="BaseTheme.BottomSheet.Style" parent="@style/Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="shapeAppearanceOverlay">
+            @style/BaseTheme.BottomSheet.ShapeAppearanceOverlay
+        </item>
+    </style>
+
+    <style name="BaseTheme.BottomSheet" parent="Theme.MaterialComponents.DayNight.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="bottomSheetStyle">@style/BaseTheme.BottomSheet.Style</item>
+    </style>
+
+    <style name="CoreTheme.BottomSheet" parent="BaseTheme.BottomSheet" />
+
+    <style name="CoreTheme.BottomSheet.Dialog" parent="BaseTheme.BottomSheet">
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+    </style>
+
+    <!--    endregion   -->
+
 </resources>

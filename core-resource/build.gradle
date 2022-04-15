@@ -11,4 +11,10 @@ dependencies {
     implementation deps.constraint_layout
     implementation project(path: ':core-util')
     implementation project(path: ':core-data')
+
+    //region extra
+
+    implementation deps.lottie
+
+    //endregio
 }

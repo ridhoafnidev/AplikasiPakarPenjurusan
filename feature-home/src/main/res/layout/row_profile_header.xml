@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginTop="@dimen/medium_fit"
     android:orientation="vertical">
 
@@ -22,6 +23,7 @@
             app:cardCornerRadius="@dimen/small">
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_profile"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
@@ -31,39 +33,43 @@
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/medium_fit"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ahmad Aldi"
+                tools:text="Ahmad Aldi"
                 android:textColor="@color/colorTextWhite"
                 android:textSize="@dimen/text_large"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_nip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/small_fit"
-                android:text="NIP. 12345678"
+                tools:text="NIP. 12345678"
                 android:textColor="@color/colorTextWhite"
                 android:textSize="@dimen/text_very_small" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_jabatan_struktural"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/smaller"
-                android:text="Tenaga Pendidik"
+                tools:text="Tenaga Pendidik"
                 android:textColor="@color/colorTextWhite"
                 android:textSize="@dimen/text_very_small" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_unit_kerja"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/smaller"
-                android:text="KUA Kec. Satu"
+                tools:text="KUA Kec. Satu"
                 android:textColor="@color/colorTextWhite"
                 android:textSize="@dimen/text_very_small" />
 

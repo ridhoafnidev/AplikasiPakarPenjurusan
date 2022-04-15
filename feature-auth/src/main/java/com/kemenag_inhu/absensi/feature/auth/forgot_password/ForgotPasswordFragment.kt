@@ -2,20 +2,18 @@ package com.kemenag_inhu.absensi.feature.auth.forgot_password
 
 import android.os.Handler
 import android.os.Looper
-import androidx.constraintlayout.widget.ConstraintSet
 import androidx.navigation.fragment.findNavController
 import com.afollestad.vvalidator.form
 import com.google.android.material.snackbar.Snackbar
-import com.kemenag_inhu.absensi.core_util.Resource
+import com.kemenag_inhu.absensi.core_util.api.Resource
 import com.kemenag_inhu.absensi.core_navigation.ModuleNavigator
 import com.kemenag_inhu.absensi.core_resource.components.base.BaseFragment
 import com.kemenag_inhu.absensi.core_util.*
+import com.kemenag_inhu.absensi.core_util.utility.dismissKeyboard
 import com.kemenag_inhu.absensi.feature.auth.AuthViewModel
 import com.kemenag_inhu.absensi.feature_auth.R
 import com.kemenag_inhu.absensi.feature_auth.databinding.FragmentForgotPasswordBinding
-import com.kemenag_inhu.absensi.feature_auth.databinding.FragmentLoginBinding
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent
-import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener
 import net.yslibrary.android.keyboardvisibilityevent.Unregistrar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

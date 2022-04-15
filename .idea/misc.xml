@@ -51,9 +51,13 @@
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.15" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/core-resource/src/main/res/drawable/bg_rounded_left_right.xml" value="0.1972972972972973" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/core-resource/src/main/res/drawable/ic_back.xml" value="0.121875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/core-resource/src/main/res/drawable/ic_close_white.xml" value="0.15416666666666667" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/core-resource/src/main/res/drawable/shape_circle_image.xml" value="0.15" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/core-resource/src/main/res/drawable/shape_circle_placeholder.xml" value="0.15" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/core-resource/src/main/res/layout/component_toolbar.xml" value="0.1875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/core-resource/src/main/res/layout/fragment_error_dialog.xml" value="0.1875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/core-resource/src/main/res/layout/fragment_progress_dialog.xml" value="0.1875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-auth/src/main/res/layout/activity_auth.xml" value="0.1875" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-auth/src/main/res/layout/fragment_forgot_password.xml" value="0.1875" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-auth/src/main/res/layout/fragment_login.xml" value="0.16" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-auth/src/main/res/layout/fragment_splash.xml" value="0.1875" />
@@ -67,21 +71,25 @@
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/activity_home.xml" value="0.152" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/bg_toolbar.xml" value="0.1875" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/fragment_home.xml" value="0.2" />
-        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/fragment_profile.xml" value="0.109765625" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/fragment_profile.xml" value="0.30371203599550056" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/fragment_riwayat.xml" value="0.109765625" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/item_riwayat_presensi.xml" value="0.1875" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/layout_item_current_event.xml" value="0.136" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/layout_item_new_event.xml" value="0.136" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/layout_toolbar.xml" value="0.176" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_bantuan.xml" value="0.1875" />
-        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_bottom_home.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_bottom_home.xml" value="0.176" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_data_pribadi.xml" value="0.1875" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_home_header.xml" value="0.1875" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_keluar.xml" value="0.1875" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_menu_profile.xml" value="0.1875" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_pengaturan.xml" value="0.1875" />
-        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_profile_header.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_profile_header.xml" value="0.3055555555555556" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/layout/row_tentang_aplikasi.xml" value="0.1875" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/feature-home/src/main/res/menu/main_menu.xml" value="0.1875" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/subfeature-dialog-api-failed/src/main/res/drawable/background_black_outline.xml" value="0.117578125" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/subfeature-dialog-api-failed/src/main/res/drawable/dialog_api_failed_network.xml" value="0.117578125" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/Kemenag Absensi/subfeature-dialog-api-failed/src/main/res/layout/fragment_nilai_penjurusan.xml" value="0.10546875" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-resource/src/main/res/drawable/bg_event_image.xml" value="0.19722222222222222" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-resource/src/main/res/drawable/ic_add_photo.xml" value="0.19722222222222222" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/Ridho Afni Test Skill EDTC/core-resource/src/main/res/drawable/ic_back.xml" value="0.1972972972972973" />

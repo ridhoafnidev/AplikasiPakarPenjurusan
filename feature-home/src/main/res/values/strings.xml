@@ -8,4 +8,5 @@
     <string name="image_event">Image Event</string>
     <string name="welcome_name">John Doe Simalakama</string>
     <string name="welcome_hello">Halo </string>
+    <string name="profile_empty_field">-</string>
 </resources>

@@ -81,7 +81,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         recyclerViewHistoryAttendance.setup {
             withLayoutManager(LinearLayoutManager(context))
             withDataSource(dataSourceOf(listEvents))
-            withItem<Event, ItemHistoryAttendanceViewHolder>(R.layout.layout_item_new_event){
+            withItem<Event, ItemHistoryAttendanceViewHolder>(R.layout.item_riwayat_presensi){
                 onBind(::ItemHistoryAttendanceViewHolder){ _, item ->
                     dateAttendance.text = item.startDate.take(2)
                     dayAttendance.text = item.startDate.trim().slice(3..6)

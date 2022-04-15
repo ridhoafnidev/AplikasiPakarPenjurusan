@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="text_search_chat">Cari</string>
+    <string name="progress_dialog_please_wait">Mohon Tunggu Sejenak</string>
+
 </resources>

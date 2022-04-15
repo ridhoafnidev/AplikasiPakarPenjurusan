@@ -1,12 +1,10 @@
 package com.kemenag_inhu.absensi.core_data.data.remote.api
 
-import java.lang.Exception
-
 sealed class ApiEvent<out DATA> {
     var hasBeenConsumed: Boolean = false
         protected set
 
-    data class OnLoading<DATA>(private val currentData: DATA) :ApiEvent<DATA>(){
+    data class OnLoading<DATA>(private val currentData: DATA) : ApiEvent<DATA>(){
         fun getCurrentData(isConsumed: Boolean = true) = currentData.also {
             if (isConsumed) hasBeenConsumed = true
         }
@@ -37,7 +35,7 @@ sealed class ApiEvent<out DATA> {
                 cacheIndex = cacheIndex
             )
 
-            fun <DATA> fromServer(data: DATA) =OnSuccess(
+            fun <DATA> fromServer(data: DATA) = OnSuccess(
                 data = data,
                 dataSource = DataSource.SERVER,
                 cacheIndex = Int.MIN_VALUE
@@ -46,15 +44,15 @@ sealed class ApiEvent<out DATA> {
     }
 
     data class OnFailed<DATA>(
-        private val exception: Exception,
-        val lateData: DATA
-    ) :ApiEvent<DATA>() {
+        private val exception: ApiException,
+        val latestData: DATA
+    ) : ApiEvent<DATA>() {
         fun getException(isConsumed: Boolean = true) = exception.also {
             if (isConsumed) hasBeenConsumed = true
         }
 
         fun <T> toOtherFailedEventNullable() = OnFailed<T?>(exception, null)
-        fun <T> toOteherFailedEventEmptyList() =OnFailed<List<T>>(exception, emptyList())
+        fun <T> toOtherFailedEventEmptyList() = OnFailed<List<T>>(exception, emptyList())
     }
 
 }

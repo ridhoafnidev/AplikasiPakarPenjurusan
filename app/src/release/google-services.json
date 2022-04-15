@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "912874559007",
+    "project_id": "absensi-depag",
+    "storage_bucket": "absensi-depag.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912874559007:android:d04900e46816ea21aea72a",
+        "android_client_info": {
+          "package_name": "com.kemenag_inhu.absensi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912874559007-bc6frcttf8fi6o9179lkhfvt4jflo0b4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoPwe2_j7jz8kBfvZm0m3I4rYdeacmWdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912874559007-bc6frcttf8fi6o9179lkhfvt4jflo0b4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

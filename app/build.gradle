@@ -2,19 +2,32 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'com.google.firebase.firebase-perf'
 }
 apply(from: "../shared_dependencies.gradle")
 
 android {
     defaultConfig {
-        applicationId "com.ridhoafnidev.edtc"
+        applicationId "com.kemenag_inhu.absensi"
     }
 
     buildTypes {
         debug{
+            ext.alwaysUpdateBuildId = false
+            shrinkResources false
             minifyEnabled false
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+            FirebasePerformance {
+                instrumentationEnabled false
+            }
         }
         release {
+            minifyEnabled true
+            crunchPngs false
+            shrinkResources false
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }

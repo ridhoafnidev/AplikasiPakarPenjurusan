@@ -1,12 +1,12 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 apply(from: "../shared_dependencies.gradle")
 
 dependencies {
     //region Common
-
     implementation deps.coroutines
     implementation deps.material
 

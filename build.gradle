@@ -9,6 +9,9 @@ buildscript {
         classpath plugin.agp
         classpath plugin.kotlin
         classpath plugin.navigation_safe_args
+        classpath plugin.google_services
+        classpath plugin.crashlytics
+        classpath plugin.firebase_perf
     }
 }
 

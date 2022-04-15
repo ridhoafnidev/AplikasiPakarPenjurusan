@@ -35,8 +35,8 @@ class App : Application() {
             androidContext(this@App)
             modules(
                 listOf(
-                    dataModule,
                     analyticsModule,
+                    dataModule,
                     authModule,
                     domainModule,
                     createEventModule,

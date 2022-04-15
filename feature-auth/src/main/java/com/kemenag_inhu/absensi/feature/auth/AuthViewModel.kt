@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kemenag_inhu.absensi.core_domain.model.Auth
 import com.kemenag_inhu.absensi.core_domain.usecase.AuthUseCase
-import com.kemenag_inhu.absensi.core_util.Resource
+import com.kemenag_inhu.absensi.core_util.api.Resource
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 

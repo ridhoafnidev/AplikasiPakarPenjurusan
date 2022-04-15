@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library'
+apply from: '../shared_dependencies.gradle'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    defaultConfig {
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+}
+
+dependencies {
+    //region Core Module
+
+    implementation project(':core-navigation')
+    implementation project(':core-resource')
+    implementation project(':core-data')
+    implementation project(':core-analytics')
+    implementation project(':core-util')
+
+    //endregion
+    //region Common
+
+    implementation deps.koin
+    implementation deps.coroutines
+    implementation deps.material
+
+    //endregion
+    //region JetPack
+
+    implementation deps.activity
+    implementation deps.core
+    implementation deps.constraint_layout
+    implementation deps.datastore
+    implementation deps.fragment
+    implementation deps.lifecycle
+    implementation deps.navigation
+    implementation deps.swipe_refresh_layout
+    implementation deps.recycler_view
+
+    //endregion
+}

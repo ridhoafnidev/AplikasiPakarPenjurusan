@@ -9,7 +9,7 @@ sealed class ApiException {
     object NullResponse : ApiException()
     object EmptyResponse : ApiException()
 
-    data class Http(val httpCode: Int, val message: String) :ApiException() {
+    data class Http(val httpCode: Int, val message: String) : ApiException() {
         @Suppress("unused")
         companion object {
             const val BAD_REQUEST  = 400
@@ -24,5 +24,8 @@ sealed class ApiException {
             const val MESSAGE_FAIL = "FAILED"
         }
     }
-
 }
+
+fun ApiException.toResult() = ApiResult.OnFailed(this)
+fun <T> ApiException.toFailedEventNullable() = ApiEvent.OnFailed<T?>(this, null)
+fun <T> ApiException.toFailedEventEmptyList() = ApiEvent.OnFailed<List<T>>(this, emptyList())

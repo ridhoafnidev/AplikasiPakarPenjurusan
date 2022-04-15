@@ -1,22 +1,22 @@
 package com.kemenag_inhu.absensi.feature.auth.login
 
+
 import android.os.Handler
 import android.os.Looper
-import androidx.constraintlayout.widget.ConstraintSet
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import com.afollestad.vvalidator.form
 import com.google.android.material.snackbar.Snackbar
-import com.kemenag_inhu.absensi.core_util.Resource
 import com.kemenag_inhu.absensi.core_navigation.ModuleNavigator
 import com.kemenag_inhu.absensi.core_resource.components.base.BaseFragment
 import com.kemenag_inhu.absensi.core_util.*
-import com.kemenag_inhu.absensi.feature.auth.AuthViewModel
+import com.kemenag_inhu.absensi.core_data.data.remote.api.ApiEvent
+import com.kemenag_inhu.absensi.core_util.utility.dismissKeyboard
 import com.kemenag_inhu.absensi.feature_auth.R
 import com.kemenag_inhu.absensi.feature_auth.databinding.FragmentLoginBinding
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent
-import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener
 import net.yslibrary.android.keyboardvisibilityevent.Unregistrar
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate), ModuleNavigator {
 
@@ -32,14 +32,14 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         getString(R.string.required_password)
     }
 
-    private val viewModel by viewModel<AuthViewModel>()
+
+    private val viewModel: LoginViewModel by sharedViewModel()
 
     private lateinit var keyboardWatcher: Unregistrar
 
     override fun initView() {
-
-    keyboardWatcher =
-        KeyboardVisibilityEvent.registerEventListener(requireActivity()) { isOpen ->
+        keyboardWatcher =
+            KeyboardVisibilityEvent .registerEventListener(requireActivity()) { isOpen ->
             with(binding) {
                 if (isOpen) {
                     layoutFooterlogin.root.gone()
@@ -53,23 +53,41 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
             }
         }
 
-        viewModel.isLogin.observe(viewLifecycleOwner){ auth ->
+        onBackpress()
+
+        loginObserver()
+
+    }
+
+    private fun onBackpress() {
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    activity?.finish()
+                }
+            }
+        )
+    }
+
+    private fun loginObserver() {
+        viewModel.login.observe(viewLifecycleOwner){ auth ->
             when(auth){
-                is Resource.Loading -> {
+                is ApiEvent.OnLoading -> {
                     showProgress()
                 }
-                is Resource.Success -> {
+                is ApiEvent.OnSuccess -> {
                     Handler(Looper.getMainLooper()).postDelayed({
                         hideProgress(true)
                         navigateToHomeActivity()
                     }, 1000L)
                 }
-                is Resource.Error -> {
+                is ApiEvent.OnFailed -> {
                     Handler(Looper.getMainLooper()).postDelayed({
                         hideProgress(true)
                     }, 1000L)
-                    auth?.message?.let { errorMessage ->
-                        showSnackBar(requireContext(), binding.parentLogin, errorMessage, Snackbar.LENGTH_LONG)
+                    auth?.getException()?.let { errorMessage ->
+                        showSnackBar(requireContext(), binding.parentLogin, "Error", Snackbar.LENGTH_LONG)
                     }
                 }
             }
@@ -93,23 +111,18 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                 }
                 submitWith(R.id.btn_login) {
                     dismissKeyboard()
-
-                    viewModel.emailOrPhoneNumber = edtEmailOrNumberPhone.text.toString()
-                    viewModel.password = edtPassword.text.toString()
-
-                    viewModel.login()
+                    viewModel.login(edtEmailOrNumberPhone.text.toString(), edtPassword.text.toString())
                 }
             }
-            binding.layoutFooterlogin.btnLogin.bindLifecycle(viewLifecycleOwner)
 
             tvForgotPassword.setOnClickListener {
                 findNavController().navigate(R.id.forgotPasswordFragment)
             }
 
         }
-        with(binding.layoutFooterlogin){
 
-        }
+        binding.layoutFooterlogin.btnLogin.bindLifecycle(viewLifecycleOwner)
+
     }
 
     private fun showProgress() = with(binding.layoutFormLogin) {

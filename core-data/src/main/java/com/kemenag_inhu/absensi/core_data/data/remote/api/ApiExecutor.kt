@@ -19,7 +19,7 @@ class ApiExecutor(
     private val analytics: Analytics,
     //private val userExtraDao: UserExtraDao
 ) {
-    internal suspend fun <T> callApi(
+    suspend fun <T> callApi(
         apiId: String = "",
         apiCall: suspend () -> T
     ) : ApiResult<T> {
@@ -50,7 +50,7 @@ class ApiExecutor(
             analytics.logApiCallResponse(apiId.key, false)
 
             ApiResult.OnFailed(
-                when(it) {
+                when (it) {
                     is HttpException -> {
                         Log.e("error.http", "error -> HttpException")
                         it.toHttpException()
@@ -85,6 +85,17 @@ class ApiExecutor(
             }
         }
 
+    }
+
+    suspend fun logException(apiId: String, apiException: ApiException) {
+        Log.d("LogException", apiId)
+        Log.d("LogException", apiException.toString())
+//        analytics.logApiException(
+//            apiException = apiException,
+//            apiId = apiId.key,
+//            orgId = getCurrentOrganization()?.id ?: 0L,
+//            wardId = getCurrentWard()?.id ?: 0L
+//        )
     }
 
     private fun HttpException.toHttpException(): ApiException.Http = try {

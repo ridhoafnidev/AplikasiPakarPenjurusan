@@ -5,7 +5,7 @@ import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
 import androidx.core.content.ContextCompat
-import com.kemenag_inhu.absensi.core_util.Constants
+import com.kemenag_inhu.absensi.core_util.utility.Constants
 import com.google.android.material.textfield.TextInputEditText
 import com.kemenag_inhu.absensi.core_resource.R
 import timber.log.Timber

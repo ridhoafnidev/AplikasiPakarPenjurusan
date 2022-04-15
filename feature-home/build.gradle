@@ -7,6 +7,12 @@ plugins {
 apply(from:"../shared_dependencies_feature.gradle")
 
 dependencies {
+    //region Sub Feature Module
+
+    implementation project(':subfeature-dialog-api-failed')
+
+    //endregion
+
     implementation deps.validator
     implementation deps.spanner
     implementation deps.glide
