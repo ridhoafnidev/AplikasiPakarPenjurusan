@@ -45,7 +45,7 @@ class PersonalDataFragment : BaseFragment<FragmentPersonalDataBinding>(
     @RequiresApi(Build.VERSION_CODES.O)
     private fun observeAuth() {
         viewModel.auth.observe(viewLifecycleOwner) { data ->
-            if (!data?.idUser.toString().isEmpty()) {
+            if (data?.idUser.toString().isNotEmpty()) {
                 idUser = data?.idUser.toString()
                 viewModel.idUser = idUser
                 level = data?.level.toString()

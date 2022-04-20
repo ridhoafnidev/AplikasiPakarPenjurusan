@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.core_data.domain.NilaiSiswa
 import com.example.core_data.domain.Siswa
+import com.example.core_util.gone
+import com.example.core_util.visible
 import com.example.subfeature.nilai_siswa.databinding.ItemNilaiSiswaBinding
 import timber.log.Timber
 
@@ -38,16 +40,25 @@ class NilaiSiswaAdapter(
                 binding.tvRataIps.text = "Rata-Rata Ips"
                 binding.tvRataAkhir.text = "Rata-Rata Akhir"
                 binding.tvAksi.text = "Aksi"
+                binding.tvAksi.visible()
+                binding.ivEdit.gone()
+                binding.ivDelete.gone()
             } else {
                 val dataNilaiSiswa = nilaiSiswaList[position - 1]
                 binding.tvNama.text = siswaList.find { it.idUser == dataNilaiSiswa.user_id }?.nama
                 binding.tvRataIpa.text = dataNilaiSiswa.rata_raport_ipa.toString()
                 binding.tvRataIps.text = dataNilaiSiswa.rata_raport_ips.toString()
                 binding.tvRataAkhir.text = dataNilaiSiswa.rata_akhir.toString()
-                binding.tvAksi.text = "Hapus"
+                binding.tvAksi.gone()
+                binding.ivEdit.visible()
+                binding.ivDelete.visible()
 
-                binding.tvAksi.setOnClickListener {
+                binding.ivDelete.setOnClickListener {
                     nilaiSiswaInterface.onDeleteNilaiSiswa(dataNilaiSiswa.user_id.toString())
+                }
+
+                binding.ivEdit.setOnClickListener {
+                    nilaiSiswaInterface.onUpdateNilaiSiswa(dataNilaiSiswa.user_id.toString())
                 }
             }
         }
