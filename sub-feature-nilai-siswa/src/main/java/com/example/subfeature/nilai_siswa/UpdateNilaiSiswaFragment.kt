@@ -4,61 +4,38 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import android.view.View
-import android.widget.AdapterView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.afollestad.vvalidator.form
 import com.example.core_data.api.ApiEvent
-import com.example.core_data.domain.ListSiswa
-import com.example.core_data.domain.Siswa
 import com.example.core_navigation.ModuleNavigator
 import com.example.core_resource.components.base.BaseFragment
 import com.example.core_util.dismissKeyboard
 import com.example.core_util.hideProgress
 import com.example.core_util.showProgress
-import com.example.feature.auth.SiswaViewModel
-import com.example.subfeature.nilai_siswa.databinding.FragmentAddNilaiSiswaBinding
+import com.example.subfeature.nilai_siswa.databinding.FragmentUpdateNilaiSiswaBinding
 import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import timber.log.Timber
-import java.util.ArrayList
 
-class AddNilaiSiswaFragment : BaseFragment<FragmentAddNilaiSiswaBinding>(
-    FragmentAddNilaiSiswaBinding::inflate
+class UpdateNilaiSiswaFragment : BaseFragment<FragmentUpdateNilaiSiswaBinding>(
+    FragmentUpdateNilaiSiswaBinding::inflate
 ), ModuleNavigator {
 
-    private val siswaViewModel by sharedViewModel<SiswaViewModel>()
-    private val nilaiSiswaViewModel by sharedViewModel<NilaiSiswaViewModel>()
+    private val args: UpdateNilaiSiswaFragmentArgs by navArgs()
 
-    private var namaList = ArrayList<String>()
-    private var idUserList = ArrayList<String>()
-    private val textBtnSubmit by lazy {
-        "Submit";
+    private val textBtnEdit by lazy {
+        "Edit";
     }
+
+    private val nilaiSiswaViewModel by sharedViewModel<NilaiSiswaViewModel>()
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun initView() {
-        siswaViewModel.getSiswaAll()
+        nilaiSiswaViewModel.userId = args.idUser
         setupInput()
-
-        siswaViewModel.siswaGetAll.observe(viewLifecycleOwner, { siswa ->
-            when (siswa) {
-                is ApiEvent.OnProgress -> {
-                    Timber.d("progress h${siswa.currentResult}")
-                }
-                is ApiEvent.OnSuccess -> {
-                    Log.d("dfdf", "pfgfofhjghjighdsdsrogressprogressprogress ${siswa.getData()!!}")
-                    initNama(siswa.getData()!!)
-                }
-                is ApiEvent.OnFailed -> {
-                    Timber.d("progress ${siswa.getException()}")
-                }
-            }
-        })
-
-
     }
 
     override fun initListener() {
@@ -77,28 +54,28 @@ class AddNilaiSiswaFragment : BaseFragment<FragmentAddNilaiSiswaBinding>(
                     isNotEmpty().description("Rata-Rata IPS harus diisi")
                 }
 
-                submitWith(R.id.btn_submit_add_nilai) {
+                submitWith(R.id.btn_edit_nilai) {
                     dismissKeyboard()
 
                     val rata_ipa = edtRataIpa.text.toString()
                     val rata_ips = edtRataIps.text.toString()
 
-                    nilaiSiswaViewModel.addNilaiSiswa(
+                    nilaiSiswaViewModel.updateNilaiSiswa(
                         rata_ipa,
                         rata_ips
                     )
 
-                    nilaiSiswaViewModel.addNilaiSiswa.observe(viewLifecycleOwner, { addNilaiSiswa ->
-                        when (addNilaiSiswa) {
+                    nilaiSiswaViewModel.updateNilaiSiswa.observe(viewLifecycleOwner, { updateNilaiSiswa ->
+                        when (updateNilaiSiswa) {
                             is ApiEvent.OnProgress -> {
                                 showProgress()
-                                Timber.d("progress ${addNilaiSiswa.currentResult}")
+                                Timber.d("progress ${updateNilaiSiswa.currentResult}")
                             }
                             is ApiEvent.OnSuccess -> {
                                 hideProgress(true)
                                 val snackBar = Snackbar.make(
                                     requireView(),
-                                    "Data Berhasil ditambah",
+                                    "Data Berhasil diperbarui",
                                     Snackbar.LENGTH_INDEFINITE
                                 )
                                     .setActionTextColor(
@@ -121,11 +98,11 @@ class AddNilaiSiswaFragment : BaseFragment<FragmentAddNilaiSiswaBinding>(
                                 }, 1000)
                             }
                             is ApiEvent.OnFailed -> {
-                                Log.d("sdsdsd", "cureesdsd ${addNilaiSiswa.getException().toString()}")
+                                Log.d("sdsdsd", "cureesdsd ${updateNilaiSiswa.getException().toString()}")
                                 hideProgress(true)
                                 Snackbar.make(
                                     requireContext(), requireView(),
-                                    addNilaiSiswa.getException().toString(), Snackbar.LENGTH_SHORT
+                                    updateNilaiSiswa.getException().toString(), Snackbar.LENGTH_SHORT
                                 ).show()
                             }
                         }
@@ -135,73 +112,26 @@ class AddNilaiSiswaFragment : BaseFragment<FragmentAddNilaiSiswaBinding>(
         }
     }
 
-    private fun initNama(data: ListSiswa) {
-
-        if (namaList.isEmpty()){
-            if (data.isNotEmpty()){
-                nilaiSiswaViewModel.nama = data[0].nama
-            }
-        }
-
-        data.map {
-            namaList.add(it.nama)
-            idUserList.add(it.idUser.toString())
-        }
-
-        binding.spinnerNama.apply {
-            item = namaList as List<Any>?
-
-            var index = -1
-
-            for ((i, v) in data.withIndex()) {
-                if (v.nama == nilaiSiswaViewModel.nama) {
-                    index = i
-                }
-            }
-
-            setSelection(index)
-
-            onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    adapterView: AdapterView<*>,
-                    view: View,
-                    position: Int,
-                    id: Long
-                ) {
-//                    Toast.makeText(context, agamaList[position], Toast.LENGTH_SHORT).show()
-                    Log.d("dfdfdf", "agamaList ${namaList[position]}")
-                    nilaiSiswaViewModel.nama = namaList[position]
-                    nilaiSiswaViewModel.userId =
-                        data.find { it.nama == namaList[position] && it.idUser.toString() == idUserList[position]}?.idUser.toString()
-
-                    Log.d("dfdfdf", "agamaList ${namaList[position]} dan ${nilaiSiswaViewModel.userId}")
-                }
-
-                override fun onNothingSelected(adapterView: AdapterView<*>) {}
-            }
-        }
-    }
-
     private fun showProgress() = with(binding) {
 
         listOf(
-            btnSubmitAddNilai, tilRataIpa, edtRataIpa, tilRataIps, edtRataIps
+            btnEditNilai, tilRataIpa, edtRataIpa, tilRataIps, edtRataIps
         ).forEach { it.isEnabled = false }
 
-        btnSubmitAddNilai.showProgress()
+        btnEditNilai.showProgress()
     }
 
     private fun hideProgress(isEnable: Boolean) = with(binding) {
-        btnSubmitAddNilai.postDelayed(
+        btnEditNilai.postDelayed(
             {
                 listOf(
-                    btnSubmitAddNilai,
-                    tilRataIpa, edtRataIpa, tilRataIps, edtRataIps, spinnerNama
+                    btnEditNilai,
+                    tilRataIpa, edtRataIpa, tilRataIps, edtRataIps
                 ).forEach { it.isEnabled = true }
             }, 1000L
         )
 
-        btnSubmitAddNilai.hideProgress(textBtnSubmit) {
+        btnEditNilai.hideProgress(textBtnEdit) {
             isEnable && with(binding) {
                 "${edtRataIpa.text}".isNotBlank() && "${edtRataIps.text}".isNotBlank()
             }

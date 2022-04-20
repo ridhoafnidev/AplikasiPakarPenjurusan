@@ -17,10 +17,6 @@ class NilaiSiswaViewModel(
     private val nilaiSiswaRepository: NilaiSiswaRepository
 ) : ViewModel() {
 
-//    val auth: LiveData<User?> = liveData<User?> {
-//        emit(authRepository.getAuth())
-//    }
-
     var nama: String? = ""
     var userId: String? = ""
 
@@ -32,6 +28,9 @@ class NilaiSiswaViewModel(
 
     private val _addNilaiSiswa = MutableLiveData<ApiEvent<NilaiSiswa?>>()
     val addNilaiSiswa: LiveData<ApiEvent<NilaiSiswa?>> = _addNilaiSiswa
+
+    private val _updateNilaiSiswa = MutableLiveData<ApiEvent<NilaiSiswa?>>()
+    val updateNilaiSiswa: LiveData<ApiEvent<NilaiSiswa?>> = _updateNilaiSiswa
 
     fun getNilaiSiswaAll() {
         viewModelScope.launch {
@@ -60,6 +59,21 @@ class NilaiSiswaViewModel(
             )
                 .onStart { emit(ApiEvent.OnProgress()) }
                 .collect { _addNilaiSiswa.value = it }
+        }
+    }
+
+    fun updateNilaiSiswa(rataIpa: String, rataIps: String) {
+        viewModelScope.launch {
+            nilaiSiswaRepository.updateNilaiSiswa(
+                userId.toString().toInt(),
+                AddNilaiSiswaRequest(
+                    idUser = userId.toString(),
+                    rataRaportIpa = rataIpa,
+                    rataRaportIps = rataIps
+                )
+            )
+                .onStart { emit(ApiEvent.OnProgress()) }
+                .collect { _updateNilaiSiswa.value = it }
         }
     }
 }
