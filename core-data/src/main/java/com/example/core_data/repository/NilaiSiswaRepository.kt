@@ -71,10 +71,36 @@ class NilaiSiswaRepository internal constructor(
         addNilaiSiswaRequest: AddNilaiSiswaRequest
     ): Flow<ApiEvent<NilaiSiswa?>> = flow {
         runCatching {
-            val apiId = SiswaService.UpdateSiswa
+            val apiId = NilaiSiswaService.AddNilaiSiswa
 
             val apiResult = apiExecutor.callApi(apiId) {
                 nilaiSiswaService.addNilaiSiswa(addNilaiSiswaRequest)
+            }
+
+            val apiEvent: ApiEvent<NilaiSiswa?> = when (apiResult) {
+                is ApiResult.OnFailed -> apiResult.exception.toFailedEvent()
+                is ApiResult.OnSuccess -> with(apiResult.response.data) {
+                    toDomain().run {
+                        ApiEvent.OnSuccess.fromServer(this)
+                    }
+                }
+            }
+
+            emit(apiEvent)
+        }.onFailure {
+            emit(it.toFailedEvent<NilaiSiswa?>())
+        }
+    }
+
+    fun updateNilaiSiswa(
+        idUser: Int,
+        updateNilaiSiswaRequest: AddNilaiSiswaRequest
+    ): Flow<ApiEvent<NilaiSiswa?>> = flow {
+        runCatching {
+            val apiId = NilaiSiswaService.UpdateNilaiSiswa
+
+            val apiResult = apiExecutor.callApi(apiId) {
+                nilaiSiswaService.updateNilaiSiswa(idUser, updateNilaiSiswaRequest)
             }
 
             val apiEvent: ApiEvent<NilaiSiswa?> = when (apiResult) {

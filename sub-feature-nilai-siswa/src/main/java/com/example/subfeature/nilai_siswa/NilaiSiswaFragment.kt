@@ -134,4 +134,8 @@ class NilaiSiswaFragment : BaseFragment<FragmentNilaiSiswaBinding>(
     override fun onDeleteNilaiSiswa(idUser: String) {
         nilaiSiswaViewModel.deleteSiswa(idUser.toInt())
     }
+
+    override fun onUpdateNilaiSiswa(idUser: String) {
+        findNavController().navigate(NilaiSiswaFragmentDirections.actionNilaiSiswaFragmentToUpdateNilaiSiswaFragment(idUser))
+    }
 }

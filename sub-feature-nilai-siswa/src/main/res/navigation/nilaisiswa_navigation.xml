@@ -13,10 +13,22 @@
         <action
             android:id="@+id/action_nilaiSiswaFragment_to_addNilaiSiswaFragment"
             app:destination="@id/addNilaiSiswaFragment" />
+        <action
+            android:id="@+id/action_nilaiSiswaFragment_to_updateNilaiSiswaFragment"
+            app:destination="@id/updateNilaiSiswaFragment" />
     </fragment>
     <fragment
         android:id="@+id/addNilaiSiswaFragment"
         android:name="com.example.subfeature.nilai_siswa.AddNilaiSiswaFragment"
         android:label="fragment_add_nilai_siswa"
         tools:layout="@layout/fragment_add_nilai_siswa" />
+    <fragment
+        android:id="@+id/updateNilaiSiswaFragment"
+        android:name="com.example.subfeature.nilai_siswa.UpdateNilaiSiswaFragment"
+        android:label="fragment_update_nilai_siswa"
+        tools:layout="@layout/fragment_update_nilai_siswa" >
+        <argument
+            android:name="id_user"
+            app:argType="string" />
+    </fragment>
 </navigation>
