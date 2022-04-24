@@ -90,6 +90,10 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(
             navigateToProfileActivity(status = "About")
         }
 
+        binding.rowMenuProfile.rowBantuan.idBantuan.setOnClickListener {
+            navigateToProfileActivity(status = "Help")
+        }
+
         binding.rowKeluar.idRowKeluar.setOnClickListener {
             viewLifecycleOwner.lifecycleScope.launch {
                 cookieHandler.removeAll()

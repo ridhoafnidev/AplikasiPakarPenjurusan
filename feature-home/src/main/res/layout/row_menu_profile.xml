@@ -22,6 +22,10 @@
             layout="@layout/row_ganti_password" />
 
         <include
+            android:id="@+id/row_bantuan"
+            layout="@layout/row_bantuan" />
+
+        <include
             android:id="@+id/row_tentang_aplikasi"
             layout="@layout/row_tentang_aplikasi" />
 
