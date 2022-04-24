@@ -4,12 +4,37 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/core-resource/src/main/res/drawable/ic_nilai_siswa.xml" value="0.1715" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/core-resource/src/main/res/drawable/ic_pakar.xml" value="0.1715" />
         <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/feature-auth/src/main/res/layout/activity_auth.xml" value="0.1598731884057971" />
         <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/feature-auth/src/main/res/layout/activity_splash.xml" value="0.1793478260869565" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/feature-home/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/feature-home/src/main/res/layout/fragment_home_2.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/feature-home/src/main/res/layout/fragment_profile.xml" value="0.13451086956521738" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/feature-home/src/main/res/layout/row_profile_header.xml" value="0.13451086956521738" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/feature-profile/src/main/res/layout/fragment_personal_data.xml" value="0.13451086956521738" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/hasilangket/src/main/res/layout/fragment_hasil_angket.xml" value="0.2984924623115578" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-penjurusan/src/main/res/drawable/background_outline.xml" value="0.1715" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-penjurusan/src/main/res/layout/fragment_nilai_penjurusan.xml" value="0.16" />
         <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-penjurusan/src/main/res/layout/item_nilai_penjurusan.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-penjurusan/src/main/res/layout/row_table_nilai_penjurusan.xml" value="0.13451086956521738" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-siswa/src/main/res/drawable/background_black_outline.xml" value="0.1715" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-siswa/src/main/res/drawable/background_outline.xml" value="0.1715" />
         <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-siswa/src/main/res/layout/fragment_add_nilai_siswa.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-siswa/src/main/res/layout/fragment_nilai_siswa.xml" value="0.13451086956521738" />
         <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-siswa/src/main/res/layout/fragment_update_nilai_siswa.xml" value="0.13405797101449277" />
         <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-siswa/src/main/res/layout/item_nilai_siswa.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/layout/fragment_eighth.xml" value="0.13451086956521738" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/layout/fragment_first.xml" value="0.13405797101449277" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/layout/fragment_fiveth.xml" value="0.13451086956521738" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/layout/fragment_fourth.xml" value="0.2984924623115578" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/layout/fragment_nineth.xml" value="0.13451086956521738" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/layout/fragment_pakar.xml" value="0.13451086956521738" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/layout/fragment_second.xml" value="0.16" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/layout/fragment_seventh.xml" value="0.13451086956521738" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/layout/fragment_sixth.xml" value="0.13451086956521738" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/layout/fragment_third.xml" value="0.13451086956521738" />
+        <entry key="..\:/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/layout/layout_question.xml" value="0.13451086956521738" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/core-resource/src/main/res/drawable/ic_back.xml" value="0.1" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/core-resource/src/main/res/drawable/ic_search.xml" value="0.1" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/core-resource/src/main/res/drawable/indicator_inactive_background.xml" value="0.14322916666666666" />
