@@ -35,6 +35,16 @@ class NilaiSiswaAdapter(
             binding.tvAksi.setBackgroundResource(R.drawable.background_black_outline)
 
             if (position == 0) {
+                binding.tvNama.setBackgroundResource(R.drawable.background_outline)
+                binding.tvRataIpa.setBackgroundResource(R.drawable.background_outline)
+                binding.tvRataIps.setBackgroundResource(R.drawable.background_outline)
+                binding.tvRataAkhir.setBackgroundResource(R.drawable.background_outline)
+                binding.tvAksi.setBackgroundResource(R.drawable.background_outline)
+                binding.tvNama.setTextColor(binding.root.context.resources.getColor(R.color.white))
+                binding.tvRataIpa.setTextColor(binding.root.context.resources.getColor(R.color.white))
+                binding.tvRataIps.setTextColor(binding.root.context.resources.getColor(R.color.white))
+                binding.tvRataAkhir.setTextColor(binding.root.context.resources.getColor(R.color.white))
+                binding.tvAksi.setTextColor(binding.root.context.resources.getColor(R.color.white))
                 binding.tvNama.text = "Nama"
                 binding.tvRataIpa.text = "Rata-Rata Ipa"
                 binding.tvRataIps.text = "Rata-Rata Ips"

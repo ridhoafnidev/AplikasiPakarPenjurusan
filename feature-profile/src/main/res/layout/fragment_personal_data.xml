@@ -35,5 +35,7 @@
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
         android:contentDescription="@string/edit"
+        app:tint="@android:color/white"
+        app:backgroundTint="@color/colorMedsOral"
         app:srcCompat="@drawable/ic_create_24" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

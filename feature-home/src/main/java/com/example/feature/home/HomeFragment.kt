@@ -20,18 +20,18 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     override fun initListener() {
         with(binding){
-            cvPakar.setOnClickListener {
+            ivPakar.setOnClickListener {
                 navigateToPakarActivity()
             }
-            cvHasilAngket.setOnClickListener {
+            ivHasilAngket.setOnClickListener {
                 navigateToHasilAngketActivity()
             }
 
-            cvNilaiSiswa.setOnClickListener {
+            ivNilaiSiswa.setOnClickListener {
                 navigateToNilaiSiswaActivity(level = level)
             }
 
-            cvHasilPenjurusan.setOnClickListener {
+            ivHasilPenjurusan.setOnClickListener {
                 navigateToNilaiPenjurusanActivity(level = level)
             }
         }
