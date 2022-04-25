@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_personalDataFragment_to_editPersonalDataFragment"
             app:destination="@id/editPersonalDataFragment" />
+        <action
+            android:id="@+id/action_personalDataFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
@@ -40,4 +43,9 @@
             android:name="idUser"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.example.feature.profile.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" />
 </navigation>

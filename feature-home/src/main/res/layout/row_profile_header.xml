@@ -9,7 +9,7 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorInputAccentFocused"
+        android:background="@color/colorMedsOral"
         android:orientation="horizontal"
         android:padding="@dimen/medium_fit"
         app:layout_constraintEnd_toEndOf="parent"
