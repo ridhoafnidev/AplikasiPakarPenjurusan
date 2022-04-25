@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="result">Berdasarkan pertanyaan dari angket yang telah diisi, maka prediksi jurusan yang akan diterima adala</string>
+    <string name="result">Berdasarkan pertanyaan dari angket yang telah diisi, maka prediksi jurusan yang akan diterima adalah</string>
 </resources>

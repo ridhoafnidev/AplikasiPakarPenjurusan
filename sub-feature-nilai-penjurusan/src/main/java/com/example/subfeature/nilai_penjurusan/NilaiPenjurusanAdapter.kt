@@ -27,6 +27,10 @@ class NilaiPenjurusanAdapter(
             binding.tvRataAkhir.setBackgroundResource(R.drawable.background_black_outline)
 
             if (position == 0) {
+                binding.tvNama.setBackgroundResource(R.drawable.background_outline)
+                binding.tvRataAkhir.setBackgroundResource(R.drawable.background_outline)
+                binding.tvNama.setTextColor(binding.root.context.resources.getColor(R.color.white))
+                binding.tvRataAkhir.setTextColor(binding.root.context.resources.getColor(R.color.white))
                 binding.tvNama.text = "Nama"
                 binding.tvRataAkhir.text = "Hasil Penjurusan"
             } else {

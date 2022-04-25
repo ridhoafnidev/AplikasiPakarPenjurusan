@@ -34,10 +34,17 @@ class PersonalDataFragment : BaseFragment<FragmentPersonalDataBinding>(
             findNavController().navigate(PersonalDataFragmentDirections.actionPersonalDataFragmentToChangePasswordFragment())
         } else if (status == "About") {
             findNavController().navigate(PersonalDataFragmentDirections.actionPersonalDataFragmentToAboutFragment())
+        } else if (status == "Help") {
+            findNavController().navigate(PersonalDataFragmentDirections.actionPersonalDataFragmentToHelpFragment())
         }
 
         binding.fabEditPersonalData.setOnClickListener {
-            findNavController().navigate(PersonalDataFragmentDirections.actionPersonalDataFragmentToEditPersonalDataFragment(level, idUser))
+            findNavController().navigate(
+                PersonalDataFragmentDirections.actionPersonalDataFragmentToEditPersonalDataFragment(
+                    level,
+                    idUser
+                )
+            )
         }
         observeAuth()
     }
@@ -81,7 +88,8 @@ class PersonalDataFragment : BaseFragment<FragmentPersonalDataBinding>(
                                 tvPendidikanTerakhirIbu.text = it.pendidikanTerakhirIbu
                                 tvPendidikanTerakhirAyah.text = it.pendidikanTerakhirAyah
                                 tvStatusAsalSekolah.text = it.statusAsalSekolah
-                                tvTanggalLahir.text = it.tanggalLahir.toLocalDate() withFormat getString(R.string.date_format_d_MMM_yyyy)
+                                tvTanggalLahir.text =
+                                    it.tanggalLahir.toLocalDate() withFormat getString(R.string.date_format_d_MMM_yyyy)
                                 tvTempatLahir.text = it.tempatLahir
                                 tvUmurAyah.text = it.umurAyah
                                 tvUmurIbu.text = it.umurAyah
