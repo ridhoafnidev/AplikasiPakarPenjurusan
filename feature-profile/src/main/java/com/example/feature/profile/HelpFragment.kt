@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import com.example.core_navigation.ModuleNavigator
 import com.example.core_resource.components.base.BaseFragment
 import com.example.feature.profile.databinding.FragmentHelpBinding
@@ -17,7 +18,14 @@ class HelpFragment : BaseFragment<FragmentHelpBinding>(
 ), ModuleNavigator {
 
     override fun initView() {
-
+        requireActivity().onBackPressedDispatcher.addCallback(
+            requireActivity(),
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    requireActivity().finish()
+                }
+            }
+        )
     }
 
     override fun initListener() {

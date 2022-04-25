@@ -18,16 +18,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="@dimen/tiny"
             android:layout_weight="2">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_8sdp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold"
-                android:background="@color/grey_40"
+                android:background="@drawable/background_outline"
                 android:text="Nilai Rata-Rata"
                 android:layout_weight="1"/>
 
@@ -37,7 +36,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="@dimen/_8sdp"
-                android:background="@color/grey_10"
+                android:textColor="@color/black"
+                android:background="@drawable/background_black_outline"
+                android:textStyle="bold"
                 tools:text="40"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -47,16 +48,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="@dimen/tiny"
             android:layout_weight="2">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_8sdp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold"
-                android:background="@color/grey_40"
+                android:background="@drawable/background_outline"
                 android:text="Hasil Angket"
                 android:layout_weight="1"/>
 
@@ -66,7 +66,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="@dimen/_8sdp"
-                android:background="@color/grey_10"
+                android:textColor="@color/black"
+                android:background="@drawable/background_black_outline"
+                android:textStyle="bold"
                 tools:text="40"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -75,16 +77,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="@dimen/tiny"
             android:layout_weight="2">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_8sdp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold"
-                android:background="@color/grey_40"
+                android:background="@drawable/background_outline"
                 android:text="Hasil Penjurusan"
                 android:layout_weight="1"/>
 
@@ -94,7 +95,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="@dimen/_8sdp"
-                android:background="@color/grey_10"
+                android:textColor="@color/black"
+                android:background="@drawable/background_black_outline"
+                android:textStyle="bold"
                 tools:text="IPS"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
