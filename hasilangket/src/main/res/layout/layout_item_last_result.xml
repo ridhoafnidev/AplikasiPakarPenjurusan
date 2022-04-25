@@ -3,31 +3,35 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_6sdp"
+    android:background="@drawable/background_black_outline"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="@dimen/medium">
 
     <!--Region Label-->
 
-    <com.example.core_util.BaseTextView
+    <TextView
         android:id="@+id/tv_label_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:base_font_style="bold_italic"
-        android:textSize="@dimen/text_large"
+        android:textSize="@dimen/text_medium"
         tools:text="Ahmad"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginEnd="@dimen/medium"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tv_label_dot"
         app:layout_constraintStart_toStartOf="parent"/>
 
-    <com.example.core_util.BaseTextView
+    <TextView
         android:id="@+id/tv_label_dot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:base_font_style="bold_italic"
-        android:textSize="@dimen/text_large"
+        android:textSize="@dimen/text_medium"
         android:text=":"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginEnd="@dimen/medium"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/barrier"/>
@@ -41,12 +45,13 @@
         app:barrierDirection="end"
         app:constraint_referenced_ids="tv_label_dot"/>
 
-    <com.example.core_util.BaseTextView
+    <TextView
         android:id="@+id/tv_result"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/text_large"
-        app:base_font_style="bold_italic"
+        android:textSize="@dimen/text_medium"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:layout_marginStart="@dimen/medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/barrier"
