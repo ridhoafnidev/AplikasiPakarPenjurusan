@@ -55,10 +55,12 @@
         <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-penjurusan/src/main/res/layout/activity_nilai_penjurusan.xml" value="0.19895833333333332" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-penjurusan/src/main/res/layout/dsf.xml" value="0.19895833333333332" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-penjurusan/src/main/res/layout/fragment_add_nilai_siswa.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-penjurusan/src/main/res/layout/fragment_nilai_penjurusan.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-penjurusan/src/main/res/layout/fragment_nilai_penjurusan.xml" value="0.264" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-penjurusan/src/main/res/layout/fragment_nilai_siswa.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-penjurusan/src/main/res/layout/item_nilai_penjurusan.xml" value="0.23333333333333334" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-penjurusan/src/main/res/layout/item_nilai_siswa.xml" value="0.19895833333333332" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-penjurusan/src/main/res/layout/row_table_nilai_penjurusan.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-nilai-penjurusan/src/main/res/layout/row_table_nilai_penjurusan_murid.xml" value="0.4" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/layout/activity_pakar.xml" value="0.25" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/layout/fragment_eighth.xml" value="0.37447916666666664" />
         <entry key="..\:/Users/ridho/AndroidStudioProjects/AplikasiPakarPenjurusan/sub-feature-pakar/src/main/res/layout/fragment_first.xml" value="0.25" />

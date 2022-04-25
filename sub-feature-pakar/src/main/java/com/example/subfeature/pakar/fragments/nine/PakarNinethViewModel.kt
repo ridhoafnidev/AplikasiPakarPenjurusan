@@ -118,6 +118,7 @@ class PakarNinethViewModel(
             answers[0].answer =="J01" && answers[1].answer=="B01" && answers[2].answer=="B02" && answers[3].answer =="M03" && answers[4].answer =="M04" && answers[5].answer =="M01" && answers[6].answer =="M06" && answers[7].answer =="M08" && answers[8].answer =="P01" && answers[9].answer =="N01" && answers[10].answer =="C01" && answers[11].answer =="D01" -> "IPA"
             answers[0].answer =="J01" && answers[1].answer=="B01" && answers[2].answer=="B02" && answers[3].answer =="M03" && answers[4].answer =="M04" && answers[5].answer =="M01" && answers[6].answer =="M07" && answers[7].answer =="M08" && answers[8].answer =="P01" && answers[9].answer =="N01" && answers[10].answer =="C01" && answers[11].answer =="D01" -> "IPA"
             answers[0].answer =="J01" && answers[1].answer=="B01" && answers[2].answer=="B02" && answers[3].answer =="M01" && answers[4].answer =="M02" && answers[5].answer =="M03" && answers[6].answer =="M05" && answers[7].answer =="M06" && answers[8].answer =="P01" && answers[9].answer =="N01" && answers[10].answer =="C01" && answers[11].answer =="D01" -> "IPA"
+            answers[0].answer =="J01" && answers[1].answer=="B01" && answers[2].answer=="B02" && answers[3].answer =="M01" && answers[4].answer =="M02" && answers[5].answer =="M03" && answers[6].answer =="M05" && answers[7].answer =="M06" && answers[8].answer =="P01" && answers[9].answer =="N01" && answers[10].answer =="C01" && answers[11].answer =="D01" -> "IPA"
 
             //endregion
             //region IPS
