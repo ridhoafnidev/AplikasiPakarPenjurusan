@@ -11,6 +11,11 @@ class NilaiPenjurusanActivity : BaseActivity<ActivityNilaiPenjurusanBinding>(Act
 
     val level by levelParam()
 
+    val userId by userIdParam()
+
+    val isGuru
+        get() = level == "guru"
+
     override fun initView() {
         initToolbar(back = true, primary = true)
         setPageName("Hasil Penjurusan")

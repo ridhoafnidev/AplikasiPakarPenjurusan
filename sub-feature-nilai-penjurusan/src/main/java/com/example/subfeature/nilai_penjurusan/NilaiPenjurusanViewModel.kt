@@ -5,8 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core_data.api.ApiEvent
-import com.example.core_data.domain.LastResults
-import com.example.core_data.domain.ListNilaiSiswa
+import com.example.core_data.domain.*
 import com.example.core_data.repository.LastResultRepository
 import com.example.core_data.repository.NilaiSiswaRepository
 import kotlinx.coroutines.flow.collect
@@ -44,4 +43,28 @@ class NilaiPenjurusanViewModel(
                 .collect { _lastResultAll.value = it }
         }
     }
+
+    infix fun getMagorValue(triple: Triple<String, String, String>): String {
+
+        val (averageIpIps, average, qa) = triple
+
+        val isAverageIpa = average == IPA
+        val isAverageIps = average == IPS
+        val isQaIpa = qa == IPA
+        val isQaIps = qa == IPS
+        val isQaIpc = qa == IPC
+        val isIpaIs = if (averageIpIps.toInt() >= 70) IPA else IPS
+
+        return when {
+            isAverageIpa && isQaIpa -> IPA
+            isAverageIps && isQaIps -> IPS
+            isAverageIps && isQaIpc -> IPS
+            isAverageIpa && isQaIpc -> IPA
+            isAverageIps && isQaIpa -> isIpaIs
+            isAverageIpa && isQaIps -> isIpaIs
+            else -> ""
+        }
+    }
+
+
 }

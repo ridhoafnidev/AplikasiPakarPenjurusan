@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.annotation.MainThread
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.core_navigation.ModuleNavigator.NilaiPenjurusanNav.Companion.USER_ID
 
 interface ModuleNavigator {
 
@@ -100,6 +101,12 @@ interface ModuleNavigator {
             lazy(LazyThreadSafetyMode.NONE) {
                 intent.getStringExtra(LEVEL).orEmpty()
             }
+
+        @MainThread
+        fun <T> T.userIdParam(): Lazy<String> where T : AppCompatActivity, T : NilaiSiswaNav =
+            lazy(LazyThreadSafetyMode.NONE) {
+                intent.getStringExtra(USER_ID).orEmpty()
+            }
     }
 
     //region Nilai Penjurusan
@@ -108,6 +115,7 @@ interface ModuleNavigator {
 
         companion object {
             const val LEVEL = "level"
+            const val USER_ID = "user_id"
         }
 
         @MainThread
@@ -115,25 +123,35 @@ interface ModuleNavigator {
             lazy(LazyThreadSafetyMode.NONE) {
                 intent.getStringExtra(LEVEL).orEmpty()
             }
+
+        @MainThread
+        fun <T> T.userIdParam(): Lazy<String> where T : AppCompatActivity, T : NilaiPenjurusanNav =
+            lazy(LazyThreadSafetyMode.NONE) {
+                intent.getStringExtra(USER_ID).orEmpty()
+            }
     }
 
     fun <T> T.navigateToNilaiPenjurusanActivity(
         finishCurrent: Boolean = false,
-        level: String = ""
+        level: String = "",
+        userId: String = ""
     ) where T : Fragment, T : ModuleNavigator {
         ActivityClassPath.NilaiPenjurusan.getIntent(requireContext())
             .apply {
                 putExtra(NilaiPenjurusanNav.LEVEL, level)
+                putExtra(NilaiPenjurusanNav.USER_ID, userId)
             }.let { startActivity(it, finishCurrent) }
     }
 
     fun <T> T.navigateToNilaiPenjurusanActivity(
         finishCurrent: Boolean = false,
-        level: String = ""
+        level: String = "",
+        userId: String = ""
     ) where T : AppCompatActivity, T : ModuleNavigator {
         ActivityClassPath.NilaiPenjurusan.getIntent(this)
             .apply {
                 putExtra(NilaiPenjurusanNav.LEVEL, level)
+                putExtra(NilaiPenjurusanNav.USER_ID, userId)
             }.let { startActivity(it, finishCurrent) }
     }
 

@@ -18,10 +18,11 @@ class HasilAngketFragment : BaseFragment<FragmentHasilAngketBinding>(FragmentHas
     private val pakarViewModel: HasilAngketViewModel by sharedViewModel()
 
     override fun initView(){
+
         pakarViewModel.auth.observe(viewLifecycleOwner) { user ->
             Log.d("dgf", "ooom ${user!!.isGuru}")
             user?.let {
-                pakarViewModel.getLastResult(it.idSiswa.toInt(), if (it.isGuru) 1 else 0)
+                pakarViewModel.getLastResult(it.idUser.toInt(), if (it.isGuru) 1 else 0)
             }
         }
         pakarViewModel.lastResult.observe(viewLifecycleOwner) { lastResult ->
@@ -37,6 +38,7 @@ class HasilAngketFragment : BaseFragment<FragmentHasilAngketBinding>(FragmentHas
                 }
             }
         }
+
     }
 
     private fun setupDataLastResult(lastResults: LastResults?) {

@@ -12,10 +12,19 @@
 
         <include
             android:id="@+id/table_nilai_siswa"
+            layout="@layout/row_table_nilai_penjurusan"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            layout="@layout/row_table_nilai_penjurusan"/>
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/layout_magor_student"
+            layout="@layout/row_table_nilai_penjurusan_murid"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/medium"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

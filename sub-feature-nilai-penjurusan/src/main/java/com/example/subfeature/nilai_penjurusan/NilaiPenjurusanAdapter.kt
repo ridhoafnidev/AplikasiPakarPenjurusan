@@ -46,6 +46,7 @@ class NilaiPenjurusanAdapter(
                     dataNilaiHasilAngket.isIpa() && dataNilaiSiswa.isIpa() -> IPA
                     dataNilaiHasilAngket.isIps() && dataNilaiSiswa.isIps() -> IPS
                     dataNilaiHasilAngket.isIpc() && dataNilaiSiswa.isIps() -> IPS
+                    dataNilaiHasilAngket.isIpc() && dataNilaiSiswa.isIpa() -> IPA
                     dataNilaiHasilAngket.isIps() && dataNilaiSiswa.isIpa() -> dataNilaiSiswa.isIpaOrIps()
                     dataNilaiHasilAngket.isIpa() && dataNilaiSiswa.isIps() -> dataNilaiSiswa.isIpaOrIps()
                     else -> ""

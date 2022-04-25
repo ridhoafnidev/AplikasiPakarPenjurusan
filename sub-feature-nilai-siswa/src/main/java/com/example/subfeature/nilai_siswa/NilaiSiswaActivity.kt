@@ -14,6 +14,8 @@ class NilaiSiswaActivity : BaseActivity<ActivityNilaiSiswaBinding>(ActivityNilai
 
     val level by levelParam()
 
+    val userId by userIdParam()
+
     override fun initView() {
         initToolbar(back = true, primary = true)
         setPageName("Nilai Siswa")

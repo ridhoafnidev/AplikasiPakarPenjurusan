@@ -7,12 +7,14 @@ import com.example.core_data.api.request.siswa.RegisterSiswaRequest
 import com.example.core_data.api.response.CommonResponse
 import com.example.core_data.domain.*
 import com.example.core_data.repository.AuthRepository
+import com.example.core_data.repository.LastResultRepository
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.collect
 
 class AuthViewModel(
-    private val authRepository: AuthRepository
+    private val authRepository: AuthRepository,
+    private val lastResultRepository: LastResultRepository
 ) : ViewModel() {
 
     val auth: LiveData<User?> = liveData<User?> {
@@ -56,6 +58,17 @@ class AuthViewModel(
 
     private val _registerSiswaRequest = MutableLiveData<ApiEvent<RegisterSiswa?>>()
     val registerSiswaRequest: LiveData<ApiEvent<RegisterSiswa?>> = _registerSiswaRequest
+
+    private val _lastResultAll = MutableLiveData<ApiEvent<LastResults?>>()
+    val lastResultAll: LiveData<ApiEvent<LastResults?>> = _lastResultAll
+
+    fun getLastResult(idUser: Int) {
+        viewModelScope.launch {
+            lastResultRepository.getLastResult(idUser, 1)
+                .onStart { emit(ApiEvent.OnProgress()) }
+                .collect { _lastResultAll.value = it }
+        }
+    }
 
     fun login(username: String, password: String) {
         viewModelScope.launch {
