@@ -1,6 +1,7 @@
 package com.example.subfeature.nilai_penjurusan
 
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.core_data.api.ApiEvent
@@ -41,12 +42,12 @@ class NilaiPenjurusanFragment : BaseFragment<FragmentNilaiPenjurusanBinding>(
                                 Timber.d("progress ${nilaiSiswa.currentResult}")
                             }
                             is ApiEvent.OnSuccess -> {
-
                                 nilaiSiswaViewModel.lastResultAll.observe(viewLifecycleOwner) { hasilAngket ->
                                     when (hasilAngket) {
                                         is ApiEvent.OnSuccess -> {
                                             if (isGuru) {
-                                                binding.layoutMagorStudent.root.visible()
+                                                binding.layoutMagorStudent.root.gone()
+                                                binding.tableNilaiSiswa.root.visible()
                                                 binding.tableNilaiSiswa.rvNilaiSiswa.layoutManager =
                                                     LinearLayoutManager(requireActivity())
                                                 val nilaiSiswadapter = NilaiPenjurusanAdapter(
@@ -59,7 +60,8 @@ class NilaiPenjurusanFragment : BaseFragment<FragmentNilaiPenjurusanBinding>(
                                             }
                                             else {
                                                 with(binding){
-                                                    tableNilaiSiswa.root.gone()
+                                                    binding.layoutMagorStudent.root.visible()
+                                                    binding.tableNilaiSiswa.root.gone()
                                                     layoutMagorStudent.apply {
                                                         root.visible()
                                                         val averageValue = nilaiSiswa.getData()?.filter { it.user_id == userId.toLong() }?.first()?.rata_akhir.toString()
@@ -70,9 +72,7 @@ class NilaiPenjurusanFragment : BaseFragment<FragmentNilaiPenjurusanBinding>(
                                                         if (tvMagorValue.text.isEmpty()) tvWarning.visible() else tvWarning.gone()
                                                     }
                                                 }
-
                                             }
-
                                         }
                                     }
                                 }
