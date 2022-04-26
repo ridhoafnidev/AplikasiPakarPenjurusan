@@ -11,6 +11,7 @@ import com.example.core_data.repository.LastResultRepository
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.filterNot
 
 class AuthViewModel(
     private val authRepository: AuthRepository,
@@ -64,8 +65,8 @@ class AuthViewModel(
 
     fun getLastResult(idUser: Int) {
         viewModelScope.launch {
-            lastResultRepository.getLastResult(idUser, 1)
-                .onStart { emit(ApiEvent.OnProgress()) }
+            lastResultRepository.getLastResult(idUser, 0)
+                .filterNot { it is ApiEvent.OnProgress }
                 .collect { _lastResultAll.value = it }
         }
     }
