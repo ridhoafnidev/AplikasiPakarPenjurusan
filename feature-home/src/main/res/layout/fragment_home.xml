@@ -28,7 +28,7 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:contentInsetStartWithNavigation="0dp"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:subtitle="Apilkasi Pakar Penjurusan SMA Negeri 1 Lareh Bago Halaban"
+            app:subtitle="Apilkasi Pakar Penjurusan SMA Negeri 1 Lareh Sago Halaban"
             app:subtitleTextAppearance="@style/Base.TextAppearance.AppCompat.Caption2"
             app:subtitleTextColor="@color/grey_10"
             app:title="Hi..." />
@@ -199,19 +199,36 @@
         android:id="@+id/nested_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="-36dp"
         android:scrollbars="none"
         android:scrollingCache="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium"
+            android:layout_marginEnd="@dimen/medium"
+            android:layout_marginTop="@dimen/medium"
             android:descendantFocusability="blocksDescendants"
             android:orientation="vertical">
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="35dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/vp_galeri"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/slider_dots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal" />
+            </LinearLayout>
 
         </LinearLayout>
 
