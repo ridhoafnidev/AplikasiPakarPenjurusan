@@ -25,27 +25,27 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     override fun initListener() {
         with(binding){
-            ivPakar.setOnClickListener {
+            cvPakar.setOnClickListener {
                 viewModel.getLastResult(userId.toInt())
                 viewModel.lastResultAll.observe(viewLifecycleOwner) { hasilAngket ->
                     when (hasilAngket) {
                         is ApiEvent.OnSuccess -> {
                             hasilAngket.getData()?.let {
-                                Toast.makeText(requireContext(), "Anda sudah melakukan pengisian data sebelumnya", Toast.LENGTH_SHORT).show()
+                                if (it.isNullOrEmpty()) navigateToPakarActivity()
+                                else Toast.makeText(requireContext(), "Data sudah ada", Toast.LENGTH_SHORT).show()
                             } ?: navigateToPakarActivity()
-
                         }
                     }
                 }
             }
-            ivHasilAngket.setOnClickListener {
+            cvHasilAngket.setOnClickListener {
                 navigateToHasilAngketActivity()
             }
 
-            ivNilaiSiswa.setOnClickListener {
+            cvNilaiSiswa.setOnClickListener {
                 navigateToNilaiSiswaActivity(level = level)
             }
-            ivHasilPenjurusan.setOnClickListener {
+            cvHasilPenjurusan.setOnClickListener {
                 navigateToNilaiPenjurusanActivity(level = level, userId = userId)
             }
 
