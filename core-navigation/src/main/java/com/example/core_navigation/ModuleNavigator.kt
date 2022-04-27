@@ -60,6 +60,7 @@ interface ModuleNavigator {
 
         companion object {
             const val STATUS = "status"
+            const val ID_USER_SISWA = "id user siswa"
         }
 
         @MainThread
@@ -67,25 +68,35 @@ interface ModuleNavigator {
             lazy(LazyThreadSafetyMode.NONE) {
                 intent.getStringExtra(STATUS).orEmpty()
             }
+
+        @MainThread
+        fun <T> T.idUserSiswaParam(): Lazy<String> where T : AppCompatActivity, T : ProfileNav =
+            lazy(LazyThreadSafetyMode.NONE) {
+                intent.getStringExtra(ID_USER_SISWA).orEmpty()
+            }
     }
 
     fun <T> T.navigateToProfileActivity(
         finishCurrent: Boolean = false,
         status: String = "",
+        idUserSiswa: String = ""
     ) where T : Fragment, T : ModuleNavigator {
         ActivityClassPath.Profile.getIntent(requireContext())
             .apply {
                 putExtra(ProfileNav.STATUS, status)
+                putExtra(ProfileNav.ID_USER_SISWA, idUserSiswa)
             }.let { startActivity(it, finishCurrent) }
     }
 
     fun <T> T.navigateToProfileActivity(
         finishCurrent: Boolean = false,
         status: String = "",
+        idUserSiswa: String = ""
     ) where T : AppCompatActivity, T : ModuleNavigator {
         ActivityClassPath.Profile.getIntent(this)
             .apply {
                 putExtra(ProfileNav.STATUS, status)
+                putExtra(ProfileNav.ID_USER_SISWA, idUserSiswa)
             }.let { startActivity(it, finishCurrent) }
     }
 

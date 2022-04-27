@@ -2,6 +2,7 @@ package com.example.core_data.domain
 
 data class Siswa(
     val idUser: Long = 0L,
+    val id: Long? = 0L,
     val username: String = "",
     val level: String = "",
     val lastLogin: String = "",

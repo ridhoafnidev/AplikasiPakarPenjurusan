@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_personalDataFragment_to_helpFragment"
             app:destination="@id/helpFragment" />
+        <action
+            android:id="@+id/action_personalDataFragment_to_studentDataFragment"
+            app:destination="@id/studentDataFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
@@ -48,4 +51,9 @@
         android:name="com.example.feature.profile.HelpFragment"
         android:label="fragment_help"
         tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/studentDataFragment"
+        android:name="com.example.feature.profile.StudentDataFragment"
+        android:label="fragment_student_data"
+        tools:layout="@layout/fragment_student_data" />
 </navigation>

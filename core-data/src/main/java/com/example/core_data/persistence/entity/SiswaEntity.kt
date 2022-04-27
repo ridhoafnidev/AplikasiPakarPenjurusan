@@ -9,6 +9,7 @@ import com.example.core_data.domain.Siswa
 data class SiswaEntity(
     @PrimaryKey
     val idUser: Long,
+    val id: Long?,
     val username: String,
     val level: String,
     val lastLogin: String,
@@ -41,6 +42,7 @@ internal typealias SiswaEntities = List<SiswaEntity>
 internal fun SiswaEntity.toDomain() =
     Siswa(
         idUser = idUser,
+        id = id,
         username = username,
         level = level,
         lastLogin = lastLogin,
@@ -74,6 +76,7 @@ internal fun SiswaEntities.toDomain() =
 internal fun Siswa.toEntity() =
     SiswaEntity(
         idUser = idUser,
+        id = id,
         username = username,
         level = level,
         lastLogin = lastLogin,
