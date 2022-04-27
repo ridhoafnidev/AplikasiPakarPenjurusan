@@ -18,6 +18,10 @@
             layout="@layout/row_data_pribadi" />
 
         <include
+            android:id="@+id/row_data_siswa"
+            layout="@layout/row_data_siswa" />
+
+        <include
             android:id="@+id/row_ganti_password"
             layout="@layout/row_ganti_password" />
 

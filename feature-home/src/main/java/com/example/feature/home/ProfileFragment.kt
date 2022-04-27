@@ -25,6 +25,8 @@ import com.example.core_data.removeAll
 import com.example.core_navigation.ModuleNavigator
 import com.example.core_resource.components.base.BaseFragment
 import com.example.core_util.convertImagePath
+import com.example.core_util.gone
+import com.example.core_util.visible
 import com.example.feature.auth.AuthViewModel
 import com.example.feature.auth.GuruViewModel
 import com.example.feature.auth.SiswaViewModel
@@ -82,6 +84,10 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(
             navigateToProfileActivity(status = "Personal Data")
         }
 
+        binding.rowMenuProfile.rowDataSiswa.idRowDataSiswa.setOnClickListener {
+            navigateToProfileActivity(status = "Data Siswa")
+        }
+
         binding.rowMenuProfile.rowGantiPassword.idGantiPassword.setOnClickListener {
             navigateToProfileActivity(status = "Password")
         }
@@ -128,7 +134,10 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(
                                     rowProfileHeader.tvAsalSekolah.text = name
 
                                     if (it.foto.isNotEmpty()) {
-                                        Log.d("jghghg", "gytiuiuh ${APP_SISWA_IMAGES_URL + it.foto}")
+                                        Log.d(
+                                            "jghghg",
+                                            "gytiuiuh ${APP_SISWA_IMAGES_URL + it.foto}"
+                                        )
                                         binding.rowProfileHeader.ivPhoto.load(APP_SISWA_IMAGES_URL + it.foto) {
                                             crossfade(true)
                                             transformations(CircleCropTransformation())
@@ -199,7 +208,13 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(
                 level = data?.level.toString()
                 viewModel.idUser = idUser
 
-
+                if (data != null) {
+                    if (data.isGuru) {
+                        binding.rowMenuProfile.rowDataSiswa.root.visible()
+                    } else {
+                        binding.rowMenuProfile.rowDataSiswa.root.gone()
+                    }
+                }
 
                 observeDetail(data)
             }
@@ -246,8 +261,10 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(
                         requireContext()
                     )
                 } else if (level == "guru") {
-                    Log.d("sdsdsd", "sdsdsddsd ${imagePath!!} dan $imageUri!!" +
-                            " ${requireActivity().contentResolver}")
+                    Log.d(
+                        "sdsdsd", "sdsdsddsd ${imagePath!!} dan $imageUri!!" +
+                                " ${requireActivity().contentResolver}"
+                    )
                     guruViewModel.updateFotoGuru(
                         idUser.toInt(),
                         imagePath!!,

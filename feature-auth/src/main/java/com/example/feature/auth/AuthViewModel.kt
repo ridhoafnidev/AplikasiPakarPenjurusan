@@ -1,5 +1,6 @@
 package com.example.feature.auth
 
+import android.util.Log
 import androidx.lifecycle.*
 import com.example.core_data.api.ApiEvent
 import com.example.core_data.api.request.guru.RegisterGuruRequest
@@ -41,6 +42,7 @@ class AuthViewModel(
     var username = ""
     var password = ""
     var idUser = ""
+    var idUserSiswa = ""
 
     private val _loginRequest = MutableLiveData<ApiEvent<User?>>()
     val loginRequest: LiveData<ApiEvent<User?>> = _loginRequest

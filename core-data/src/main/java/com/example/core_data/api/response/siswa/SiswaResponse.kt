@@ -37,6 +37,8 @@ data class SiswaDataResponse(
     val idUser: Long?,
     @Json(name = "user_id")
     val userId: Long?,
+    @Json(name = "id")
+    val id: Long?,
     @Json(name = "username")
     val username: String = "",
     @Json(name = "level")
@@ -100,6 +102,7 @@ fun ListSiswaResponse.toDomain() = map {
 internal fun SiswaDataResponse.toDomain() =
     Siswa(
         idUser = idUser ?: (userId ?: 0L),
+        id = id,
         username = username,
         level = level,
         lastLogin = lastLogin,
